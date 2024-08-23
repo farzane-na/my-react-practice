@@ -1,0 +1,39 @@
+.shopping-cart-table{
+    margin: 2rem auto;
+    width: 60%;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.shopping-cart-table th{
+    padding: 0.8rem;
+    text-align: start;
+}
+.shopping-cart-table td{
+    padding: 1rem;
+}
+.product-title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    font-weight: bold;
+}
+.product-title img{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 1rem;
+}
+.product-btn button{
+    padding: 0.5rem 1.5rem;
+    background-color: rgb(13, 95, 13);
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 150ms ease-in;
+}
+.product-btn button:hover{
+    background-color: rgb(10, 73, 10);
+}
