@@ -1,0 +1,17 @@
+.footer{
+    margin-top: 3rem;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(191, 219, 191);
+}
+.copy-right{
+    font-weight: bold;
+}
+.social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
