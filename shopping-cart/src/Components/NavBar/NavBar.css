@@ -1,0 +1,21 @@
+.navbar a {
+    text-decoration: none;
+}
+.navbar ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+.navbar li{
+    cursor: pointer;
+}
+.navbar a{
+    color: #212121;
+    transition: all 150ms ease-in;
+    font-weight: bold;
+}
+.navbar a:hover{
+    color: rgb(13, 95, 13);
+}
