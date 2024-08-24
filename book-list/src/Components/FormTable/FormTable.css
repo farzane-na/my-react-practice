@@ -1,0 +1,54 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+.input{
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+}
+.submit{
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #FF6F00;
+    color: #fff;
+    cursor: pointer;
+}
+.table{
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    margin-bottom: 5rem;
+}
+tr:nth-child(even){
+    background-color: #fff;
+}
+tr:nth-child(odd){
+    background-color: #ccccccd7;
+}
+.heading{
+    width: 100%;
+    border-radius: 1rem;
+}
+.table__title{
+    width: 40%;
+    padding: 0.4rem;
+    text-align: start;
+}
+.table__author{
+    width: 30%;
+    padding: 0.4rem;
+    text-align: start;
+}
+.table__year{
+    width: 30%;
+    padding: 0.4rem;
+    text-align: start;
+}
+td{
+    padding: 0.8rem;
+}
