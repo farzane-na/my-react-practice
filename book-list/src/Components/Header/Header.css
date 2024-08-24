@@ -1,0 +1,17 @@
+.header{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+.header span{
+    color: #FF6F00;
+}
+.header h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
