@@ -1,0 +1,42 @@
+.todo{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 1.5rem;
+    border: 1px solid #6c63ff;
+    border-radius: 1rem;
+}
+.todo-title{
+    flex-grow: 1;
+    padding: 1rem;
+    border-radius: 1rem;
+    position: relative;
+}
+.todo-btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 2rem;
+    border-left: 1px solid #ccc;
+}
+.complete-todo ,
+.delete-todo{
+    background-color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 2rem;
+}
+.complete-todo{
+    color: green;
+}
+.delete-todo{
+    color: rgb(201, 11, 11);
+}
+.completed{
+    background-color: #ccc;
+    color: #444;
+}
