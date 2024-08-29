@@ -1,0 +1,93 @@
+.note-app{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.title{
+    margin-bottom: 4rem;
+    margin-top: 3rem;
+    color: #212121;
+}
+.form{
+ width: 50rem;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ gap: 2rem;
+ margin-bottom: 5rem;
+}
+.form input{
+    width: 100%;
+    flex-grow: 1;
+    border: 0.1rem solid #ccc;
+    outline: none;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.form input:focus-within{
+    box-shadow: 0 0 8px #304FFE;
+}
+.note-handeler{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.colors span{
+    background-color: red;
+    border-radius: 100%;
+    width: 5rem;
+    height: 5rem;
+}
+.colors{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+.note-bts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+.add , .delete{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    padding: 0.8rem;
+    border: 0.1rem solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    transition: all 150ms ease-in;
+}
+.add{
+    color: #304FFE;
+    border-color: #304FFE;
+}
+.add:hover{
+    box-shadow: 0 0 10px #304FFE;
+}
+.delete{
+    color: #D50000;
+    border-color: #D50000;
+}
+.delete:hover{
+    box-shadow: 0 0 10px #D50000;
+}
+.note-wrapper{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    gap: 1rem;
+}
