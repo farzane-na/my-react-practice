@@ -1,0 +1,110 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav__logo{
+    font-weight: bold;
+    color: var(--yellow-color);
+    font-size: 2.5rem;
+}
+.nav__menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3.9rem;
+    color: var(--white-color);
+    list-style-type: none;
+}
+.nav__menu-link{
+    color: var(--white-color);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 150ms ease-in;
+}
+.nav__menu-link:hover{
+    color: var(--yellow-color);
+}
+
+/* nav menu mobile */
+.mobile-menu{
+    display: none;
+}
+.hamburger-menu{
+    width: 5rem;
+    padding: 1rem;
+}
+.hamburger-line{
+    width: 100%;
+    background-color: var(--yellow-color);
+    height: 0.4rem;
+    display: block;
+    border-radius: 1rem;
+    position: relative;
+}
+.hamburger-line::after,
+.hamburger-line::before{
+    content: "";
+    position: absolute;
+    background-color: var(--yellow-color);
+    height: 0.4rem;
+    right: 0;
+    border-radius: 1rem;
+    transition: all 150ms ease-in;
+}
+.hamburger-line::after{
+    width: 70%;
+    top: 1rem;
+}
+.hamburger-line::before{
+    width: 130%;
+    top: -1rem;
+}
+.hamburger-line--active::after{
+    transition: all 150ms ease-in;
+    width: 130%;
+}
+.hamburger-line--active::before{
+    transition: all 150ms ease-in;
+    width: 70%;
+}
+.nav__menu-mobile{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5rem;
+    gap: 3rem;
+    list-style-type: none;
+    background-color: var(--cream-color);
+    top: 0;
+    left: -51%;
+    width: 50%;
+    min-height: 100vh;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    transition: all 150ms ease-in;
+}
+.nav__menu-mobile.nav__menu-mobile--open{
+    left: 0;
+}
+.nav__menu-mobile-item{
+    cursor: pointer;
+    transition: all 150ms ease-in;
+}
+.nav__menu-mobile-link{
+    color: var(--dark-green-color);
+    text-decoration: none;
+}
+.nav__menu-mobile-link:hover{
+    color: var(--green-color);
+}
+
+@media (max-width:564px){
+    .nav__menu{
+        display: none;
+    }
+    .mobile-menu{
+        display: flex;
+    }
+}

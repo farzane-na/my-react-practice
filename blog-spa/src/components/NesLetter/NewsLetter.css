@@ -1,0 +1,46 @@
+.newsletter{
+    width: 100%;
+    padding-right: 2.4rem;
+}
+.input-wrapper{
+    border: 1px solid var(--yellow-color);
+    border-radius: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.input-wrapper input{
+    padding: 1.5rem 0;
+    padding-left: 3.5rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 2rem;
+    flex-grow: 1;
+}
+.input-wrapper input::placeholder{
+    color: var(--yellow-color);
+}
+.input-wrapper button{
+    padding: 1.5rem 3.5rem;
+    background-color: var(--yellow-color);
+    border: none;
+    outline: none;
+    color: var(--dark-green-color);
+    border-radius: 5rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+@media (max-width:564px){
+    .newsletter{
+        padding: 0;
+    }
+    .input-wrapper button{
+        padding: 1rem 2rem;
+        font-size: 1.6rem;
+    }
+    .input-wrapper input{
+        padding: 1rem 0 1rem 1.3rem;
+        font-size: 1.6rem;
+    }
+}
