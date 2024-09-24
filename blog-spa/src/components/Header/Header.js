@@ -23,7 +23,7 @@ export default function Header() {
           <div className="header__picture">
             <img
               src="./images/header-img.png"
-              alt="header image"
+              alt="header"
               className="header__picture-img"
             />
           </div>

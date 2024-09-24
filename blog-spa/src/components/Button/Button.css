@@ -1,0 +1,14 @@
+.btn-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8rem;
+}
+.btn{
+    background-color: var(--dark-green-color);
+    color: var(--yellow-color);
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+}

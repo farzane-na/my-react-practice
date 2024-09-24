@@ -1,0 +1,12 @@
+.popular-blog{
+    width: 100%;
+    margin-bottom: 4.4rem;
+}
+.popular-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
