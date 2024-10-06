@@ -1,6 +1,6 @@
 .blog{
     width: 23rem;
-    height: 26rem;
+    height: 31rem;
     padding: 1rem;
     border-radius: 1rem;
     display: flex;
@@ -32,14 +32,28 @@
 }
 .blog__pproperty{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
 }
-.blog__view,
-.blog__like{
+.blog__sumary{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.blog__date,
+.blog__author{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
     color: var(--dark-green-color);
+}
+.blog__author-author{
+    width: 17rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
 }

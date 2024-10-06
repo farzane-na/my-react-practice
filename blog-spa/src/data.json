@@ -6,7 +6,8 @@
             "date":"May 22, 2024",
             "author":" Ricky Hanlon",
             "text":"Last week we hosted React Conf 2024, a two-day conference in Henderson, Nevada where 700+ attendees     gathered in-person to discuss the latest in UI engineering. This was our first in-person conference since 2019,     and we were thrilled to be able to bring the community together again. At React Conf 2024, we announced the React   19 RC, the React Native New Architecture Beta, and an experimental release of the React Compiler. The community   also took the stage to announce React Router v7, Universal Server Components in Expo Router, React Server     Components in RedwoodJS, and much more.The entire day 1 and day 2 streams are available online. In this post,   we’ll summarize the talks and announcements from the event.To kick off day 1, Meta CTO Andrew “Boz” Bosworth  shared a welcome message followed by an introduction by Seth Webster, who manages the React Org at Meta, and our     MC Ashley Narcisse.In the day 1 keynote, Joe Savona shared our goals and vision for React to make it easy for   anyone to build great user experiences. Lauren Tan followed with a State of React, where she shared that React was    downloaded over 1 billion times in 2023, and that 37% of new developers learn to program with React. Finally, she  highlighted the work of the React community to make React, React.",
-            "image":"./images/react/1.jpg"
+            "image":"./images/react/1.jpg",
+            "sumary":"Last week we hosted React Conf 2024, a two-day conference in Henderson, Nevada where 700+ attendees     gathered in-person to discuss the latest in UI engineering."
         },
         {
             "id":2,
@@ -14,7 +15,8 @@
             "date":"April 25, 2024",
             "author":"The React Team",
             "text":"In our React 19 RC Upgrade Guide, we shared step-by-step instructions for upgrading your app to React 19. In this post, we’ll give an overview of the new features in React 19, and how you can adopt them. A common use case in React apps is to perform a data mutation and then update state in response. For example, when a user submits a form to change their name, you will make an API request, and then handle the response. In the past, you would need to handle pending states, errors, optimistic updates, and sequential requests manually.In React 19, we’re adding support for using async functions in transitions to handle pending states, errors, forms, and optimistic updates automatically.The async transition will immediately set the isPending state to true, make the async request(s), and switch isPending to false after any transitions. This allows you to keep the current UI responsive and interactive while the data is changing. Building on top of Actions, React 19 introduces useOptimistic to manage optimistic updates, and a new hook React.useActionState to handle common cases for Actions. In react-dom we’re adding <form> Actions to manage forms automatically and useFormStatus to support the common cases for Actions in forms. useActionState accepts a function (the “Action”), and returns a wrapped Action to call. This works because Actions compose. When the wrapped Action is called, useActionState will return the last result of the Action as data, and the pending state of the Action as pending.",
-            "image":"./images/react/2.jpg"
+            "image":"./images/react/2.jpg",
+            "sumary":"In our React 19 RC Upgrade Guide, we shared step-by-step instructions for upgrading your app to React 19. In this post, we’ll give an overview of the new features in React 19, and how you can adopt them."
         },
         {
             "id":3,
@@ -22,7 +24,8 @@
             "date":"April 25, 2024",
             "author":"Ricky Hanlon",
             "text":"The improvements added to React 19 RC require some breaking changes, but we’ve worked to make the upgrade as smooth as possible, and we don’t expect the changes to impact most apps. To help make the upgrade to React 19 easier, we’ve published a react@18.3 release that is identical to 18.2 but adds warnings for deprecated APIs and other changes that are needed for React 19. If you’d like to help us test React 19, follow the steps in this upgrade guide and report any issues you encounter. For a list of new features added to React 19, see the React 19 release post. We introduced a new JSX transform in 2020 to improve bundle size and use JSX without importing React. In React 19, we’re adding additional improvements like using ref as a prop and JSX speed improvements that require the new transform. If you’re using TypeScript, you also need to update the types. Once React 19 is released as stable, you can install the types as usual from @types/react and @types/react-dom.  If you’re using TypeScript, you also need to update the types. Once React 19 is released as stable, you can install the types as usual from @types/react and @types/react-dom.  Until the stable release, the types are available in different packages which need to be enforced in your package.json: In previous versions of React, errors thrown during render were caught and rethrown. In DEV, we would also log to console.error, resulting in duplicate error logs.",
-            "image":"./images/react/3.jpg"
+            "image":"./images/react/3.jpg",
+            "sumary":"The improvements added to React 19 RC require some breaking changes, but we’ve worked to make the upgrade as smooth as possible, and we don’t expect the changes to impact most apps. "
         },
         {
             "id":4,
@@ -30,7 +33,8 @@
             "date":"February 15, 2024",
             "author":"Joseph Savona, Ricky Hanlon, Andrew Clark, Matt Carroll, and Dan Abramov.",
             "text":"The improvements added to React 19 RC require some breaking changes, but we’ve worked to make the upgrade as smooth as possible, and we don’t expect the changes to impact most apps. To help make the upgrade to React 19 easier, we’ve published a react@18.3 release that is identical to 18.2 but adds warnings for deprecated APIs and other changes that are needed for React 19. If you’d like to help us test React 19, follow the steps in this upgrade guide and report any issues you encounter. For a list of new features added to React 19, see the React 19 release post. We introduced a new JSX transform in 2020 to improve bundle size and use JSX without importing React. In React 19, we’re adding additional improvements like using ref as a prop and JSX speed improvements that require the new transform. If you’re using TypeScript, you also need to update the types. Once React 19 is released as stable, you can install the types as usual from @types/react and @types/react-dom.  If you’re using TypeScript, you also need to update the types. Once React 19 is released as stable, you can install the types as usual from @types/react and @types/react-dom.  Until the stable release, the types are available in different packages which need to be enforced in your package.json: In previous versions of React, errors thrown during render were caught and rethrown. In DEV, we would also log to console.error, resulting in duplicate error logs.",
-            "image":"./images/react/4.jpg"
+            "image":"./images/react/4.jpg",
+            "sumary":"The improvements added to React 19 RC require some breaking changes, but we’ve worked to make the upgrade as smooth as possible, and we don’t expect the changes to impact most apps."
         },
         {
             "id":5,
@@ -38,7 +42,8 @@
             "date":"May 3, 2023 ",
             "author":"Dan Abramov, Sophie Alpert, Rick Hanlon, Sebastian Markbåge, and Andrew Clark",
             "text":"The improvements added to React 19 RC require some breaking changes, but we’ve worked to make the upgrade as smooth as possible, and we don’t expect the changes to impact most apps. To help make the upgrade to React 19 easier, we’ve published a react@18.3 release that is identical to 18.2 but adds warnings for deprecated APIs and other changes that are needed for React 19. If you’d like to help us test React 19, follow the steps in this upgrade guide and report any issues you encounter. For a list of new features added to React 19, see the React 19 release post. We introduced a new JSX transform in 2020 to improve bundle size and use JSX without importing React. In React 19, we’re adding additional improvements like using ref as a prop and JSX speed improvements that require the new transform. If you’re using TypeScript, you also need to update the types. Once React 19 is released as stable, you can install the types as usual from @types/react and @types/react-dom.  If you’re using TypeScript, you also need to update the types. Once React 19 is released as stable, you can install the types as usual from @types/react and @types/react-dom.  Until the stable release, the types are available in different packages which need to be enforced in your package.json: In previous versions of React, errors thrown during render were caught and rethrown. In DEV, we would also log to console.error, resulting in duplicate error logs.",
-            "image":"./images/react/5.jpg"
+            "image":"./images/react/5.jpg",
+            "sumary":"The improvements added to React 19 RC require some breaking changes, but we’ve worked to make the upgrade as smooth as possible, and we don’t expect the changes to impact most apps."
         },
         {
             "id":6,
@@ -46,7 +51,8 @@
             "date":"March 16, 2023 ",
             "author":"Dan Abramov and Rachel Nabors",
             "text":"The improvements added to React 19 RC require some breaking changes, but we’ve worked to make the upgrade as smooth as possible, and we don’t expect the changes to impact most apps. To help make the upgrade to React 19 easier, we’ve published a react@18.3 release that is identical to 18.2 but adds warnings for deprecated APIs and other changes that are needed for React 19. If you’d like to help us test React 19, follow the steps in this upgrade guide and report any issues you encounter. For a list of new features added to React 19, see the React 19 release post. We introduced a new JSX transform in 2020 to improve bundle size and use JSX without importing React. In React 19, we’re adding additional improvements like using ref as a prop and JSX speed improvements that require the new transform. If you’re using TypeScript, you also need to update the types. Once React 19 is released as stable, you can install the types as usual from @types/react and @types/react-dom.  If you’re using TypeScript, you also need to update the types. Once React 19 is released as stable, you can install the types as usual from @types/react and @types/react-dom.  Until the stable release, the types are available in different packages which need to be enforced in your package.json: In previous versions of React, errors thrown during render were caught and rethrown. In DEV, we would also log to console.error, resulting in duplicate error logs.",
-            "image":"./images/react/6.jpg"
+            "image":"./images/react/6.jpg",
+            "sumary":"The improvements added to React 19 RC require some breaking changes, but we’ve worked to make the upgrade as smooth as possible, and we don’t expect the changes to impact most apps."
         },
         {
             "id":7,
@@ -54,10 +60,45 @@
             "date":"March 22, 2023",
             "author":"Joseph Savona, Josh Story, Lauren Tan, Mengdi Chen, Samuel Susla, Sathya Gunasekaran, Sebastian Markbåge, and Andrew Clark",
             "text":"The improvements added to React 19 RC require some breaking changes, but we’ve worked to make the upgrade as smooth as possible, and we don’t expect the changes to impact most apps. To help make the upgrade to React 19 easier, we’ve published a react@18.3 release that is identical to 18.2 but adds warnings for deprecated APIs and other changes that are needed for React 19. If you’d like to help us test React 19, follow the steps in this upgrade guide and report any issues you encounter. For a list of new features added to React 19, see the React 19 release post. We introduced a new JSX transform in 2020 to improve bundle size and use JSX without importing React. In React 19, we’re adding additional improvements like using ref as a prop and JSX speed improvements that require the new transform. If you’re using TypeScript, you also need to update the types. Once React 19 is released as stable, you can install the types as usual from @types/react and @types/react-dom.  If you’re using TypeScript, you also need to update the types. Once React 19 is released as stable, you can install the types as usual from @types/react and @types/react-dom.  Until the stable release, the types are available in different packages which need to be enforced in your package.json: In previous versions of React, errors thrown during render were caught and rethrown. In DEV, we would also log to console.error, resulting in duplicate error logs.",
-            "image":"./images/react/7.jpg"
+            "image":"./images/react/7.jpg",
+            "sumary":"The improvements added to React 19 RC require some breaking changes, but we’ve worked to make the upgrade as smooth as possible, and we don’t expect the changes to impact most apps."
         }
     ],
     "library":[
-        {}
+        {
+            "id":1,
+            "title":"react-icon",
+            "img":"./images/libs/1.jpg"
+        },
+        {
+            "id":2,
+            "title":"json-server",
+            "img":"./images/libs/2.jpg"
+        },
+        {
+            "id":3,
+            "title":"Axios",
+            "img":"./images/libs/3.jpg"
+        },
+        {
+            "id":4,
+            "title":"formik",
+            "img":"./images/libs/4.jpg"
+        },
+        {
+            "id":5,
+            "title":"react-google-recapcha",
+            "img":"./images/libs/5.png"
+        },
+        {
+            "id":6,
+            "title":"react-hook-form",
+            "img":"./images/libs/6.jpg"
+        },
+        {
+            "id":7,
+            "title":"reacharts",
+            "img":"./images/libs/7.png"
+        }
     ]
 }
