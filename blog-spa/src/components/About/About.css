@@ -1,0 +1,38 @@
+.about{
+    margin: 10rem 0;
+}
+.about__title{
+    font-size: 4rem;
+    color: var(--dark-green-color);
+    margin-bottom: 4rem;
+}
+.about__info{
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    gap: 4rem;
+}
+.about__image{
+    width: 30%;
+    overflow: hidden;
+    border-radius: 5rem;
+}
+.about__image img{
+    width: 100%;
+    object-fit: contain;
+}
+.about__caption{
+    line-height: 2.5;
+    width: 60%;
+}
+@media (max-width:720px){
+    .about__info{
+        flex-direction: column;
+    }
+    .about__image{
+        width: 100%;
+    }
+    .about__caption{
+        width: 100%;
+    }
+}

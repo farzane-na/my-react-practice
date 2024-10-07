@@ -8,6 +8,7 @@ import LibrariesPage from './components/LibrariesPage/LibrariesPage';
 import Contact from './components/Contact/Contact';
 import MainBlog from './components/MainBlog/MainBlog'
 import MainLibrary from './components/MainLibrary/MainLibrary'
+import Page404 from './components/404Page/404Page'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/blog/:blogID' element={<MainBlog />} />
           <Route path='/library/:libraryID' element={<MainLibrary />} />
+          <Route path='*' element={<Page404 />} />
       </Routes>
     </>
   );

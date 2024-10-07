@@ -67,6 +67,6 @@
         width: 100%;
     }
     .contact__title{
-        text-align: center;
+        justify-content: center;
     }
 }

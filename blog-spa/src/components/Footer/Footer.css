@@ -51,3 +51,19 @@
     cursor: pointer;
     color: var(--cream-color);
 }
+@media (max-width:720px){
+    .footer-access{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: start;
+    }
+    .footer-caption{
+        max-width: 100%;
+    }
+    .footer-copy-right{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: start;
+        gap: 2rem;
+    }
+}
