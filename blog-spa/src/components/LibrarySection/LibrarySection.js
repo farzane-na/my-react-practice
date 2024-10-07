@@ -15,6 +15,7 @@ export default function LibrarySection() {
     }
     fetchData()
     },[])
+    console.log(libraryData)
   return (
     <section className="library-sec">
         <div className="container">
