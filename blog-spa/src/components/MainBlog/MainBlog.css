@@ -1,0 +1,29 @@
+.main-blog{
+    margin: 10rem 0;
+}
+.maib-blog__title{
+    font-size: 4rem;
+    color: var(--dark-green-color);
+    margin-bottom: 2rem;
+}
+.main-blog__date{
+    color: var(--dark-green-color);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 5rem;
+}
+.main-blog__image{
+    width: 100%;
+    height: 30rem;
+}
+.main-blog__image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.main-blog__text{
+    margin-top: 4rem;
+    line-height: 2.3rem;
+}

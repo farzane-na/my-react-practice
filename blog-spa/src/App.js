@@ -18,8 +18,8 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/Libraries' element={<LibrariesPage />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/blog/:id' element={<MainBlog />} />
-          <Route path='/library/:id' element={<MainLibrary />} />
+          <Route path='/blog/:blogID' element={<MainBlog />} />
+          <Route path='/library/:libraryID' element={<MainLibrary />} />
       </Routes>
     </>
   );

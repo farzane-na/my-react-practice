@@ -11,7 +11,7 @@ export default function Blog(props) {
         <div className="blog__image">
             <img src={image} alt="blog" />
         </div>
-        <Link to={`/post/${id}`} className="blog__title">{title}</Link>
+        <Link to={`/blog/${id}`} className="blog__title">{title}</Link>
         <p className="blog__sumary">{sumary}</p>
         <div className="blog__pproperty">
             <div className="blog__date">

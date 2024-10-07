@@ -16,11 +16,11 @@ export default function Home() {
         <Heading>Latest Blogs</Heading>
       </div>
       <BlogSection />
-      <Button>Read More</Button>
+      <Button link='/blogs'>Read More</Button>
       <div className="container">
         <Heading>Most Popular Library</Heading>
         <LibrarySection />
-        <Button>Show More</Button>
+        <Button link='/libraries' >Show More</Button>
         <NewsLetterSection />
       </div>
       <Footer />

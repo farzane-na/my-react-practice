@@ -1,12 +1,21 @@
-import React , {useState} from 'react'
+import React , {useState,useEffect} from 'react'
 import "./LibrariesPage.css"
 import Nav from '../Nav/Nav'
 import Footer from '../Footer/Footer'
-import data from "../../data.json"
 import Library from '../Library/Library'
 
 export default function LibrariesPage() {
-  const [libraryData , setLibraryData]=useState(data.library)
+  const [libraryData , setLibraryData]=useState([])
+  useEffect(()=>{
+    async function fetchData() {
+      await fetch('http://localhost:3000/data.json')
+      .then(res=>res.json())
+      .then(data=>{
+        setLibraryData(data.library)
+      })
+    }
+    fetchData()
+  },[])
   return (
     <>
       <Nav />

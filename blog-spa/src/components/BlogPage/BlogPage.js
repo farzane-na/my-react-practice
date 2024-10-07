@@ -1,13 +1,23 @@
-import React , {useState} from 'react'
+import React , {useState,useEffect} from 'react'
 import "./BlogPage.css"
 import Nav from '../Nav/Nav'
 import Footer from '../Footer/Footer'
 import MainBlog from '../MainBlog/MainBlog'
-import data from "./../../data.json"
 import Blog from '../Blog/Blog'
 
 export default function BlogPage() {
-  const [blogData , setBlogData]=useState(data.blog)
+  const [blogData , setBlogData]=useState([])
+  useEffect(()=>{
+    async function fetchData() {
+      await fetch('http://localhost:3000/data.json')
+      .then(res=>res.json())
+      .then(data=>{
+        console.log("in fetch : ",data);
+        setBlogData(data.blog)
+      })
+    }
+    fetchData()
+  },[])
   return (
     <>
       <Nav />
