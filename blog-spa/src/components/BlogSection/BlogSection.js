@@ -4,16 +4,17 @@ import Blog from "../Blog/Blog"
 import data from "./../../data.json"
 
 export default function BlogSection() {
-    const blogData=data.blog
-    console.log(blogData)
-    let [posts,setPosts]=useState([])
-    // useEffect(()=>{
-    //     fetch("https://dummyjson.com/posts")
-    //     .then(res=>res.json())
-    //     .then(data=>{
-    //         setPosts(()=>posts=data.posts)
-    //     },[])
-    // })
+    const [blogData,setBlogData]=useState([])
+    useEffect(()=>{
+        async function fetchData() {
+          await fetch('http://localhost:3000/data.json')
+          .then(res=>res.json())
+          .then(data=>{
+            setBlogData(data.blog)
+        })
+    }
+    fetchData()
+    },[])
   return (
     <section className="blog-section">
         <div className="container">
