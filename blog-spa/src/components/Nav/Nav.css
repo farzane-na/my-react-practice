@@ -27,6 +27,9 @@
 .nav__menu-link:hover{
     color: var(--yellow-color);
 }
+.nav__menu-link--active{
+    color: var(--yellow-color);
+}
 
 /* nav menu mobile */
 .mobile-menu{
@@ -99,6 +102,9 @@
     text-decoration: none;
 }
 .nav__menu-mobile-link:hover{
+    color: var(--green-color);
+}
+.nav__menu-mobile-link--active{
     color: var(--green-color);
 }
 
