@@ -1,0 +1,22 @@
+.library-page{
+    margin: 10rem 0;
+}
+.library-page__title{
+    font-size: 4rem;
+    color: var(--dark-green-color);
+    text-align: center;
+    margin-bottom: 5rem;
+}
+.library-page__description{
+    font-size: 2rem;
+    line-height: 1.5;
+    margin-bottom: 4rem;
+
+}
+.library-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}

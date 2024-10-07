@@ -2,6 +2,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: linear-gradient(135deg,var(--dark-green-color),var(--green-color));
+    padding: 4.1rem;
 }
 .nav__logo{
     font-weight: bold;

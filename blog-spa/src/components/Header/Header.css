@@ -1,7 +1,6 @@
 .header{
     width: 100%;
     background: linear-gradient(135deg,var(--dark-green-color),var(--green-color));
-    padding-top: 4.1rem;
     padding-bottom: 11.3rem;
     margin-bottom: 4.5rem;
 }

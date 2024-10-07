@@ -6,8 +6,8 @@ import NewsLetter from "../NesLetter/NewsLetter";
 export default function Header() {
   return (
     <header className="header">
-      <div className="container">
         <Nav />
+      <div className="container">
         <div className="header__content">
           <aside>
             <h1 className="header__titlle">
