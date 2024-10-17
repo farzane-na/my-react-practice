@@ -1,15 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 :root{
   --blue: #007bff;
+  --light-blue: #BBDEFB;
   --body: #f8f9fa;
   --heading: #212529;
   --text: #343a40;
   --green: #28a745;
+  --light-green: #C8E6C9;
   --gray: #6c757d;
   --red: #dc3545;
+  --light-red: #FFCDD2;
   --shadow: #ced4da;
   --sidebar: #e9ecef;
   --active: #dee2e6;
+  --purple: #7B1FA2;
+  --light-purple: #E1BEE7;
+  --orange: #EF6C00;
+  --light-orange: #FFE0B2;
   --shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 html , * ,*::after ,*::before{

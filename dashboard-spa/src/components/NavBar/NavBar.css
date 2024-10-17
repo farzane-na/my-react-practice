@@ -9,7 +9,7 @@
     top: 0;
     margin: auto;
     background-color: var(--body);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 .navbar__logo{
     color: var(--heading);
