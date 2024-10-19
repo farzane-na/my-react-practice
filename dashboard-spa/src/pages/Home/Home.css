@@ -1,3 +1,9 @@
 .home{
     width: 100%;
 }
+.chart-box{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
