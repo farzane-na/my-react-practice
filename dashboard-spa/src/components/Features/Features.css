@@ -15,6 +15,14 @@
     border-radius: 1rem;
     width: 24%;
     box-shadow: var(--shadow);
+    transition: all 150ms ease-in;
+}
+.weekly-sale:hover,
+.new-user:hover,
+.order:hover,
+.messages:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 .weekly-sale{
     background-color: var(--light-blue);
