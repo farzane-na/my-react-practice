@@ -15,7 +15,7 @@ import ChartData from '../../data';
 export default function Features() {
   return (
     <section className="features">
-        <div className="weekly-sale">
+        <article className="weekly-sale">
             <div className="weekly-sale__heading">
                 <ShoppingBagIcon />
                 <div className="weekly-sale__satus">
@@ -32,8 +32,8 @@ export default function Features() {
                         </LineChart>
                     </div>
                 </div>
-        </div>
-        <div className="new-user">
+        </article>
+        <article className="new-user">
             <div className="new-user__heading">
                 <PeopleAltIcon />
                 <div className="new-user__satus">
@@ -50,8 +50,8 @@ export default function Features() {
                         </LineChart>
                     </div>
                 </div>
-        </div>
-        <div className="order">
+        </article>
+        <article className="order">
             <div className="order__heading">
                 <ShoppingCartIcon />
                 <div className="order__satus">
@@ -68,8 +68,8 @@ export default function Features() {
                         </LineChart>
                     </div>
                 </div>
-        </div>
-        <div className="messages">
+        </article>
+        <article className="messages">
             <div className="messages__heading">
                 <ForumIcon />
                 <div className="messages__satus">
@@ -86,7 +86,7 @@ export default function Features() {
                         </LineChart>
                     </div>
                 </div>
-        </div>
+        </article>
     </section>
   )
 }
