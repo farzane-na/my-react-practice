@@ -9,6 +9,7 @@
   justify-content: flex-start;
   gap: 3rem;
   position: relative;
+  margin-bottom: 3rem;
 }
 .App{
   position: relative;

@@ -23,7 +23,7 @@ export default function Features() {
                     <span>+2.6%</span>
                 </div>
             </div>
-                <h6 className="weekly-sale__title">Weekly Sale</h6>
+                <h6 className="weekly-sale__title">فروش هفتگی</h6>
                 <div className="weekly-sale__count">
                     <h3 className="weekly-sale__number">714 هزار</h3>
                     <div className="weekly-sale__chart">
@@ -41,7 +41,7 @@ export default function Features() {
                     <span>-0.1%</span>
                 </div>
             </div>
-                <h6 className="new-user__title">New User</h6>
+                <h6 className="new-user__title">کاربر جدید</h6>
                 <div className="new-user__count">
                     <h3 className="new-user__number">1.35 میلیون</h3>
                     <div className="new-user__chart">
@@ -59,7 +59,7 @@ export default function Features() {
                     <span>+2.8%</span>
                 </div>
             </div>
-                <h6 className="order__title">Order</h6>
+                <h6 className="order__title">سفارش</h6>
                 <div className="order__count">
                     <h3 className="order__number">1.72 میلیون</h3>
                     <div className="order__chart">
@@ -77,7 +77,7 @@ export default function Features() {
                     <span>+3.6%</span>
                 </div>
             </div>
-                <h6 className="messages__title">Message</h6>
+                <h6 className="messages__title">پیام ها</h6>
                 <div className="messages__count">
                     <h3 className="messages__number">234</h3>
                     <div className="messages__chart">

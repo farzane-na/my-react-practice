@@ -1,0 +1,39 @@
+.message-box{
+    margin-top: 3rem;
+    width: 49%;
+}
+.message-box__title{
+    margin-bottom: 2rem;
+}
+.table{
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--active);
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+}
+th{
+    text-align: right;
+    padding: 0.7rem 0;
+}
+td{
+    padding: 0.5rem 0;
+}
+.btn{
+    display: flex;
+    justify-content: flex-end;
+}
+.message-box__btn{
+    text-decoration: none;
+    color: var(--body);
+    background-color: var(--blue);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.message-box__btn svg{
+    font-size: 2rem;
+}

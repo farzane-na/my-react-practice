@@ -12,6 +12,7 @@ import data from "./../../SaleChrtData";
 export default function SaleChart() {
   return (
     <div className="sale-chart">
+        <h3 className="sale-chart__title">نمودار فروش سالیانه</h3>
       <ResponsiveContainer width="100%" aspect={3}>
         <LineChart data={data}>
           <Line type="monotone" dataKey="uv" stroke="#007bff" />
