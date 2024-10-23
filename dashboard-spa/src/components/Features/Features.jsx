@@ -10,7 +10,7 @@ import ForumIcon from '@mui/icons-material/Forum';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 
-import ChartData from '../../data';
+import ChartData from '../../data/ChartData';
 
 export default function Features() {
   return (

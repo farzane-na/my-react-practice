@@ -1,8 +1,22 @@
 .css-1iqthua-MuiDataGrid-virtualScroller ,
-.css-1bgckiu-MuiDataGrid-main{
+.css-1bgckiu-MuiDataGrid-main ,
+.MuiTablePagination-selectLabel.css-s09cke-MuiTablePagination-selectLabel ,
+.MuiInputBase-root.MuiInputBase-colorPrimary.MuiTablePagination-input.css-oegngy-MuiInputBase-root-MuiTablePagination-select ,
+.MuiTablePagination-displayedRows.css-11cfq65-MuiTablePagination-displayedRows ,
+.MuiTablePagination-actions button >svg ,
+.MuiList-root.MuiList-padding.MuiMenu-list.css-1toxriw-MuiList-root-MuiMenu-list{
     font-size: 1.6rem !important;
     font-family: "Rubik" !important;
 }
 .css-db1x6l-MuiDataGrid-root .MuiDataGrid-virtualScrollerContent .MuiDataGrid-row{
     font-size: 1.6rem !important;
+}
+.css-db1x6l-MuiDataGrid-root .MuiDataGrid-cell--textLeft{
+    text-align: right !important;
+}
+.css-db1x6l-MuiDataGrid-root .MuiDataGrid-columnHeader--alignRight .MuiDataGrid-columnHeaderDraggableContainer, .css-db1x6l-MuiDataGrid-root .MuiDataGrid-columnHeader--alignRight .MuiDataGrid-columnHeaderTitleContainer{
+    flex-direction: row !important;
+}
+.MuiSvgIcon-root{
+    transform: rotate(180deg);
 }

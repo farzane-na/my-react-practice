@@ -7,7 +7,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import data from "./../../SaleChrtData";
+import data from "./../../data/SaleChrtData";
 
 export default function SaleChart() {
   return (
