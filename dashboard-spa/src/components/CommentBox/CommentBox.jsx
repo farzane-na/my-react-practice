@@ -1,5 +1,6 @@
 import React from "react";
 import "./CommentBox.css";
+import CommentIcon from '@mui/icons-material/Comment';
 import user1 from "./../../asset/images/user1.webp"
 import user2 from "./../../asset/images/user2.webp"
 
@@ -36,6 +37,7 @@ export default function CommentBox() {
                 <td></td>
                 <td className="btn">
                     <a href="#" className="comment-box__btn">
+                        <CommentIcon />
                         مشاهده همه
                     </a>
                 </td>
