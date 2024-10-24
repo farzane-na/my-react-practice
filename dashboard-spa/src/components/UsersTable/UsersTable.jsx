@@ -1,11 +1,34 @@
-import * as React from "react";
-import "./UsersTable.css"
+import React , {useState} from "react";
+import "./UsersTable.css";
 import { DataGrid } from "@mui/x-data-grid";
 import Paper from "@mui/material/Paper";
-import Users from "./../../data/Users";
+import Users from "../../data/users";
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
+import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
+import { Link } from "react-router-dom";
+
+
+
+export default function UsersTable() {
+const [AllUsers,setAllUsers]=useState(Users)
+const deleteMainUser=id=>{
+  setAllUsers(AllUsers.filter(user=>user.id!==id))
+}
 
 const columns = [
-  { field: "id", headerName: "ID", width: 70 },
+  { field: "id", headerName: "شناسه", width: 70 },
+  {
+    field: "image",
+    headerName: "تصویر پروفایل",
+    width: 150,
+    renderCell:((params)=>{
+      return(
+        <div className="user-image">
+          <img src={params.row.image} />
+        </div>
+      )
+    })
+  },
   { field: "firstName", headerName: "نام", width: 150 },
   { field: "lastName", headerName: "نام خانوادگی", width: 170 },
   {
@@ -15,23 +38,46 @@ const columns = [
     width: 100,
   },
   {
-    field: "fullName",
-    headerName: "نام کامل",
-    description: "این ستون اسم کامل اشخاص را نشان میدهد",
-    sortable: false,
-    width: 160,
-    valueGetter: (value, row) => `${row.firstName || ""} ${row.lastName || ""}`,
+    field: "email",
+    headerName: "ایمیل",
+    width: 200,
   },
+  {
+    field: "phone",
+    headerName: "شماره تلفن",
+    width: 200,
+  },
+  {
+    field:"action",
+    headerName:"عملیات",
+    width:200,
+    renderCell:((params)=>{
+      return (
+        <div className="user-handle">
+          <button className="user-delete" onClick={()=>deleteMainUser(params.row.id)}>
+            <span>
+              <DeleteOutlineOutlinedIcon />
+            </span>
+            <span>حذف</span>
+          </button>
+          <Link className="user-edit">
+            <span>
+              <ModeEditOutlineOutlinedIcon />
+            </span>
+            <span>ویرایش</span>
+          </Link>
+        </div>
+      )
+    })
+  }
 ];
 
 const paginationModel = { page: 0, pageSize: 6 };
-
-export default function UsersTable() {
   return (
     <div className="users-table">
       <Paper sx={{ height: 450, width: "100%" }}>
         <DataGrid
-          rows={Users}
+          rows={AllUsers}
           columns={columns}
           initialState={{ pagination: { paginationModel } }}
           pageSizeOptions={[5, 10]}
