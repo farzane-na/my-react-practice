@@ -20,7 +20,7 @@ const columns = [
   {
     field: "image",
     headerName: "تصویر پروفایل",
-    width: 150,
+    width: 120,
     renderCell:((params)=>{
       return(
         <div className="user-image">
@@ -29,8 +29,8 @@ const columns = [
       )
     })
   },
-  { field: "firstName", headerName: "نام", width: 150 },
-  { field: "lastName", headerName: "نام خانوادگی", width: 170 },
+  { field: "firstName", headerName: "نام", width: 90 },
+  { field: "lastName", headerName: "نام خانوادگی", width: 130 },
   {
     field: "age",
     headerName: "سن",
@@ -45,7 +45,7 @@ const columns = [
   {
     field: "phone",
     headerName: "شماره تلفن",
-    width: 200,
+    width: 150,
   },
   {
     field:"action",
@@ -60,7 +60,7 @@ const columns = [
             </span>
             <span>حذف</span>
           </button>
-          <Link className="user-edit">
+          <Link to={`/users/${params.row.id}`} className="user-edit">
             <span>
               <ModeEditOutlineOutlinedIcon />
             </span>
