@@ -61,7 +61,7 @@ export default function SideBar(){
                         </Link>
                     </li>
                     <li className="dashboard-list__item">
-                        <Link to={""} className="dashboard-list__link">
+                        <Link to={"/products"} className="dashboard-list__link">
                             <StorefrontOutlinedIcon />
                             <span>محصولات</span>
                         </Link>
