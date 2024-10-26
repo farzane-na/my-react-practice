@@ -9,13 +9,27 @@ import product from "./../../data/product";
 
 export default function ProductsTable() {
   const [allProducts, setAllProducts] = useState([]);
+  const [filteredProductBox, setFilteredProductBox] = useState("");
+  const [filteredProduct, setFilteredProduct] = useState([]);
+
   useEffect(() => {
     setAllProducts(product);
-  },[]);
+  }, []);
   const deleteMainProduct = (id) => {
-    let filterProduct=allProducts.filter(product=>product.id!==id)
-    setAllProducts(filterProduct)
+    let filterProduct = allProducts.filter((product) => product.id !== id);
+    setAllProducts(filterProduct);
   };
+  const changeFilteredValue = (event) => {
+    setFilteredProductBox(event.target.value);
+  };
+  const submitSearchForm = (event) => {
+    event.preventDefault();
+    const filtered = allProducts.filter((item) => {
+      return item.title.includes(filteredProductBox);
+    });
+    setFilteredProduct(filtered);
+  };
+
   const columns = [
     { field: "id", headerName: "شناسه", width: 70 },
     {
@@ -89,18 +103,45 @@ export default function ProductsTable() {
   const paginationModel = { page: 0, pageSize: 6 };
   return (
     <div className="product-table">
-      <h2 className="product-table__title">محصولات</h2>
-      <div className="product__wrapper">
-        <Paper sx={{ height: 450, width: "100%" }}>
-          <DataGrid
-            rows={allProducts}
-            columns={columns}
-            initialState={{ pagination: { paginationModel } }}
-            pageSizeOptions={[5, 10]}
-            checkboxSelection
-            sx={{ border: 0 }}
+      <div className="product-table__header">
+        <h2 className="product-table__title">محصولات</h2>
+        <form
+          className="product-table__filter"
+          onSubmit={(event) => submitSearchForm(event)}
+        >
+          <label htmlFor="">نام محصول : </label>
+          <input
+            type="text"
+            placeholder="جستجو"
+            onChange={(event) => changeFilteredValue(event)}
           />
-        </Paper>
+          <button>اعمال</button>
+        </form>
+      </div>
+      <div className="product__wrapper">
+        {filteredProduct.length===0 ? (
+          <Paper sx={{ height: 450, width: "100%" }}>
+            <DataGrid
+              rows={allProducts}
+              columns={columns}
+              initialState={{ pagination: { paginationModel } }}
+              pageSizeOptions={[5, 10]}
+              checkboxSelection
+              sx={{ border: 0 }}
+            />
+          </Paper>
+        ) : (
+          <Paper sx={{ height: 450, width: "100%" }}>
+            <DataGrid
+              rows={filteredProduct}
+              columns={columns}
+              initialState={{ pagination: { paginationModel } }}
+              pageSizeOptions={[5, 10]}
+              checkboxSelection
+              sx={{ border: 0 }}
+            />
+          </Paper>
+        )}
       </div>
     </div>
   );

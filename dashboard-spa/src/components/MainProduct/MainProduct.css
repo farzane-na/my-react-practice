@@ -4,6 +4,9 @@
     gap: 3rem;
     width: 100%;
 }
+.main-product__title{
+    margin-bottom: 3rem;
+}
 .main-product__wrapper{
     display: flex;
     justify-content: flex-start;
@@ -14,7 +17,6 @@
     width: 40rem;
     height: 40rem;
     overflow: hidden;
-    /* border-radius: 100%; */
 }
 .main-product__image img{
     width: 100%;
