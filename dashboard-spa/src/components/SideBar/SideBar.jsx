@@ -53,7 +53,7 @@ export default function SideBar() {
           </li>
           <li className="dashboard-list__item">
             <NavLink
-              to={""}
+              to={"/orders"}
               className={({ isActive }) =>
                 `dashboard-list__link ${
                   isActive ? "dashboard-list__link--active" : ""
@@ -61,7 +61,7 @@ export default function SideBar() {
               }
             >
               <TrendingUpIcon />
-              <span>فروش ها</span>
+              <span>سفارش ها</span>
             </NavLink>
           </li>
         </ul>
