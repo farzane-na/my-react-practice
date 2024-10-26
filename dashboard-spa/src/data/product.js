@@ -20,7 +20,8 @@ const product=[
         category:"لوازم جانبی کنسول بازی متفرقه",
         price:980000,
         image:product1,
-        rate:"4.3"
+        rate:"4.3",
+        stock:150
     },
     {
         id:2,
@@ -28,7 +29,8 @@ const product=[
         category:"لوازم جانبی کنسول بازی متفرقه",
         price:149000,
         image:product2,
-        rate:"3.3"
+        rate:"3.3",
+        stock:300
     },
     {
         id:3,
@@ -36,7 +38,8 @@ const product=[
         category:"هدفون، هدست و هندزفری متفرقه",
         price:345000,
         image:product3,
-        rate:"2.5"
+        rate:"2.5",
+        stock:240
     },
     {
         id:4,
@@ -44,7 +47,8 @@ const product=[
         category:"هدفون، هدست و هندزفری کیو سی وای",
         price:735000,
         image:product4,
-        rate:"4.5"
+        rate:"4.5",
+        stock:560
     },
     {
         id:5,
@@ -52,7 +56,8 @@ const product=[
         category:"هدفون، هدست و هندزفری متفرقه",
         price:260000,
         image:product5,
-        rate:"3.8"
+        rate:"3.8",
+        stock:310
     },
     {
         id:6,
@@ -60,7 +65,8 @@ const product=[
         category:"هدفون، هدست و هندزفری متفرقه",
         price:349000,
         image:product6,
-        rate:"3.4"
+        rate:"3.4",
+        stock:80
     },
     {
         id:7,
@@ -68,7 +74,8 @@ const product=[
         category:"ساعت هوشمند متفرقه",
         price:261000,
         image:product7,
-        rate:"3.7"
+        rate:"3.7",
+        stock:430
     },
     {
         id:8,
@@ -76,7 +83,8 @@ const product=[
         category:"ساعت هوشمند متفرقه",
         price:415680,
         image:product8,
-        rate:"3.2"
+        rate:"3.2",
+        stock:127
     },
     {
         id:9,
@@ -84,7 +92,8 @@ const product=[
         category:"ساعت هوشمند متفرقه",
         price:1890000,
         image:product9,
-        rate:"4.2"
+        rate:"4.2",
+        stock:209
     },
     {
         id:10,
@@ -92,7 +101,8 @@ const product=[
         category:"ساعت هوشمند ورنا",
         price:730000,
         image:product10,
-        rate:"3.8"
+        rate:"3.8",
+        stock:87
     },
     {
         id:11,
@@ -100,7 +110,8 @@ const product=[
         category:"دوربین عکاسی متفرقه",
         price:1897000,
         image:product11,
-        rate:"3.6"
+        rate:"3.6",
+        stock:12
     },
     {
         id:12,
@@ -108,7 +119,8 @@ const product=[
         category:"دوربین عکاسی فوجی فیلم",
         price:5850000,
         image:product12,
-        rate:"4.2"
+        rate:"4.2",
+        stock:120
     },
     {
         id:13,
@@ -116,7 +128,8 @@ const product=[
         category:"دوربین عکاسی کانن",
         price:32600000,
         image:product13,
-        rate:"4.2"
+        rate:"4.2",
+        stock:100
     },
     {
         id:14,
@@ -124,7 +137,8 @@ const product=[
         category:"لپ تاپ و الترابوک اچ‌ پی",
         price:27160000,
         image:product14,
-        rate:"4.3"
+        rate:"4.3",
+        stock:53
     },
 ]
 export default product

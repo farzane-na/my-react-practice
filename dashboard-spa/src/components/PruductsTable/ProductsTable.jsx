@@ -49,7 +49,13 @@ export default function ProductsTable() {
       field: "price",
       headerName: "قیمت (تومان)",
       type: "number",
-      width: 150,
+      width: 120,
+    },
+    {
+      field: "stock",
+      headerName: "موجودی",
+      type: "number",
+      width: 80,
     },
 
     {
