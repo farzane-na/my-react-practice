@@ -6,45 +6,52 @@ import product from "../../data/product";
 import { DataGrid } from "@mui/x-data-grid";
 import Paper from "@mui/material/Paper";
 import { useParams } from "react-router-dom";
-import MainUser from "../MainUser/MainUser";
-
+let filteredOrder=null
+let filteredUser=null
+let filteredProduct=null
 export default function MainOrder() {
   let { id } = useParams();
   const [mainUser, setMainUser] = useState({});
-  const [orderedProducts, setOrderedProducts] = useState(null);
+  const [orderedProducts, setOrderedProducts] = useState([]);
   const [mainOrder, setMainOrder] = useState({});
 
   useEffect(() => {
-    let filteredOrder = orders.find((item) => item.id == id);
-    console.log(filteredOrder);
-    
-    setMainOrder(filteredOrder);
-  }, []);
+    if(id){
+
+      filteredOrder = orders.find((item) => item.id === +id);
+      setMainOrder(filteredOrder);
+    }
+  },[id]);
   
-  useEffect(() => {
-    let filteredUser = Users.find((user) => user.id == mainOrder.userID);
-    setMainUser(filteredUser);
-    console.log(filteredUser);
+  useEffect( () => {
+    if(mainOrder){
+
+      filteredUser = Users.find((user) => user.id === mainOrder.userID);
+     setMainUser(filteredUser);
+    }
   }, [mainOrder]);
   useEffect(()=>{
     if (mainOrder.productID) {
-        let filteredProduct = mainOrder.productID.map((id) =>
+        filteredProduct = mainOrder.productID.map((id) =>
           product.find((product) => product.id === id)
         );
-        console.log(filteredProduct);
         
           setOrderedProducts(filteredProduct)
         }
   },[mainUser])
+  console.log("main order",mainOrder);
+  console.log("main products",orderedProducts);
+  console.log("main user",mainUser);
+  
   return (
-    <div className="main-order">
+        <div className="main-order">
       <h2 className="main-order__title">فاکتور سفارش</h2>
       <div className="user-order">
         <div className="user-order__image">
-          <img src={mainUser.image} alt="" />
+          <img src={`${mainUser?.image}`} alt={`${mainUser?.firstName} ${mainUser?.lastName}`} />
         </div>
         <p className="user-name">
-          {`${mainUser.firstName} ${mainUser.lastName}`}
+          {`${mainUser?.firstName} ${mainUser?.lastName}`}
         </p>
       </div>
       <div className="main-order__table">
@@ -60,5 +67,6 @@ export default function MainOrder() {
           </Paper> */}
       </div>
     </div>
+      
   );
 }
