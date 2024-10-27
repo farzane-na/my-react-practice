@@ -1,0 +1,51 @@
+.main-user{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+}
+.main-user__wrapper{
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    gap: 1.5rem;
+}
+.main-user__image{
+    width: 30rem;
+    height: 30rem;
+    overflow: hidden;
+    border-radius: 100%;
+}
+.main-user__image img{
+    width: 100%;
+    height: 100%;
+}
+.main-user__property{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex-grow: 1;
+}
+.main-user__property input{
+    width: 100%;
+    border: 1px solid var(--active);
+    border-radius: 0.5rem;
+    padding: 1rem 1.5rem;
+    outline: none;
+    font-family: "Rubik";
+}
+.submit-edit{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.submit-edit button{
+    padding: 1rem 1.5rem;
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    color: var(--body);
+    background-color: var(--green);
+    font-family: "Rubik";
+    cursor: pointer;
+}

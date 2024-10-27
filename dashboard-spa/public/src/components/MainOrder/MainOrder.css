@@ -1,0 +1,55 @@
+.main-order{
+    width: 100%;
+}
+.main-order__title{
+    margin-bottom: 2rem;
+}
+.user-order{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+}
+.user-order__image{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 100%;
+    overflow: hidden;
+}
+.user-order__image img{
+    width: 100%;
+    height: 100%;
+}
+.main-order__table{
+    margin-top: 2rem;
+}
+.main-order__property{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+    margin-right: 2rem;
+}
+.main-order__date ,
+.main-order__total-price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+.main-order__date span,
+.main-order__total-price span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-order__date svg,
+.main-order__total-price svg{
+    font-size: 2rem;
+}
+.main-order__date svg{
+    color: var(--blue);
+}
+.main-order__total-price svg{
+    color: var(--green);
+}

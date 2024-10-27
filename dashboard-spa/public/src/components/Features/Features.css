@@ -1,0 +1,91 @@
+.features{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+.weekly-sale,
+.new-user,
+.order,
+.messages{
+    display: flex;
+    flex-direction: column;gap: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 24%;
+    box-shadow: var(--shadow);
+    transition: all 150ms ease-in;
+}
+.weekly-sale:hover,
+.new-user:hover,
+.order:hover,
+.messages:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+.weekly-sale{
+    background-color: var(--light-blue);
+    color: var(--blue);
+}
+.new-user{
+   background-color: var(--light-orange);
+   color: var(--orange);
+}
+.order{
+    background-color: var(--light-purple);
+    color: var(--purple);
+}
+.messages{
+    background-color: var(--light-red);
+    color: var(--red);
+}
+.weekly-sale__heading,
+.new-user__heading,
+.order__heading,
+.messages__heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.weekly-sale__heading> svg,
+.new-user__heading> svg,
+.order__heading> svg,
+.messages__heading> svg{
+    font-size: 4rem;
+}
+.weekly-sale__satus,
+.new-user__satus,
+.order__satus,
+.messages__satus{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: row-reverse;
+}
+.weekly-sale__satus svg,
+.new-user__satus svg,
+.order__satus svg,
+.messages__satus svg{
+    font-size: 2rem;
+}
+.weekly-sale__title,
+.new-user__title,
+.order__title,
+.messages__title{
+    font-size: 2rem;
+}
+.new-user__count,
+.order__count,
+.messages__count,
+.weekly-sale__count{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.weekly-sale__number,
+.new-user__number,
+.order__number,
+.message__number{
+    font-size: 1.8rem;
+}

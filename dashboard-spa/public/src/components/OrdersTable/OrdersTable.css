@@ -1,0 +1,45 @@
+.btn-box{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.order-btn{
+    border: none;
+    outline: none;
+    background-color: var(--blue);
+    color: var(--body);
+    font-family: "Rubik";
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+.order-btn span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.css-1gqmilo-MuiDataGrid-columnHeaderTitle{
+    padding: 4px 0 !important;
+}
+.show-order{
+    border: none;
+    outline: none;
+    padding: 0.5rem 2rem;
+    font-family: "Rubik";
+    background-color: var(--green);
+    color: var(--body);
+    text-decoration: none;
+    height: 2.556rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.3rem;
+}

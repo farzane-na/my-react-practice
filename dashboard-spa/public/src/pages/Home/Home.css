@@ -1,0 +1,15 @@
+.home{
+    width: 100%;
+}
+.chart-box{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 2rem;
+}
