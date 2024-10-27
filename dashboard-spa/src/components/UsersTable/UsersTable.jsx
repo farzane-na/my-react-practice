@@ -1,4 +1,4 @@
-import React , {useState} from "react";
+import React , {useState,useEffect} from "react";
 import "./UsersTable.css";
 import { DataGrid } from "@mui/x-data-grid";
 import Paper from "@mui/material/Paper";
@@ -10,7 +10,10 @@ import { Link } from "react-router-dom";
 
 
 export default function UsersTable() {
-const [AllUsers,setAllUsers]=useState(Users)
+const [AllUsers,setAllUsers]=useState([])
+useEffect(()=>{
+  setAllUsers([...Users].reverse())
+},[])
 const deleteMainUser=id=>{
   setAllUsers(AllUsers.filter(user=>user.id!==id))
 }

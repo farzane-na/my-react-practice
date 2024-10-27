@@ -5,23 +5,30 @@ import Paper from "@mui/material/Paper";
 import { Link } from "react-router-dom";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ThumbDownIcon from "@mui/icons-material/ThumbDown";
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import orders from "./../../data/orders";
 import product from "./../../data/product";
 import Users from "../../data/users";
-import { Spa } from "@mui/icons-material";
 
 export default function OrdersTable() {
   const [allUser, setAllUser] = useState([]);
   const [allProduct, setAllProduct] = useState([]);
   const [allOrders,setAllOrders]=useState([])
-  const [isAccept,setIsAccept]=useState(false)
+  // const [isAccept,setIsAccept]=useState(false)
   const [orderedProduct,setOrderedProduct]=useState([])
   let mainUser=null
   useEffect(() => {
     setAllUser(Users);
     setAllProduct(product);
-    setAllOrders(orders)
-  });
+    setAllOrders([...orders].reverse())
+  },[]);
+  const toggleOrderStatus=(id)=>{
+    setAllOrders((prevOrders) =>
+      prevOrders.map((order) =>
+        order.id === id ? { ...order, isAccept: !order.isAccept } : order
+      )
+    )
+  }
   const columns = [
     { field: "id", headerName: "شناسه", width: 70 },
     {
@@ -81,9 +88,9 @@ export default function OrdersTable() {
       renderCell: (params) => {
         return (
             <div className="btn-box">
-            <button className="order-btn">
+            <button className="order-btn" onClick={()=>toggleOrderStatus(params.row.id)}>
                 {
-                    !isAccept ? (
+                    !params.row.isAccept ? (
                         <>
                             <span> <ThumbUpIcon/> </span>
                             <span>تایید</span>
@@ -96,6 +103,10 @@ export default function OrdersTable() {
                     )
                 }
             </button>
+            <Link to={`/orders/${params.row.id}`} className="show-order">
+            <RemoveRedEyeIcon />
+            <span>مشاهده</span>
+            </Link>
             </div>
         )
       },
