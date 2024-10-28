@@ -54,3 +54,18 @@
     font-family: "Rubik";
     cursor: pointer;
 }
+.min-product__rate{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+}
+.min-product__rate svg{
+    color: rgb(218, 218, 7);
+    font-size: 1.8rem;
+}
+.min-product__rate span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

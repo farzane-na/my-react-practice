@@ -1,0 +1,65 @@
+.newuser{
+    width: 100%;
+}
+.newuser__title{
+    margin-bottom: 2rem;
+}
+.newuser-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 2rem;
+}
+.newuser__form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 60%;
+}
+.form-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+.form-wrapper input{
+    border: 1px solid var(--active);
+    border-radius: 0.5rem;
+    outline: none;
+    padding: 0.5rem 1rem;
+}
+.newuser-pass{
+    width: 100%;
+    border: 1px solid var(--active);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+.newuser-pass svg{
+    cursor: pointer;
+    color: var(--blue);
+    font-size: 1.8rem;
+}
+.password{
+    border: none !important;
+    outline: none !important;
+    height: 100% !important;
+    flex-grow: 1;
+}
+.submit-form{
+    border: none;
+    outline: none;
+    font-family: "Rubik";
+    padding: 1rem;
+    width: 10rem;
+    border-radius: 0.5rem;
+    color: var(--body);
+    background-color: var(--blue);
+    cursor: pointer;
+}
+.lottie{
+    width: 48%;
+}

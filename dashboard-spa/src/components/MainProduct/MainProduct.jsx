@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./MainProduct.css";
 import product from "./../../data/product"
 import { useParams } from "react-router-dom";
+import StarIcon from '@mui/icons-material/Star';
 
 
 export default function Mainproduct() {
@@ -17,15 +18,17 @@ export default function Mainproduct() {
 
   useEffect(() => {
     // setMainProduct(product.filter((product) => product.id == id))
-    MainProductObj=product.filter((product) => product.id == id)
+    MainProductObj=product.filter((product) => product.id === +id)
+    console.log(product);
+    
     setMainProduct(MainProductObj[0])
-    setTitle(mainProduct.title);
-    setCategory(mainProduct.category);
-    setPrice(mainProduct.price);
-    setStock(mainProduct.stock);
-    setImage(mainProduct.image)
-    setRate(mainProduct.rate)
-  },[]);
+    setTitle(mainProduct?.title);
+    setCategory(mainProduct?.category);
+    setPrice(mainProduct?.price);
+    setStock(mainProduct?.stock);
+    setImage(mainProduct?.image)
+    setRate(mainProduct?.rate)
+  },[id]);
   
   console.log(mainProduct)
   const changeTitle = (event) => {
@@ -91,7 +94,7 @@ export default function Mainproduct() {
             onChange={(event) => changeStock(event)}
           />
           <div className="min-product__rate">
-            <span></span>
+            <span><StarIcon /></span>
             <span>{rate}</span>
           </div>
           <div className="submit-edit">
