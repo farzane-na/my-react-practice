@@ -40,7 +40,7 @@ export default function SideBar() {
           </li>
           <li className="dashboard-list__item">
             <NavLink
-              to={""}
+              to={"/analysis"}
               className={({ isActive }) =>
                 `dashboard-list__link ${
                   isActive ? "dashboard-list__link--active" : ""
@@ -48,7 +48,7 @@ export default function SideBar() {
               }
             >
               <TimelineIcon />
-              <span>Analytics</span>
+              <span>تجزیه و تحلیل</span>
             </NavLink>
           </li>
           <li className="dashboard-list__item">

@@ -1,0 +1,49 @@
+.analysis{
+    width: 100%;
+}
+.analysis__title{
+    margin-bottom: 2rem;
+}
+.text-group > text{
+    fill: #000 !important;
+}
+.analysis_wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.analysis__performance,
+.analysis__speed{
+    flex-grow: 1;
+}
+.analysis__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+.analysis__btn button{
+    border: 1px solid var(--active);
+    font-family: "Rubik";
+    padding: 0.7rem 3rem;
+    border-radius: 1rem;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+.analysis__btn--active{
+    background-color: var(--blue);
+    color: var(--body);
+}
+.analysis__performance-chart , 
+.analysis__speed-chart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+}
