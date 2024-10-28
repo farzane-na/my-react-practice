@@ -1,0 +1,39 @@
+.report{
+    width: 100%;
+}
+.report__title{
+    margin-bottom: 2rem;
+}
+.text-group > text{
+    fill: #000 !important;
+}
+.report__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+.report__btn button{
+    border: 1px solid var(--active);
+    font-family: "Rubik";
+    padding: 0.7rem 3rem;
+    border-radius: 1rem;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+.report__btn--active{
+    background-color: var(--blue);
+    color: var(--body);
+}
+.report__performance-chart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+}

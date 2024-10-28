@@ -110,7 +110,7 @@ export default function SideBar() {
           </li>
           <li className="dashboard-list__item">
             <NavLink
-              to={""}
+              to={"/reports"}
               className={({ isActive }) =>
                 `dashboard-list__link ${
                   isActive ? "dashboard-list__link--active" : ""

@@ -6,6 +6,7 @@ import MainUser from "./components/MainUser/MainUser"
 import Mainproduct from "./components/MainProduct/MainProduct"
 import Orders from "./pages/Orders/Orders"
 import MainOrder from "./components/MainOrder/MainOrder"
+import Report from "./pages/Report/Report"
 
 let routes=[
     {path:"/",element:<Home />},
@@ -16,5 +17,6 @@ let routes=[
     {path:"/products/:id",element:<Mainproduct />},
     {path:"/orders",element:<Orders />},
     {path:"/orders/:id",element:<MainOrder />},
+    {path:"/reports",element:<Report />},
 ]
 export default routes

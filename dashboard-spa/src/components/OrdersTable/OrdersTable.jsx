@@ -14,7 +14,6 @@ export default function OrdersTable() {
   const [allUser, setAllUser] = useState([]);
   const [allProduct, setAllProduct] = useState([]);
   const [allOrders,setAllOrders]=useState([])
-  // const [isAccept,setIsAccept]=useState(false)
   const [orderedProduct,setOrderedProduct]=useState([])
   let mainUser=null
   useEffect(() => {
