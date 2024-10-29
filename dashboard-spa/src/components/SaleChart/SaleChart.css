@@ -1,4 +1,7 @@
 .sale-chart{
     width: 100% !important;
-    height: 300px;
+    /* height: 300px; */
+}
+.sale-chart__title{
+    margin-bottom: 2rem;
 }

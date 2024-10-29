@@ -11,6 +11,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 3rem;
 }
 .analysis__performance,
 .analysis__speed{
@@ -46,4 +47,8 @@
     align-items: center;
     flex-direction: column;
     gap: 1.5rem;
+}
+.analys__security ,
+.analys__seo{
+    margin-bottom: 5rem;
 }

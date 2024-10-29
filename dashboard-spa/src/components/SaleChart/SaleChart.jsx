@@ -1,4 +1,5 @@
 import React from "react";
+import "./SaleChart.css"
 import {
   LineChart,
   Line,
