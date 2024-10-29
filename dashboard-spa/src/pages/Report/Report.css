@@ -4,3 +4,10 @@
 .report__title{
     margin-bottom: 2rem;
 }
+.sale-chart,
+.user-login{
+    margin-bottom: 5rem;
+}
+.user-login__title{
+    margin-bottom: 2rem;
+}
