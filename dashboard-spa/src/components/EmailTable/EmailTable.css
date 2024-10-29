@@ -1,0 +1,19 @@
+.email-btn{
+    border: none;
+    outline: none;
+    background-color: var(--blue);
+    color: var(--body);
+    font-family: "Rubik";
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+.email-btn span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

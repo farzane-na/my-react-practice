@@ -128,7 +128,7 @@ export default function SideBar() {
         <ul className="dashboard-list">
           <li className="dashboard-list__item">
             <NavLink
-              to={""}
+              to={"/emails"}
               className={({ isActive }) =>
                 `dashboard-list__link ${
                   isActive ? "dashboard-list__link--active" : ""
