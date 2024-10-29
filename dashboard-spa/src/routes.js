@@ -9,6 +9,7 @@ import MainOrder from "./components/MainOrder/MainOrder"
 import Report from "./pages/Report/Report"
 import Analysis from "./pages/Analysis/Analysis"
 import Email from "./pages/Email/Email"
+import MainEmail from "./components/MainEmail/MainEmail"
 
 let routes=[
     {path:"/",element:<Home />},
@@ -22,5 +23,6 @@ let routes=[
     {path:"/reports",element:<Report />},
     {path:"/analysis",element:<Analysis />},
     {path:"/emails",element:<Email />},
+    {path:"/emails/:id",element:<MainEmail />},
 ]
 export default routes

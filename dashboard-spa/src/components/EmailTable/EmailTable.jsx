@@ -68,7 +68,7 @@ export default function EmailTable() {
                         )
                     }
                 </button>
-                <Link to={`/orders/${params.row.id}`} className="show-order">
+                <Link to={`/emails/${params.row.id}`} className="show-order">
                 <RemoveRedEyeIcon />
                 <span>مشاهده</span>
                 </Link>
