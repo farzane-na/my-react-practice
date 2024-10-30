@@ -10,6 +10,7 @@ import Report from "./pages/Report/Report"
 import Analysis from "./pages/Analysis/Analysis"
 import Email from "./pages/Email/Email"
 import MainEmail from "./components/MainEmail/MainEmail"
+import Comment from "./pages/Comment/Comment"
 
 let routes=[
     {path:"/",element:<Home />},
@@ -24,5 +25,6 @@ let routes=[
     {path:"/analysis",element:<Analysis />},
     {path:"/emails",element:<Email />},
     {path:"/emails/:id",element:<MainEmail />},
+    {path:"/comments",element:<Comment />},
 ]
 export default routes

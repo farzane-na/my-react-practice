@@ -141,7 +141,7 @@ export default function SideBar() {
           </li>
           <li className="dashboard-list__item">
             <NavLink
-              to={""}
+              to={"/comments"}
               className={({ isActive }) =>
                 `dashboard-list__link ${
                   isActive ? "dashboard-list__link--active" : ""
@@ -149,7 +149,7 @@ export default function SideBar() {
               }
             >
               <DynamicFeedOutlinedIcon />
-              <span>بازخورد</span>
+              <span>کامنت ها</span>
             </NavLink>
           </li>
           <li className="dashboard-list__item">

@@ -1,0 +1,41 @@
+.comment{
+    width: 100%;
+}
+.comment__title{
+    margin-bottom: 2rem;
+}
+.comment-delete,
+.reject-comment,
+.accept-comment{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    outline: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: var(--body);
+    cursor: pointer;
+    font-family: "Rubik";
+    font-size: 1.6rem;
+}
+.comment-delete span,
+.reject-comment span,
+.accept-comment span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.comment-delete{
+    background-color: var(--red);
+}
+.comment-delete svg{
+    font-size: 2rem;
+}
+.reject-comment{
+    background-color: var(--blue);
+}
+.accept-comment{
+    background-color: var(--green);
+}
