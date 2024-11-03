@@ -2,6 +2,7 @@ import Home from "./pages/Home/Home"
 import Users from "./pages/Users/Users"
 import NewUser from "./pages/NewUser/NewUser"
 import Products from "./pages/Products/Products" 
+import NewProduct from "./pages/NewProduct/NewProduct"
 import MainUser from "./components/MainUser/MainUser"
 import Mainproduct from "./components/MainProduct/MainProduct"
 import Orders from "./pages/Orders/Orders"
@@ -18,6 +19,7 @@ let routes=[
     {path:"/users/:id",element:<MainUser />},
     {path:"/newUser",element:<NewUser />},
     {path:"/products",element:<Products />},
+    {path:"/new-product",element:<NewProduct />},
     {path:"/products/:id",element:<Mainproduct />},
     {path:"/orders",element:<Orders />},
     {path:"/orders/:id",element:<MainOrder />},

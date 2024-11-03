@@ -141,4 +141,17 @@ const product=[
         stock:53
     },
 ]
+const category=[
+    {title:"موبایل"},
+    {title:"لپتاپ"},
+    {title:"دسته بازی"},
+    {title:"کیبور"},
+    {title:"موس"},
+    {title:"هدفون"},
+    {title:"عینک واقعیت مجازی"},
+    {title:"هدفون بلوتوثی"},
+    {title:"ساعت هوشمند"},
+    {title:"دوربین عکاسی"}
+]
 export default product
+export {category}

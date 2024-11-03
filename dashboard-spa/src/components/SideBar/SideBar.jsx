@@ -10,6 +10,7 @@ import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined
 import PersonAddAltOutlinedIcon from "@mui/icons-material/PersonAddAltOutlined";
 import StorefrontOutlinedIcon from "@mui/icons-material/StorefrontOutlined";
 import AttachMoneyOutlinedIcon from "@mui/icons-material/AttachMoneyOutlined";
+import AddBusinessIcon from '@mui/icons-material/AddBusiness';
 import EqualizerOutlinedIcon from "@mui/icons-material/EqualizerOutlined";
 
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
@@ -106,6 +107,19 @@ export default function SideBar() {
             >
               <StorefrontOutlinedIcon />
               <span>محصولات</span>
+            </NavLink>
+          </li>
+          <li className="dashboard-list__item">
+            <NavLink
+              to={"/new-product"}
+              className={({ isActive }) =>
+                `dashboard-list__link ${
+                  isActive ? "dashboard-list__link--active" : ""
+                }`
+              }
+            >
+              <AddBusinessIcon />
+              <span>محصول جدید</span>
             </NavLink>
           </li>
           <li className="dashboard-list__item">

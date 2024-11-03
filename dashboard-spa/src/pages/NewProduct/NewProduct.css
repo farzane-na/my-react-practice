@@ -1,0 +1,40 @@
+.new-product{
+    width: 100%;
+}
+.new-product__title{
+    margin-bottom: 2rem;
+}
+.new-product__form{
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+.input__wrapper{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+.new-product__box{
+    position: relative;
+}
+.new-product__label{
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    right: 1rem;
+    margin: auto;
+}
+.new-product__input{
+    border: 1px solid var(--active);
+    border-radius: 1rem;
+    outline: none;
+    padding: 1rem 2rem;
+    width: 100%;
+}
+.new-product__input:focus .new-product__label{
+    top: 0;
+    bottom: auto;
+}
