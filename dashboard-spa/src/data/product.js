@@ -153,5 +153,8 @@ const category=[
     {title:"ساعت هوشمند"},
     {title:"دوربین عکاسی"}
 ]
+const colors=[
+    "آبی","زرد","سبز","قرمز","صورتی","بنفش","قهوه ای","مشکی","سفید","طلایی"
+]
 export default product
-export {category}
+export {category,colors}

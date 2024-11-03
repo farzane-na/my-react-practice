@@ -61,12 +61,6 @@
     font-size: 1.6rem;
     border-radius: 1rem;
 }
-.top{
-    width: 48%;
-    display: flex;
-    flex-direction: column;
-    gap: 5rem;
-}
 .uploader{
    width: 100%;
    min-height: 14.5rem;
@@ -98,4 +92,9 @@
 .new-product__input[type='number']::placeholder{
     font-size: 1.6rem;
     color: #aaa;
+}
+.submit-btn{
+    background-color: var(--blue);
+    color: var(--body);
+    cursor: pointer;
 }
