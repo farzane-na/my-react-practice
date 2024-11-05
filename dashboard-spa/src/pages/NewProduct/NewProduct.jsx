@@ -72,8 +72,6 @@ export default function NewProduct() {
             </UploadButton>
           </div>
           <div className="new-product__box">
-              {/* <label htmlFor="" className="new-product__label"></label>
-                <input type="text" className="new-product__input" /> */}
               <select name="" id="" className="new-product__select">
                 <option value="" selected>
                   لطفا یک رنگ را انتخاب کنید ...
