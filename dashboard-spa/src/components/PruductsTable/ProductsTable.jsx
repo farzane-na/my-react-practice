@@ -19,15 +19,14 @@ export default function ProductsTable() {
     let filterProduct = allProducts.filter((product) => product.id !== id);
     setAllProducts(filterProduct);
   };
-  const changeFilteredValue = (event) => {
-    setFilteredProductBox(event.target.value);
-  };
-  const submitSearchForm = (event) => {
-    event.preventDefault();
+  useEffect(() => {
     const filtered = allProducts.filter((item) => {
       return item.title.includes(filteredProductBox);
     });
     setFilteredProduct(filtered);
+  }, [filteredProductBox]);
+  const changeFilteredValue = (event) => {
+    setFilteredProductBox(event.target.value);
   };
 
   const columns = [
@@ -105,21 +104,17 @@ export default function ProductsTable() {
     <div className="product-table">
       <div className="product-table__header">
         <h2 className="product-table__title">محصولات</h2>
-        <form
-          className="product-table__filter"
-          onSubmit={(event) => submitSearchForm(event)}
-        >
+        <form className="product-table__filter">
           <label htmlFor="">نام محصول : </label>
           <input
             type="text"
             placeholder="جستجو"
             onChange={(event) => changeFilteredValue(event)}
           />
-          <button>اعمال</button>
         </form>
       </div>
       <div className="product__wrapper">
-        {filteredProduct.length===0 ? (
+        {filteredProduct.length === 0 ? (
           <Paper sx={{ height: 450, width: "100%" }}>
             <DataGrid
               rows={allProducts}
