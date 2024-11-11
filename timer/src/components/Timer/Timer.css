@@ -20,6 +20,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 18px;
 }
 .minute {
   border-top-left-radius: 10px;
