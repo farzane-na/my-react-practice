@@ -1,0 +1,55 @@
+.App{
+  padding: 0 30px;
+  /* margin: ; */
+}
+.app-title{
+  text-align: center;
+  color: rgb(46, 46, 46);
+  margin: 20px 0;
+}
+.wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 20px;
+  margin-bottom: 70px;
+}
+.wrapper.pending{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+.loading svg{
+  animation: rotate 500ms linear infinite;
+  width: 30px;
+  height: 30px;
+}
+.number-wrapper{
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.number{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+@keyframes rotate{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(-360deg);
+  }
+}
