@@ -10,6 +10,8 @@ function App() {
   const [countPage,setCountPage]=useState(0)
   const [currentPage,setCurrentPage]=useState(1)
   const [filteredTodo,setFilteredTodo]=useState([])
+  const [numbers,setNumbers]=useState([])
+  let row=12
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/todos")
       .then((res) => res.json())
@@ -22,9 +24,27 @@ function App() {
       });
   }, []);
   useEffect(()=>{
-    setCountPage(Math.ceil(todos.length/9))
+    setCountPage(Math.ceil(todos.length/row))
+    createNumber()
   },[todos])
-
+  useEffect(()=>{
+    let startIndex=currentPage*row -row
+    let endIndex=currentPage*row-1
+    setFilteredTodo(todos.slice(startIndex,endIndex+1))
+  },[countPage,currentPage])
+  const createNumber=()=>{
+    let page=[]
+    for(let i=1;i<=countPage;i++){
+      page.push(
+        <li
+         className="number"
+         onClick={()=>setCurrentPage(i)}
+         >{i}</li>
+      )
+      
+    }
+    setNumbers(page)
+  }
   return (
     <div className="App">
       <h1 className="app-title">My Todos</h1>
@@ -50,21 +70,24 @@ function App() {
             </svg>
           </div>
         ) : (
-          todos.map((todo) => {
+          filteredTodo.map((todo) => {
             return <Todo key={todo.id} {...todo} />;
           })
         )}
       </div>
-      {
-        !isPending ? (
-
       <ul className="number-wrapper">
-        <li className="number">1</li>
-      </ul>
-        ):(
-          <></>
+      {
+        isPending ? (
+          numbers.map(number=>{
+            console.log(number);
+            
+            return number
+          })
+        ): (
+          "loading ..."
         )
       }
+    </ul>
     </div>
   );
 }
