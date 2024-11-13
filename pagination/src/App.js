@@ -6,45 +6,39 @@ import Todo from "./components/Todo/Todo";
 function App() {
   const [todos, setTodos] = useState([]);
   const [isPending, setIsPending] = useState(true);
-  const [pageNumber,setPageNumber]=useState(1)
-  const [countPage,setCountPage]=useState(0)
-  const [currentPage,setCurrentPage]=useState(1)
-  const [filteredTodo,setFilteredTodo]=useState([])
-  const [numbers,setNumbers]=useState([])
-  let row=12
+  const [pageNumber, setPageNumber] = useState(1);
+  const [countPage, setCountPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [filteredTodo, setFilteredTodo] = useState([]);
+  const [numbers, setNumbers] = useState([]);
+  let row = 12;
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/todos")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-
-        setTodos(data);
-
-        setIsPending(prev=>!prev);
+        setIsPending((prev) => !prev);
       });
   }, []);
-  useEffect(()=>{
-    setCountPage(Math.ceil(todos.length/row))
-    createNumber()
-  },[todos])
-  useEffect(()=>{
-    let startIndex=currentPage*row -row
-    let endIndex=currentPage*row-1
-    setFilteredTodo(todos.slice(startIndex,endIndex+1))
-  },[countPage,currentPage])
-  const createNumber=()=>{
-    let page=[]
-    for(let i=1;i<=countPage;i++){
+  useEffect(() => {
+    setCountPage(Math.ceil(todos.length / row));
+    createNumber();
+  }, [todos]);
+  useEffect(() => {
+    let startIndex = currentPage * row - row;
+    let endIndex = currentPage * row - 1;
+    setFilteredTodo(todos.slice(startIndex, endIndex + 1));
+  }, [countPage, currentPage]);
+  const createNumber = () => {
+    let page = [];
+    for (let i = 1; i <= countPage; i++) {
       page.push(
-        <li
-         className="number"
-         onClick={()=>setCurrentPage(i)}
-         >{i}</li>
-      )
-      
+        <li className="number" onClick={() => setCurrentPage(i)}>
+          {i}
+        </li>
+      );
     }
-    setNumbers(page)
-  }
+    setNumbers(page);
+  };
   return (
     <div className="App">
       <h1 className="app-title">My Todos</h1>
@@ -76,18 +70,14 @@ function App() {
         )}
       </div>
       <ul className="number-wrapper">
-      {
-        isPending ? (
-          numbers.map(number=>{
-            console.log(number);
-            
-            return number
-          })
-        ): (
-          "loading ..."
-        )
-      }
-    </ul>
+        {isPending
+          ? numbers.map((number) => {
+              console.log(number);
+
+              return number;
+            })
+          : "loading ..."}
+      </ul>
     </div>
   );
 }
