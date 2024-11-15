@@ -30,11 +30,11 @@
   height: 30px;
 }
 .number-wrapper{
-  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
+  padding: 0;
 }
 .number{
   display: flex;
@@ -58,4 +58,14 @@
   to{
     transform: rotate(-360deg);
   }
+}
+.number-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.number-box svg{
+  width: 15px;
+  height: 15px;
 }

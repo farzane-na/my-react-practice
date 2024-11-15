@@ -10,13 +10,14 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [filteredTodo, setFilteredTodo] = useState([]);
   let row = 12;
-  
+
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/todos")
       .then((res) => res.json())
       .then((data) => {
         setTodos(data);
         setIsPending((prev) => !prev);
+        console.log("fetch");
       });
   }, []);
 
@@ -33,7 +34,9 @@ function App() {
     let endIndex = currentPage * row - 1;
     setFilteredTodo(todos.slice(startIndex, endIndex + 1));
   }, [countPage, currentPage]);
-
+  const nextPage=()=>{
+    
+  }
   return (
     <div className="App">
       <h1 className="app-title">My Todos</h1>
@@ -64,23 +67,53 @@ function App() {
           })
         )}
       </div>
-      <ul className="number-wrapper">
-        {isPending
-          ? pageNumber.map((number) => {
-              return (
-                <li
-                  className={`number ${
-                    currentPage === number + 1 ? "active-number" : ""
-                  }`}
-                  key={number + 1}
-                  onClick={() => setCurrentPage(number + 1)}
-                >
-                  {number + 1}
-                </li>
-              );
-            })
-          : "loading ..."}
-      </ul>
+      <div className="number-box">
+        <span className="number">
+          <svg
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 19.5 8.25 12l7.5-7.5"
+            />
+          </svg>
+        </span>
+        <ul className="number-wrapper">
+          {isPending
+            ? pageNumber.map((number) => {
+                return (
+                  <li
+                    className={`number ${
+                      currentPage === number + 1 ? "active-number" : ""
+                    }`}
+                    key={number + 1}
+                    onClick={() => setCurrentPage(number + 1)}
+                  >
+                    {number + 1}
+                  </li>
+                );
+              })
+            : "loading ..."}
+        </ul>
+        <span className="number" onClick={nextPage}>
+          <svg
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m8.25 4.5 7.5 7.5-7.5 7.5"
+            />
+          </svg>
+        </span>
+      </div>
     </div>
   );
 }
