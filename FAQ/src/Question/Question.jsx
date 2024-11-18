@@ -3,14 +3,9 @@ import "./Question.css";
 import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa6";
 import questions from "./../data.js";
+import HOC from "../HOC/HOC.jsx";
 
-function Question() {
-  console.log(questions);
-  const [isOpenAnswer,setIsOpenAnswer]=useState(null)
-
-  const toggleAnswer=(id)=>{
-    setIsOpenAnswer((prevId) => (prevId === id ? null : id));
-  }
+function Question({toggling,isOpen}) {
   return (
     <div className="question-wrapper">
       {questions.map((question) => {
@@ -20,17 +15,17 @@ function Question() {
               <h2 className="question-text">{question.question}</h2>
               <span className="question-icon">
                 {
-                  isOpenAnswer === question.id ? (
+                  isOpen === question.id ? (
 
-                    <FaMinus onClick={()=>toggleAnswer(question.id)} />
+                    <FaMinus onClick={()=>toggling(question.id)} />
                   ):(
 
-                    <FaPlus onClick={()=>toggleAnswer(question.id)} />
+                    <FaPlus onClick={()=>toggling(question.id)} />
                   )
                 }
               </span>
             </div>
-            <div className={`answer ${isOpenAnswer === question.id ? "answer-show" : ""}`}>
+            <div className={`answer ${isOpen === question.id ? "answer-show" : ""}`}>
               <p className="anser-text">{question.answer}</p>
             </div>
           </div>
@@ -40,4 +35,4 @@ function Question() {
   );
 }
 
-export default Question;
+export default  HOC(Question);
