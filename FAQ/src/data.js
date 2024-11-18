@@ -1,4 +1,4 @@
-questions=[
+const questions=[
     {
         id:1,
         question:"چطور می‌توانم سفارشم را پیگیری کنم؟",

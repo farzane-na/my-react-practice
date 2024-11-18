@@ -1,7 +1,11 @@
 .App {
   width: 90%;
-  margin: 0 auto;
+  margin: 30px auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+h1{
+  margin-bottom: 15px;
 }
