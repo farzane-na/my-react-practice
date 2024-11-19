@@ -1,18 +1,18 @@
 import React,{useState} from 'react'
 
 function HOC(OriginalComponent) {
-    function NewComponent(){
+    function NewComponent(props){
 
-        const [isOpenAnswer,setIsOpenAnswer]=useState(null)
+        const [isOpenAnswer,setIsOpenAnswer]=useState(false)
     
       const toggleAnswer=(id)=>{
-        setIsOpenAnswer((prevId) => (prevId === id ? null : id));
+        setIsOpenAnswer(prevShow=>!prevShow);
       }
       return (
-        <OriginalComponent toggling={toggleAnswer} isOpen={isOpenAnswer} />
+        <OriginalComponent toggling={toggleAnswer} isOpen={isOpenAnswer} {...props} />
       )
     }
-  return NewComponent
+  return NewComponent;
 }
 
-export default HOC
+export default HOC;
