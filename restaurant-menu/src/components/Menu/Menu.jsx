@@ -30,7 +30,6 @@ export default function Menu() {
         if(activeCategory==="all"){
             setFilteredFood(data)
         }else{
-
             setFilteredFood(filterMenu)
         }
     },[activeCategory])
@@ -39,7 +38,7 @@ export default function Menu() {
       <ul className="menu-list">
         {
             menuItem.map(item=>{
-                return <li key={item} className={`menu-list__item`} name={item} onClick={(event)=>chnageCategory(event)}>{item}</li>
+                return <li key={item} className={`menu-list__item ${activeCategory===item ? "active" : ""}`} name={item} onClick={(event)=>chnageCategory(event)}>{item}</li>
             })
         }
       </ul>
