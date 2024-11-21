@@ -1,0 +1,54 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    background-color: #ffb5da7e;
+    color: #FF3EA5;
+    gap: 1rem;
+    padding: 1rem;
+}
+.card-image{
+    width: 100%;
+    height: 30rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+.card-image img{
+    width: 100%;
+    height: 100%;
+}
+.card-name{
+    overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 2; 
+}
+.card-description{
+    text-align: justify;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-height: 1.35; 
+   max-height: 7rem;
+}
+.card-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-calory{
+     font-weight: bold;
+}
+.card-btn{
+    border: none;
+    outline: none;
+    padding: 0.5rem 1rem;
+    background-color: #6420AA;
+    color: #fff;
+    font-family: "Fira Sans";
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
