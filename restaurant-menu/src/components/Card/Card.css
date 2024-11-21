@@ -18,11 +18,10 @@
     height: 100%;
 }
 .card-name{
+    width: 250px;
     overflow: hidden;
-   text-overflow: ellipsis;
-   display: -webkit-box;
-   -webkit-box-orient: vertical;
-   -webkit-line-clamp: 2; 
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .card-description{
     text-align: justify;

@@ -1,25 +1,23 @@
 import React from "react";
 import "./Card.css";
 
-export default function Card() {
+export default function Card({name,description,image,cal}) {
   return (
     <article className="card">
       <div className="card-image">
         <img
-          src="https://s7d1.scene7.com/is/image/mcdonalds/DC_202402_0521_MediumCoke_ContourGlassv1_1564x1564?wid=1000&hei=1000&dpr=off"
-          alt=""
+          src={image}
+          alt={name}
         />
       </div>
       <h3 className="card-name">
-        McCafé® Iced Caramel Macchiato Macchiato Macchiato Macchiato Macchiato
+        {name}
       </h3>
       <p className="card-description">
-        The McCafé® Strawberry Banana Smoothie recipe features the perfect
-        combination of real strawberry and banana fruit purees and juices,
-        blended with creamy low fat yogurt and ice.
+        {description}
       </p>
       <div className="card-footer">
-        <p className="card-calory">100</p>
+        <p className="card-calory">callory : {cal}</p>
         <button className="card-btn">Buy Now</button>
       </div>
     </article>
