@@ -19,9 +19,8 @@ export default function Menu() {
         console.log(filteredFood);
         
     },[])
-    const chnageCategory=(event)=>{
-        console.log(event.target.getAttribute("name"));
-        setActiveCategory(event.target.getAttribute("name"))
+    const chnageCategory=(item)=>{
+        setActiveCategory(item)
     }
     useEffect(()=>{
         const filterMenu=data.filter(item=>{
@@ -37,8 +36,8 @@ export default function Menu() {
     <div className="menu">
       <ul className="menu-list">
         {
-            menuItem.map(item=>{
-                return <li key={item} className={`menu-list__item ${activeCategory===item ? "active" : ""}`} name={item} onClick={(event)=>chnageCategory(event)}>{item}</li>
+            menuItem.map((item,index)=>{
+                return <li key={index} className={`menu-list__item ${activeCategory===item ? "active" : ""}`} onClick={()=>chnageCategory(item)}>{item}</li>
             })
         }
       </ul>
