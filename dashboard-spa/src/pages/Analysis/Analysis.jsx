@@ -88,7 +88,7 @@ export default function Analysis() {
             <GaugeChart
               id="gauge-chart2"
               nrOfLevels={20}
-              percent={status === "desktop" ? 0.8 : 0.75}
+              percent={speedStatus === "desktop" ? 0.8 : 0.75}
               style={{ width: 500, height: 200 }}
             />
             <p>درصد سرعت سایت</p>

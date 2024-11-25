@@ -166,19 +166,6 @@ export default function SideBar() {
               <span>کامنت ها</span>
             </NavLink>
           </li>
-          <li className="dashboard-list__item">
-            <NavLink
-              to={""}
-              className={({ isActive }) =>
-                `dashboard-list__link ${
-                  isActive ? "dashboard-list__link--active" : ""
-                }`
-              }
-            >
-              <ChatBubbleOutlineOutlinedIcon />
-              <span>پیام ها</span>
-            </NavLink>
-          </li>
         </ul>
       </div>
     </div>

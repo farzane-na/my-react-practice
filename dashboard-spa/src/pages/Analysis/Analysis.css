@@ -57,3 +57,6 @@
 .analys__seo{
     margin-bottom: 5rem;
 }
+#gauge-chart2 > div > svg > g > g.text-group > text{
+    fill: var(--heading) !important;
+}
