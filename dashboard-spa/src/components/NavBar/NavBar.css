@@ -101,5 +101,8 @@
     height: 100%;
 }
 path{
-    fill: none !important;
+    /* fill: none !important; */
+}
+#root > div > div > div.navbar > div.navbar__logo > div > svg > g > g:nth-child(9) > g > path{
+    fill: none;
 }
