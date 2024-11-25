@@ -9,7 +9,7 @@
     font-family: "Rubik" !important;
 }
 .css-db1x6l-MuiDataGrid-root .MuiDataGrid-virtualScrollerContent .MuiDataGrid-row{
-    font-size: 1.6rem !important;
+    font-size: 1.4rem !important;
 }
 .css-db1x6l-MuiDataGrid-root .MuiDataGrid-cell--textLeft{
     text-align: right !important;
@@ -25,6 +25,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.product-table__title{
+    color: var(--heading);
 }
 .product-table__filter{
     display: flex;

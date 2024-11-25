@@ -33,7 +33,7 @@ export default function OrdersTable() {
     {
       field: "image",
       headerName: "تصویر کاربر",
-      width: 120,
+      width: 100,
       renderCell: (params) => {
         mainUser = allUser.find(user => user.id === params.row.userID);
           return (
@@ -45,7 +45,7 @@ export default function OrdersTable() {
     },
     { field: "name",
         headerName: "نام کاربر",
-         width: 200 ,
+         width: 150 ,
          renderCell: (params) => {
             const mainUser = allUser.find(user => user.id === params.row.userID);
             return <span>{mainUser ? `${mainUser.firstName} ${mainUser.lastName}` : "نامشخص"}</span>;
@@ -64,11 +64,11 @@ export default function OrdersTable() {
     {
       field: "date",
       headerName: "تاریخ",
-      width: 150,
+      width: 140,
     },
     { field: "totalPrice",
          headerName: "مبلغ کل سفارش",
-          width: 230 ,
+          width: 200 ,
           renderCell: (params) => {
             const orderedProducts = params.row.productID.map(id => 
               allProduct.find(product => product.id === id)
@@ -116,7 +116,7 @@ export default function OrdersTable() {
 
   return (
     <div className="orders-table">
-        <Paper sx={{ height: 450, width: "100%" }}>
+        <Paper sx={{ height: 450 }}>
             <DataGrid
               rows={allOrders}
               columns={columns}
@@ -124,6 +124,7 @@ export default function OrdersTable() {
               pageSizeOptions={[5, 10]}
               checkboxSelection
               sx={{ border: 0 }}
+              
             />
           </Paper>
     </div>

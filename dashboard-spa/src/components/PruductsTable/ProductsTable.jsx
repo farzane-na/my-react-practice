@@ -45,11 +45,11 @@ export default function ProductsTable() {
         );
       },
     },
-    { field: "title", headerName: "نام محصول", width: 300 },
+    { field: "title", headerName: "نام محصول", width: 250 },
     {
       field: "category",
       headerName: "دسته بندی",
-      width: 270,
+      width: 250,
       renderCell: (params) => {
         return (
           <div className="product__category">
@@ -62,7 +62,7 @@ export default function ProductsTable() {
       field: "price",
       headerName: "قیمت (تومان)",
       type: "number",
-      width: 120,
+      width: 110,
     },
     {
       field: "stock",
@@ -105,34 +105,34 @@ export default function ProductsTable() {
       <div className="product-table__header">
         <h2 className="product-table__title">محصولات</h2>
         <form className="product-table__filter">
-          <label htmlFor="">نام محصول : </label>
+          <label htmlFor="searchBar" style={{color:"var(--heading)"}}>نام محصول : </label>
           <input
             type="text"
             placeholder="جستجو"
             onChange={(event) => changeFilteredValue(event)}
+            style={{backgroundColor:"transparent"}}
+            id="searchBar"
           />
         </form>
       </div>
       <div className="product__wrapper">
         {filteredProduct.length === 0 ? (
-          <Paper sx={{ height: 450, width: "100%" }}>
+          <Paper sx={{ height: 450}}>
             <DataGrid
               rows={allProducts}
               columns={columns}
               initialState={{ pagination: { paginationModel } }}
               pageSizeOptions={[5, 10]}
-              checkboxSelection
               sx={{ border: 0 }}
             />
           </Paper>
         ) : (
-          <Paper sx={{ height: 450, width: "100%" }}>
+          <Paper sx={{ height: 450 }}>
             <DataGrid
               rows={filteredProduct}
               columns={columns}
               initialState={{ pagination: { paginationModel } }}
               pageSizeOptions={[5, 10]}
-              checkboxSelection
               sx={{ border: 0 }}
             />
           </Paper>

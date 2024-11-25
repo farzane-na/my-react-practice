@@ -14,6 +14,9 @@
 .navbar__logo{
     color: var(--heading);
 }
+.navbar__logo canvas {
+    background: none !important;
+}
 .navbar__logo span{
     font-size: 3rem;
     font-weight: 700;
@@ -53,7 +56,8 @@
 .navbar__notification{
     position: relative;
 }
-.navbar__notification svg{
+.navbar__notification svg,
+.navbar__theme svg{
     font-size: 3rem;
     color: var(--text);
     cursor: pointer;
@@ -95,4 +99,7 @@
 .navbar__profile img{
     width: 100%;
     height: 100%;
+}
+path{
+    fill: none !important;
 }

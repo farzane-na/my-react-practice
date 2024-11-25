@@ -18,6 +18,8 @@
   --orange: #EF6C00;
   --light-orange: #FFE0B2;
   --shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  --dark-bg: #191919;
+  --table:#fff;
 }
 html , * ,*::after ,*::before{
   box-sizing: border-box;
@@ -34,6 +36,7 @@ body {
   font-size: 1.6rem;
   font-family: "Rubik" !important;
   background-color: var(--body);
+  /* background-color: var(--dark-bg); */
 }
 
 code {

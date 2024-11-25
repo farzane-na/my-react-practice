@@ -43,3 +43,9 @@
     gap: 0.5rem;
     font-size: 1.3rem;
 }
+.css-db1x6l-MuiDataGrid-root .MuiDataGrid-container--top [role=row], .css-db1x6l-MuiDataGrid-root .MuiDataGrid-container--bottom [role=row] , .css-oiuzu-MuiPaper-root{
+    background-color: var(--table) !important;
+}
+.css-1iqthua-MuiDataGrid-virtualScroller , .css-1gak8h1-MuiToolbar-root-MuiTablePagination-toolbar{
+    color: var(--heading);
+}

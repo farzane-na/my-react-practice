@@ -3,6 +3,7 @@
 }
 .analysis__title{
     margin-bottom: 2rem;
+    color: var(--heading);
 }
 .text-group > text{
     fill: #000 !important;
@@ -47,6 +48,10 @@
     align-items: center;
     flex-direction: column;
     gap: 1.5rem;
+}
+.analysis__speed-chart p ,
+.analysis__performance-chart p{
+    color: var(--heading);
 }
 .analys__security ,
 .analys__seo{

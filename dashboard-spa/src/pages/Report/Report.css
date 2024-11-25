@@ -3,6 +3,7 @@
 }
 .report__title{
     margin-bottom: 2rem;
+    color: var(--heading);
 }
 .sale-chart,
 .user-login{
@@ -10,4 +11,5 @@
 }
 .user-login__title{
     margin-bottom: 2rem;
+    color: var(--heading);
 }

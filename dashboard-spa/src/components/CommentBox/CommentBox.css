@@ -4,6 +4,7 @@
 }
 .comment-box__title{
     margin-bottom: 2rem;
+    color: var(--heading);
 }
 .table{
     width: 100%;

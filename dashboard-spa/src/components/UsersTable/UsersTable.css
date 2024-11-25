@@ -26,6 +26,9 @@
     overflow: hidden;
     border-radius: 100%;
 }
+.user-table__title{
+    color: var(--heading);
+}
 .user-image img{
     width: 100%;
     height: 100%;
@@ -106,4 +109,13 @@
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     font-family: "Rubik";
+}
+.css-db1x6l-MuiDataGrid-root{
+    background-color: var(--table);
+}
+.css-db1x6l-MuiDataGrid-root .MuiDataGrid-container--top [role=row], .css-db1x6l-MuiDataGrid-root .MuiDataGrid-container--bottom [role=row] , .css-oiuzu-MuiPaper-root{
+    background-color: var(--table) !important;
+}
+.css-1iqthua-MuiDataGrid-virtualScroller , .css-1gak8h1-MuiToolbar-root-MuiTablePagination-toolbar{
+    color: var(--heading);
 }

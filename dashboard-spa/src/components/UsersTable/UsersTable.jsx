@@ -61,12 +61,12 @@ export default function UsersTable() {
     {
       field: "email",
       headerName: "ایمیل",
-      width: 200,
+      width: 170,
     },
     {
       field: "phone",
       headerName: "شماره تلفن",
-      width: 150,
+      width: 120,
     },
     {
       field: "action",
@@ -102,19 +102,21 @@ export default function UsersTable() {
       <div className="user-table__header">
         <h2 className="user-table__title">کاربران</h2>
         <form className="user-table__filter">
-          <label htmlFor="">نام کاربر : </label>
+          <label htmlFor="searchBar" style={{color:"var(--heading)"}}>نام کاربر : </label>
           <input
             type="text"
             placeholder="جستجو"
             onChange={(event) => changeFilteredValue(event)}
             onKeyDown={keyDownOnInput}
+            id="searchBar"
+            style={{backgroundColor:"transparent"}}
           />
         </form>
       </div>
 
       <div className="users-table">
         {filteredUser.length === 0 ? (
-          <Paper sx={{ height: 450, width: "100%" }}>
+          <Paper sx={{ height: 450 }}>
             <DataGrid
               rows={AllUsers}
               columns={columns}

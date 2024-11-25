@@ -4,6 +4,7 @@
 }
 .message-box__title{
     margin-bottom: 2rem;
+    color: var(--heading);
 }
 .table{
     width: 100%;
@@ -11,6 +12,7 @@
     border: 1px solid var(--active);
     border-radius: 1rem;
     box-shadow: var(--shadow);
+    color: var(--heading);
 }
 th{
     text-align: right;

@@ -3,6 +3,7 @@
 }
 .newuser__title{
     margin-bottom: 2rem;
+    color: var(--heading);
 }
 .newuser-wrapper{
     display: flex;
@@ -21,11 +22,15 @@
     flex-direction: column;
     gap: 0.75rem;
 }
+.form-label{
+    color: var(--heading);
+}
 .form-wrapper input{
     border: 1px solid var(--active);
     border-radius: 0.5rem;
     outline: none;
     padding: 0.5rem 1rem;
+    background-color: transparent;
 }
 .newuser-pass{
     width: 100%;
@@ -37,6 +42,7 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: row-reverse;
+    background-color: transparent;
 }
 .newuser-pass svg{
     cursor: pointer;
