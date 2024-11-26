@@ -1,36 +1,36 @@
 import React, { useState, useEffect } from "react";
 import "./MainProduct.css";
-import product from "./../../data/product"
+import product from "./../../data/product";
 import { useParams } from "react-router-dom";
-import StarIcon from '@mui/icons-material/Star';
-
+import StarIcon from "@mui/icons-material/Star";
 
 export default function Mainproduct() {
   const { id } = useParams();
-  let MainProductObj=null
   const [mainProduct, setMainProduct] = useState("");
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
   const [price, setPrice] = useState("");
   const [stock, setStock] = useState("");
-  const [image,setImage]=useState("")
-  const [rate,setRate]=useState("")
+  const [image, setImage] = useState("");
+  const [rate, setRate] = useState("");
 
   useEffect(() => {
-    // setMainProduct(product.filter((product) => product.id == id))
-    MainProductObj=product.filter((product) => product.id === +id)
+    const MainProductObj = product.find((product) => product.id === +id);
     console.log(product);
-    
-    setMainProduct(MainProductObj[0])
+    console.log(MainProductObj);
+    if (MainProductObj) {
+      setMainProduct(MainProductObj);
+    }
+  }, [id]);
+  useEffect(() => {
     setTitle(mainProduct?.title);
     setCategory(mainProduct?.category);
     setPrice(mainProduct?.price);
     setStock(mainProduct?.stock);
-    setImage(mainProduct?.image)
-    setRate(mainProduct?.rate)
-  },[id]);
-  
-  console.log(mainProduct)
+    setImage(mainProduct?.image);
+    setRate(mainProduct?.rate);
+  }, [mainProduct]);
+  console.log(rate);
   const changeTitle = (event) => {
     setTitle(event.target.value);
   };
@@ -51,7 +51,7 @@ export default function Mainproduct() {
       category,
       price,
       stock,
-      rate
+      rate,
     }));
   };
   return (
@@ -65,28 +65,28 @@ export default function Mainproduct() {
           className="main-product__property"
           onSubmit={(event) => submitForm(event)}
         >
-         <label>عنوان محصول</label>
+          <label>عنوان محصول</label>
           <input
             type="text"
             className="main-product__title"
             value={title}
             onChange={(event) => changeTitle(event)}
           />
-         <label>دسته بندی محصول</label>
+          <label>دسته بندی محصول</label>
           <input
             type="text"
             className="main-product__category"
             value={category}
             onChange={(event) => changeCategory(event)}
           />
-         <label>قیمت محصول </label>
+          <label>قیمت محصول </label>
           <input
             type="text"
             className="main-product__price"
             value={price}
             onChange={(event) => changePrice(event)}
           />
-         <label>موجودی محصول</label>
+          <label>موجودی محصول</label>
           <input
             type="text"
             className="main-product__stock"
@@ -94,7 +94,9 @@ export default function Mainproduct() {
             onChange={(event) => changeStock(event)}
           />
           <div className="min-product__rate">
-            <span><StarIcon /></span>
+            <span>
+              <StarIcon />
+            </span>
             <span>{rate}</span>
           </div>
           <div className="submit-edit">
