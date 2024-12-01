@@ -11,19 +11,19 @@ export default function Menu() {
   return (
     <ul className="flex items-center gap-x-10">
       <li>
-        <a href="" className="flex items-center gap-x-2 text-slate-950">
-          <CiMenuBurger className="w-6 h-6 text-slate-950" />
+        <a href="" className="flex items-center gap-x-2 text-slate-950 group hover:text-blue-900 transition-all">
+          <CiMenuBurger className="w-6 h-6" />
           <span>دسته بندی محصولات</span>
         </a>
       </li>
       <li>
-        <a href="" className="flex items-center gap-x-2 text-slate-950">
+        <a href="" className="flex items-center gap-x-2 text-slate-950 group hover:text-blue-900 transition-all">
           <svg
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6 text-slate-950"
+            className="w-6 h-6"
           >
             <path
               strokeLinecap="round"
@@ -35,32 +35,32 @@ export default function Menu() {
         </a>
       </li>
       <li>
-        <a href="" className="flex items-center gap-x-2 text-slate-950">
-          <CiShoppingBasket className="w-6 h-6 text-slate-950" />
+        <a href="" className="flex items-center gap-x-2 text-slate-950 group hover:text-blue-900 transition-all">
+          <CiShoppingBasket className="w-6 h-6" />
           <span>خرید سازمانی</span>
         </a>
       </li>
       <li>
-        <a href="" className="flex items-center gap-x-2 text-slate-950">
-          <CiGift className="w-6 h-6 text-slate-950" />
+        <a href="" className="flex items-center gap-x-2 text-slate-950 group hover:text-blue-900 transition-all">
+          <CiGift className="w-6 h-6" />
           <span>کارت هدیه</span>
         </a>
       </li>
       <li>
-        <a href="" className="flex items-center gap-x-2 text-slate-950">
-          <CiWallet className="w-6 h-6 text-slate-950" />
+        <a href="" className="flex items-center gap-x-2 text-slate-950 group hover:text-blue-900 transition-all">
+          <CiWallet className="w-6 h-6" />
           <span>خرید قسطی</span>
         </a>
       </li>
       <li>
-        <a href="" className="flex items-center gap-x-2 text-slate-950">
-          <PiCoins className="w-6 h-6 text-slate-950" />
+        <a href="" className="flex items-center gap-x-2 text-slate-950 group hover:text-blue-900 transition-all">
+          <PiCoins className="w-6 h-6" />
           <span>خرید طلای دیجیتال</span>
           <span className="bg-red-100 text-red-500 rounded-lg p-1 text-xs">جدید</span>
         </a>
       </li>
       <li>
-        <a href="" className="flex items-center gap-x-2 text-blue-950">
+        <a href="" className="flex items-center gap-x-2 text-blue-800 font-bold">
           <span>فروشنده شو</span>
         </a>
       </li>
