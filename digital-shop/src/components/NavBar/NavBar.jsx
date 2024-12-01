@@ -1,11 +1,12 @@
 import React from "react";
 import logo from "./../../asset/logo/static_logo_techno_new.svg";
 import { CiShoppingCart, CiSearch, CiMenuBurger } from "react-icons/ci";
+import Menu from "../Menu/Menu";
 
 export default function NavBar() {
   return (
     <>
-      <div className="navbar hidden md:block">
+      <nav className="navbar hidden md:flex flex-col gap-y-5">
         <div className="w-full flex justify-between items-center">
           <div className="flex gap-x-8">
             <div className="logo flex justify-center items-center">
@@ -34,8 +35,9 @@ export default function NavBar() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="navbar-mobile flex md:hidden flex-col gap-y-7">
+        <Menu />
+      </nav>
+      <nav className="navbar-mobile flex md:hidden flex-col gap-y-7">
         <div className="topbar flex justify-between items-center">
           <CiMenuBurger className="text-slate-950 w-6 h-6 cursor-pointer" />
           <div className="logo flex justify-center items-center">
@@ -71,7 +73,7 @@ export default function NavBar() {
             <CiShoppingCart className="text-slate-950 w-6 h-6 cursor-pointer" />
           </div>
         </div>
-      </div>
+      </nav>
     </>
   );
 }
