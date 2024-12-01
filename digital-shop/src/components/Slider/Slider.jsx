@@ -1,5 +1,5 @@
 import React from "react";
-import "./Slider.css"
+import "./Slider.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Navigation,
@@ -45,7 +45,7 @@ export default function Slider() {
           nextEl: ".next-slider",
           prevEl: ".prev-slider",
         }}
-        pagination={{clickable: true}}
+        pagination={{ clickable: true }}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
       >
@@ -57,12 +57,12 @@ export default function Slider() {
           );
         })}
 
-        <div className="absolute right-10 bottom-6 z-10 flex items-center gap-x-3">
-          <button className="prev-slider p-2 bg-slate-300 rounded-full cursor-pointer">
-            <MdNavigateNext className="text-blue-800 text-2xl" />
+        <div className="absolute right-10 bottom-6 z-10 flex items-center gap-x-1 md:gap-x-3">
+          <button className="prev-slider p-1 md:p-2 bg-slate-300 rounded-full cursor-pointer">
+            <MdNavigateNext className="text-blue-800 md:text-2xl" />
           </button>
-          <button className="next-slider p-2 bg-slate-300 rounded-full cursor-pointer">
-            <GrFormPrevious className="text-blue-800 text-2xl" />
+          <button className="next-slider p-1 md:p-2 bg-slate-300 rounded-full cursor-pointer">
+            <GrFormPrevious className="text-blue-800 md:text-2xl" />
           </button>
         </div>
       </Swiper>

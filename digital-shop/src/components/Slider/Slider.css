@@ -14,3 +14,15 @@
   background: #1e40af !important;
   opacity: 1 !important;
 }
+@media (max-width: 768px) {
+  .swiper-pagination-bullet,
+  .swiper-pagination-bullet-active {
+    width: 7px !important;
+    height: 7px !important;
+  }
+  .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets
+    .swiper-pagination-bullet {
+    margin: 0 3px !important;
+  }
+}
