@@ -7,9 +7,9 @@ import {
 } from "react-icons/ci";
 import { PiCoins } from "react-icons/pi";
 
-export default function Menu() {
+export default function Menu({flexCol}) {
   return (
-    <ul className="flex items-center gap-x-10">
+    <ul className={`flex items-center gap-x-10 ${flexCol ? "flex-col" : ""}`}>
       <li>
         <a href="" className="flex items-center gap-x-2 text-slate-950 group hover:text-blue-900 transition-all">
           <CiMenuBurger className="w-6 h-6" />
