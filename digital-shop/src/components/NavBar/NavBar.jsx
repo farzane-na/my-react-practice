@@ -41,7 +41,7 @@ export default function NavBar() {
       <nav className="navbar-mobile flex md:hidden flex-col gap-y-7">
         <div className="topbar flex justify-between items-center">
           <CiMenuBurger className="text-slate-950 w-6 h-6 cursor-pointer" />
-          <div className="flex-col">
+          <div className="fixed top-0 right-0 bottom-0 bg-white p-4 z-50">
             <Menu flexCol={true} />
           </div>
           <div className="logo flex justify-center items-center">
