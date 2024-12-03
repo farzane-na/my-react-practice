@@ -1,10 +1,13 @@
-import React , {useState} from "react";
+import React, { useState } from "react";
 import logo from "./../../asset/logo/static_logo_techno_new.svg";
 import { CiShoppingCart, CiSearch, CiMenuBurger } from "react-icons/ci";
 import Menu from "../Menu/Menu";
 
 export default function NavBar() {
-  const [openMenu,setOpenMenu]=useState(false)
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
+  const togglingMenu = () => {
+    setIsOpenMenu((prev) => !prev);
+  };
   return (
     <>
       <nav className="navbar hidden md:flex flex-col gap-y-5">
@@ -36,13 +39,20 @@ export default function NavBar() {
             </div>
           </div>
         </div>
-        <Menu flexCol={false} />
+        <Menu mobile={false} />
       </nav>
       <nav className="navbar-mobile flex md:hidden flex-col gap-y-7">
         <div className="topbar flex justify-between items-center">
-          <CiMenuBurger className="text-slate-950 w-6 h-6 cursor-pointer" />
-          <div className="fixed top-0 right-0 bottom-0 bg-white p-4 z-50">
-            <Menu flexCol={true} />
+          <CiMenuBurger
+            className="text-slate-950 w-6 h-6 cursor-pointer"
+            onClick={togglingMenu}
+          />
+          <div
+            className={`fixed top-0 ${
+              isOpenMenu ? "right-0 shadow-lg shadow-blue-800/50" : "-right-80"
+            }  bottom-0 bg-white p-4 z-50 transition-all ease-linear duration-200`}
+          >
+            <Menu mobile={true} onToggle={togglingMenu} />
           </div>
           <div className="logo flex justify-center items-center">
             <img src={logo} alt="تکنولایف" />
@@ -77,6 +87,12 @@ export default function NavBar() {
             <CiShoppingCart className="text-slate-950 w-6 h-6 cursor-pointer" />
           </div>
         </div>
+        {isOpenMenu && (
+          <div
+            className="overlay fixed top-0 left-0 right-0 bottom-0 bg-black/20 z-40"
+            onClick={togglingMenu}
+          ></div>
+        )}
       </nav>
     </>
   );

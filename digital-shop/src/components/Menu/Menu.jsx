@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useState} from "react";
 import {
   CiMenuBurger,
   CiShoppingBasket,
@@ -6,18 +6,40 @@ import {
   CiWallet,
 } from "react-icons/ci";
 import { PiCoins } from "react-icons/pi";
+import { HiMiniXMark } from "react-icons/hi2";
+import favicon from "./../../asset/logo/favicon_new.webp";
 
-export default function Menu({flexCol}) {
+export default function Menu({ onToggle, mobile }) {
+  const [openMenu,setOpenMenu]=useState(false)
+  
   return (
-    <ul className={`flex items-center gap-x-10 ${flexCol ? "flex-col" : ""}`}>
+    <ul
+      className={`flex gap-10 ${
+        mobile ? "w-72 flex-col items-start justify-start" : "items-center"
+      }`}
+    >
+      {mobile ? (
+        <div className="w-full flex justify-between items-center">
+          <HiMiniXMark className="w-6 h-6 text-blue-800" onClick={onToggle} />
+          <div>
+            <img src={favicon} alt="تکنولایف" />
+          </div>
+        </div>
+      ) : null}
       <li>
-        <a href="" className="flex items-center gap-x-2 text-slate-950 group hover:text-blue-900 transition-all">
+        <a
+          href=""
+          className="flex items-center gap-x-2 text-slate-950 group hover:text-blue-900 transition-all"
+        >
           <CiMenuBurger className="w-6 h-6" />
           <span>دسته بندی محصولات</span>
         </a>
       </li>
       <li>
-        <a href="" className="flex items-center gap-x-2 text-slate-950 group hover:text-blue-900 transition-all">
+        <a
+          href=""
+          className="flex items-center gap-x-2 text-slate-950 group hover:text-blue-900 transition-all"
+        >
           <svg
             fill="none"
             viewBox="0 0 24 24"
@@ -35,32 +57,49 @@ export default function Menu({flexCol}) {
         </a>
       </li>
       <li>
-        <a href="" className="flex items-center gap-x-2 text-slate-950 group hover:text-blue-900 transition-all">
+        <a
+          href=""
+          className="flex items-center gap-x-2 text-slate-950 group hover:text-blue-900 transition-all"
+        >
           <CiShoppingBasket className="w-6 h-6" />
           <span>خرید سازمانی</span>
         </a>
       </li>
       <li>
-        <a href="" className="flex items-center gap-x-2 text-slate-950 group hover:text-blue-900 transition-all">
+        <a
+          href=""
+          className="flex items-center gap-x-2 text-slate-950 group hover:text-blue-900 transition-all"
+        >
           <CiGift className="w-6 h-6" />
           <span>کارت هدیه</span>
         </a>
       </li>
       <li>
-        <a href="" className="flex items-center gap-x-2 text-slate-950 group hover:text-blue-900 transition-all">
+        <a
+          href=""
+          className="flex items-center gap-x-2 text-slate-950 group hover:text-blue-900 transition-all"
+        >
           <CiWallet className="w-6 h-6" />
           <span>خرید قسطی</span>
         </a>
       </li>
       <li>
-        <a href="" className="flex items-center gap-x-2 text-slate-950 group hover:text-blue-900 transition-all">
+        <a
+          href=""
+          className="flex items-center gap-x-2 text-slate-950 group hover:text-blue-900 transition-all"
+        >
           <PiCoins className="w-6 h-6" />
           <span>خرید طلای دیجیتال</span>
-          <span className="bg-red-100 text-red-500 rounded-lg p-1 text-xs">جدید</span>
+          <span className="bg-red-100 text-red-500 rounded-lg p-1 text-xs">
+            جدید
+          </span>
         </a>
       </li>
       <li>
-        <a href="" className="flex items-center gap-x-2 text-blue-800 font-bold">
+        <a
+          href=""
+          className="flex items-center gap-x-2 text-blue-800 font-bold"
+        >
           <span>فروشنده شو</span>
         </a>
       </li>
