@@ -1,4 +1,5 @@
 import React from "react";
+import "./CatSlider.css"
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Navigation,
@@ -37,7 +38,7 @@ const catImage = [
 
 export default function CatSlider() {
   return (
-    <div className="catslider my-13">
+    <div className="catslider">
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         autoplay={{
@@ -45,7 +46,6 @@ export default function CatSlider() {
           disableOnInteraction: false,
         }}
         speed={500}
-        // spaceBetween={50}
         slidesPerView={7}
         navigation={{
           nextEl: ".next-slider",
@@ -54,13 +54,14 @@ export default function CatSlider() {
         // pagination={{ clickable: true }}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
+        className="relative"
       >
         {catImage.map((img, index) => {
           return (
             <SwiperSlide key={index}>
               <a
                 href="#"
-                className="flex justify-center items-center w-32 h-32  p-1 rounded-full border border-blue-800 hover:border-2 transition-all"
+                className="flex justify-center items-center w-32 h-32  p-1 rounded-full border borde border-blue-800 hover:border-4 hover:border-blue-800 transition-all group duration-100"
               >
                 <img src={img} alt="" />
               </a>
@@ -68,14 +69,12 @@ export default function CatSlider() {
           );
         })}
 
-        {/* <div className="absolute right-10 bottom-6 z-10 flex items-center gap-x-1 md:gap-x-3">
-          <button className="prev-slider p-1 md:p-2 bg-slate-300 rounded-full cursor-pointer">
+          <button className="prev-slider absolute right-0 bottom-0 top-0 m-auto w-10 h-10 p-1 md:p-2 hover:bg-slate-300 rounded-full cursor-pointer transition-all">
             <MdNavigateNext className="text-blue-800 md:text-2xl" />
           </button>
-          <button className="next-slider p-1 md:p-2 bg-slate-300 rounded-full cursor-pointer">
+          <button className="next-slider absolute left-0 bottom-0 top-0 m-auto w-10 h-10 p-1 md:p-2 hover:bg-slate-300 rounded-full cursor-pointer transition-all">
             <GrFormPrevious className="text-blue-800 md:text-2xl" />
           </button>
-        </div> */}
       </Swiper>
     </div>
   );

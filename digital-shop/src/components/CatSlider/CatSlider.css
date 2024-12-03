@@ -1,0 +1,8 @@
+.catslider{
+    margin: 52px 0;
+}
+.catslider .swiper-slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
