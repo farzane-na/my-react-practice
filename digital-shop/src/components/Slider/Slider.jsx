@@ -52,7 +52,7 @@ export default function Slider() {
         {imageGetter.map((img, index) => {
           return (
             <SwiperSlide key={index}>
-              <img src={img} alt="" />
+              <img src={img} alt=""  className="w-full"/>
             </SwiperSlide>
           );
         })}

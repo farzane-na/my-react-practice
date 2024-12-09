@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logo from "./../../asset/logo/static_logo_techno_new.svg";
 import { CiShoppingCart, CiSearch, CiMenuBurger } from "react-icons/ci";
 import Menu from "../Menu/Menu";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -28,10 +29,10 @@ export default function NavBar() {
           <div className="flex items-center gap-x-10">
             <div className="login-btn rounded-md border border-slate-950  py-2 flex items-center">
               <div className="border-l border-slate-950 px-5">
-                <a href="#">ورود</a>
+                <Link to="/login" >ورود</Link>
               </div>
               <div className="px-5">
-                <a href="#">ثبت نام</a>
+                <Link to="/login">ثبت نام</Link>
               </div>
             </div>
             <div className="cart border border-slate-100 rounded-md p-2">
@@ -58,7 +59,7 @@ export default function NavBar() {
             <img src={logo} alt="تکنولایف" />
           </div>
           <div className="login flex items-center gap-x-2 text-slate-950">
-            <span>ورود</span>
+            <a to={"/login"}>ورود</a>
             <svg
               fill="none"
               viewBox="0 0 24 24"
