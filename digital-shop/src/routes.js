@@ -7,11 +7,13 @@ let routes=[
         path:'/',
         element:<OrgLayout>
             <Home />
-        </OrgLayout>
+        </OrgLayout>,
+        title:"تکنولایف"
     },
     {
         path:'/login',
-        element:<Login />
+        element:<Login />,
+        title:"ورود | ثبت‌نام"
     },
 ]
 export default routes
