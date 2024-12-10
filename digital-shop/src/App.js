@@ -17,7 +17,7 @@ function App() {
     }
   },[location])
   return (
-    <div className="App pt-2 sm:pt-4 lg:pt-5">
+    <div className="App">
         {router}
     </div>
   );
