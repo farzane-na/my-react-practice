@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import logo from "./../../asset/logo/static_logo_techno_new.svg";
 import { CiShoppingCart, CiSearch, CiMenuBurger } from "react-icons/ci";
 import Menu from "../Menu/Menu";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 export default function NavBar() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
