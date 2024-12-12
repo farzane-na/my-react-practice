@@ -33,24 +33,27 @@ export default function Login() {
       goingToWriteCode()
     }
   };
-  const CountDown=()=>{
-    setInterval(()=>{
-      if(second>0){
-        setSecond(prev=>prev-1)
-      } else if(second<0 ){
-        setSecond(59)
-        setMinute(prev=>prev-1)
-      }
-
-    },1000)
-    setTimeout(()=>{
-      setSecond(30)
-      setMinute(1)
-    },90000)
-  }
-  useEffect(()=>{
-    CountDown()
-  },[showTimer])
+  useEffect(() => {
+    if(showTimer) {
+      setInterval(() => {
+        setSecond((prevSecond) => {
+          if (prevSecond > 0){
+            return prevSecond - 1;
+          } 
+  
+          if (prevSecond === 0 && minute > 0) {
+            setMinute((prevMinute) => prevMinute - 1);
+            return 59;
+          }
+          if(second===0 && minute===0){
+            setShowTimer(false)
+            setMinute(1)
+            setSecond(30)
+          }
+        });
+      }, 100);
+    }
+  }, [showTimer, minute]);
   return (
     <div className="login flex w-screen h-screen">
       <div className="w-[30%] p-11 flex flex-col items-center justify-between">
@@ -103,12 +106,14 @@ export default function Login() {
                 
               </span>
               {
-                showTimer && (
+                showTimer ? (
                   <span className="absolute translate-y-7 bottom-0 left-0 text-blue-900 font-bold">
-                <span>{minute}</span>
-                <span>:</span>
-                <span>{second}</span>
-              </span>
+                    <span className="minute">{minute < 10 ? `0${minute}` : minute}</span>
+                    <span>:</span>
+                    <span className="second">{second < 10 ? `0${second}` : second}</span>
+                  </span>
+                ) :(
+                  ""
                 )
               }
             </label>
