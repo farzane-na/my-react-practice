@@ -102,9 +102,9 @@ export default function Login() {
                   کد خود را وارد کنید
               </span>
             </label>
-            <div className="w-full h-16 flex justify-start items-start">
+            <div className="w-full h-16 flex justify-between items-start flex-row-reverse">
               {showTimer ? (
-                <div className="mr-auto ml-0 flex flex-col justify-start items-end">
+                <div className="flex flex-col justify-start items-end">
                   <span className="text-blue-900 font-bold">
                     <span className="minute">
                       {String(minute).padStart(2, "0")}
