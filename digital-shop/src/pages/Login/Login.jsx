@@ -95,7 +95,7 @@ export default function Login() {
                 onChange={(event)=>setPhoneNumber(event.target.value)}
                 value={phoneNumber}
               />
-              <span className={`flex  text-gray-400 absolute top-[50%] -translate-y-[50%] cursor-text  transition-all duration-200 ease-in-out ${phoneNumber ? "-top-5 right-0" : "right-6 peer-focus:-top-5 peer-focus:right-0"}  peer-focus:text-blue-600`}>
+              <span className={`flex  text-gray-400 absolute cursor-text  transition-all duration-200 ease-in-out ${phoneNumber ? "-top-5 right-0" : "top-[50%] -translate-y-[50%] right-6 peer-focus:-top-5 peer-focus:right-0"}  peer-focus:text-blue-600`}>
                 {
                   isCorrectPhoneNumber ? (
                       "کد خود را وارد کنید"
@@ -114,6 +114,11 @@ export default function Login() {
                   </span>
                 ) :(
                   ""
+                )
+              }
+              {
+                !checkPhoneNumber() || !phoneNumber && (
+                  <span className="absolute translate-y-7 bottom-0 right-0 text-blue-900 font-bold" >لطفا شماره خود را به درستی وارد کنید</span>
                 )
               }
             </label>
@@ -183,8 +188,8 @@ export default function Login() {
           تکنولایف است.
         </p>
       </div>
-      <div className="w-[70%]">
-        <img src={loginImage} alt="" className="w-full h-full" />
+      <div className="w-[70%] h-full">
+        <img src={loginImage} alt="" className="w-full h-full object-cover" />
       </div>
     </div>
   );
