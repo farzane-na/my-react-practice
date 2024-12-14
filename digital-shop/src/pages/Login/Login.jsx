@@ -5,55 +5,63 @@ import loginImage from "./../../asset/banner/login.webp";
 export default function Login() {
   const [isSubmit, setIsSubmit] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [phoneNumber,setPhoneNumber]=useState(null)
-  const [isCorrectPhoneNumber,setIsCorrectPhoneNumber]=useState(false)
-  const [minute,setMinute]=useState(1)
-  const [second,setSecond]=useState(30)
-  const [showTimer,setShowTimer]=useState(false)
+  const [phoneNumber, setPhoneNumber] = useState(null);
+  const [isCorrectPhoneNumber, setIsCorrectPhoneNumber] = useState(false);
+  const [minute, setMinute] = useState(1);
+  const [second, setSecond] = useState(30);
+  const [showTimer, setShowTimer] = useState(false);
+  const [finishTime, setFinishTime] = useState(false);
 
-  const checkPhoneNumber=()=>{
+  const checkPhoneNumber = () => {
     const phoneRegex = /^09[0-9]{9}$/;
     return phoneRegex.test(phoneNumber);
-  }
-  const goingToWriteCode=()=>{
-    setIsSubmit(true);
+  };
+  const goingToWriteCode = () => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      setIsCorrectPhoneNumber(true)
-      setPhoneNumber("")
-      setShowTimer(true)
-    },2000);
-  }
+      setIsCorrectPhoneNumber(true);
+      setPhoneNumber("");
+      setShowTimer(true);
+    }, 2000);
+  };
   const submitForm = (event) => {
     event.preventDefault();
     console.log("helo");
+    setIsSubmit(true);
     console.log(checkPhoneNumber());
-    if (checkPhoneNumber()){
-      goingToWriteCode()
+    if (checkPhoneNumber()) {
+      goingToWriteCode();
     }
   };
   useEffect(() => {
-    if(showTimer) {
-      setInterval(() => {
+    if (showTimer) {
+      const timer = setInterval(() => {
         setSecond((prevSecond) => {
-          if (prevSecond > 0){
+          if (prevSecond > 0) {
             return prevSecond - 1;
-          } 
-  
+          }
           if (prevSecond === 0 && minute > 0) {
             setMinute((prevMinute) => prevMinute - 1);
             return 59;
           }
-          if(second===0 && minute===0){
-            setShowTimer(false)
-            setMinute(1)
-            setSecond(30)
+          if (prevSecond === 0 && minute === 0) {
+            // setShowTimer(false);
+            // setMinute(1);
+            // setSecond(30);
+            setFinishTime(true);
           }
+          return prevSecond; // جلوگیری از undefined
         });
-      }, 100);
+      }, 100); // زمان واقعی
+      return () => clearInterval(timer);
     }
   }, [showTimer, minute]);
+  const resendCode = () => {
+    setFinishTime(false);
+    setMinute(1);
+    setSecond(30);
+  };
   return (
     <div className="login flex w-screen h-screen">
       <div className="w-[30%] p-11 flex flex-col items-center justify-between">
@@ -64,24 +72,21 @@ export default function Login() {
 
           <div className="flex flex-col items-center gap-4 xs:gap-[42px] ">
             <div className="flex items-center justify-center gap-2 text-2xl">
-              {
-                isCorrectPhoneNumber ? (
-                  <span>کد اعتباری</span>
-                ) : (
-                  <>
+              {isCorrectPhoneNumber ? (
+                <span>کد اعتباری</span>
+              ) : (
+                <>
                   <span>ورود</span>
                   <span>|</span>
                   <span>ثبت نام</span>
-                  </>
-                )
-              }
-              
+                </>
+              )}
             </div>
             <p className="text-lg font-bold">خوش اومدی :)</p>
           </div>
           <form
             action=""
-            className="w-full flex flex-col justify-center items-center gap-10 md:gap-14"
+            className="w-full flex flex-col justify-center items-center"
             onSubmit={(event) => submitForm(event)}
           >
             <label
@@ -92,36 +97,65 @@ export default function Login() {
                 type="text"
                 className="peer w-full h-12 outline-none px-6 py-1 rounded-lg relative z-10 bg-transparent"
                 id="phone-number"
-                onChange={(event)=>setPhoneNumber(event.target.value)}
+                onChange={(event) => setPhoneNumber(event.target.value)}
                 value={phoneNumber}
               />
-              <span className={`flex  text-gray-400 absolute cursor-text  transition-all duration-200 ease-in-out ${phoneNumber ? "-top-5 right-0" : "top-[50%] -translate-y-[50%] right-6 peer-focus:-top-5 peer-focus:right-0"}  peer-focus:text-blue-600`}>
-                {
-                  isCorrectPhoneNumber ? (
-                      "کد خود را وارد کنید"
-                  ) : (
-                    "شماره خود را وارد کنید"
-                  )
-                }
-                
+              <span
+                className={`flex text-gray-400 absolute top-[50%] -translate-y-[50%] cursor-text transition-all duration-200 ease-in-out ${
+                  phoneNumber
+                    ? "!-top-5 right-0"
+                    : "right-6 peer-focus:-top-5 peer-focus:right-0"
+                }  peer-focus:text-blue-600`}
+              >
+                {isCorrectPhoneNumber
+                  ? "کد خود را وارد کنید"
+                  : "شماره خود را وارد کنید"}
               </span>
-              {
-                showTimer ? (
-                  <span className="absolute translate-y-7 bottom-0 left-0 text-blue-900 font-bold">
-                    <span className="minute">{minute < 10 ? `0${minute}` : minute}</span>
-                    <span>:</span>
-                    <span className="second">{second < 10 ? `0${second}` : second}</span>
-                  </span>
-                ) :(
-                  ""
-                )
-              }
-              {
-                !checkPhoneNumber() || !phoneNumber && (
-                  <span className="absolute translate-y-7 bottom-0 right-0 text-blue-900 font-bold" >لطفا شماره خود را به درستی وارد کنید</span>
-                )
-              }
             </label>
+            <div className="w-full h-16 flex justify-start items-start">
+              {showTimer ? (
+                <div className="mr-auto ml-0 flex flex-col justify-start items-end">
+                  <span className="text-blue-900 font-bold">
+                    <span className="minute">
+                      {String(minute).padStart(2, "0")}
+                    </span>
+                    <span>:</span>
+                    <span className="second">
+                      {String(second).padStart(2, "0")}
+                    </span>
+                  </span>
+                  {finishTime && (
+                    <span
+                      className="flex items-center cursor-pointer gap-x-2 text-blue-700"
+                      onClick={resendCode}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="w-4 h-4"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
+                        />
+                      </svg>
+                      <span className="text-xs">ارسال مجدد کد</span>
+                    </span>
+                  )}
+                </div>
+              ) : (
+                ""
+              )}
+              {isSubmit && !checkPhoneNumber() && phoneNumber && (
+                <span className="ml-auto mr-0 text-blue-900 font-bold">
+                  لطفا شماره خود را به درستی وارد کنید
+                </span>
+              )}
+            </div>
             <button
               type="submit"
               className="w-full flex justify-center items-center text-white cursor-pointer bg-blue-900 rounded-xl h-12"
@@ -133,7 +167,7 @@ export default function Login() {
                   x="0px"
                   y="0px"
                   viewBox="0 0 100 100"
-                  enableBackground="new 0 0 0 0" 
+                  enableBackground="new 0 0 0 0"
                   className="w-10 "
                 >
                   <circle fill="#fff" stroke="none" cx="6" cy="50" r="6">
@@ -185,7 +219,7 @@ export default function Login() {
           >
             حریم خصوصی کاربران
           </a>
-          تکنولایف است.
+          &nbsp; تکنولایف است.
         </p>
       </div>
       <div className="w-[70%] h-full">
