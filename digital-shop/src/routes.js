@@ -1,6 +1,7 @@
 import OrgLayout from "./components/Layout/OrgLayout"
 import Home from "./pages/Home/Home"
 import Login from "./pages/Login/Login"
+import VerifyLogin from "./pages/VerifyLogin/VerifyLogin"
 
 let routes=[
     {
@@ -13,6 +14,11 @@ let routes=[
     {
         path:'/login',
         element:<Login />,
+        title:"ورود | ثبت‌نام"
+    },
+    {
+        path:'/verifying',
+        element:<VerifyLogin />,
         title:"ورود | ثبت‌نام"
     },
 ]
