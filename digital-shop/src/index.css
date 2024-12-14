@@ -4,6 +4,36 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: 'shabnam';
+    font-style: normal;
+    font-display: swap;
+    src: url("../public/font/shabnam/Shabnam.ttf") format('TrueType');
+  }
+  @font-face {
+    font-family: 'shabnam-ligh';
+    font-style: normal;
+    font-display: swap;
+    src: url("../public/font/shabnam/Shabnam-Light.ttf") format('TrueType');
+  }
+  @font-face {
+    font-family: 'shabnam-medium';
+    font-style: normal;
+    font-display: swap;
+    src: url("../public/font/shabnam/Shabnam-Medium.ttf") format('TrueType');
+  }
+  @font-face {
+    font-family: 'shabnam-thin';
+    font-style: normal;
+    font-display: swap;
+    src: url("../public/font/shabnam/Shabnam-Thin.ttf") format('TrueType');
+  }
+  @font-face {
+    font-family: 'shabnam-bold';
+    font-style: normal;
+    font-display: swap;
+    src: url("../public/font/shabnam/Shabnam-Bold.ttf") format('TrueType');
+  }
   html,
   *,
   *::after,
@@ -15,7 +45,7 @@
 
   body {
     margin: 0;
-    font-family: "Shabnam";
+    @apply font-shabnam
   }
 }
 @layer components {
