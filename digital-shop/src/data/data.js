@@ -132,8 +132,8 @@ const products=[
     },
     {
         name:"گوشی موبايل ناتینگ مدل Phone 2 5G ظرفیت 512 گیگابایت رم 12 گیگابایت",
-        price:"46990000",
-        off:"0",
+        price:"47700000",
+        off:"46990000",
         category:"mobile",
         image:mobile4
     },
@@ -146,8 +146,8 @@ const products=[
     },
     {
         name:"گوشی موبايل شیائومی مدل 14T ظرفیت 256 گیگابایت رم 12 گیگابایت",
-        price:"29799000",
-        off:"0",
+        price:"29800000",
+        off:"29799000",
         category:"mobile",
         image:mobile6
     },

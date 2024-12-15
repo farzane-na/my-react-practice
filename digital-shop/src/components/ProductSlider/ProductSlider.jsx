@@ -31,9 +31,9 @@ export default function ProductSlider({off,category,border,heading,title,}) {
     <div
       className={`border ${
         border ? "border-blue-500" : "border-gray-500"
-      } p-3 pb-6 rounded-3xl mb-20`}
+      } px-3 py-6 rounded-3xl mb-20`}
     >
-      <div className="flex justify-between items-center px-11">
+      <div className="flex justify-between items-center px-11 mb-5">
         {title && <h3 className="font-shabnamBold text-xl">{title}</h3>}
         <Link
           href="#"
@@ -74,24 +74,31 @@ export default function ProductSlider({off,category,border,heading,title,}) {
                   return (
                     <SwiperSlide key={product.id}>
                       {
-                        product.off>0 && (
+                        product.off>0 ? (
                           <div className="off-slider relative w-full flex justify-between items-center py-0.5 font-shabnamBold text-blue-600 mb-2">
                             <span className="text-sm">فروش ویژه</span>
                             <span>1:30:05</span>
                           </div>
+                        ) : (
+                          <div className="h-7 w-full"></div>
                         )
                       }
                       <div className="item-slider flex flex-col gap-y-2 pl-2">
                         <div className="flex justify-center items-center">
                           <img src={product.image} alt="" />
                         </div>
-                        <h4 className="text-sm line-clamp-2 leading-6">{product.name}</h4>
-                        <div className="flex justify-between items-start">
-                          <span className="bg-blue-500 px-1 py-0.5 rounded text-sm text-white">
+                        <h4 className="text-sm line-clamp-2 leading-6 h-12">{product.name}</h4>
+                        <div className={`flex ${product.off>0 ? "justify-between" : "justify-end"} items-start`}>
+                          {
+                            product.off>0 && (
+                              <span className="bg-blue-500 px-1 py-0.5 rounded text-sm text-white">
                             {
                               (100-Math.ceil((product.off*100)/product.price))+" %"
                             }
                           </span>
+                            )
+                          }
+                          
                           <div className="flex flex-col font-shabnamMedium">
                             {
                               product.off>0 && (
@@ -115,10 +122,10 @@ export default function ProductSlider({off,category,border,heading,title,}) {
                 })}
         
               </Swiper>
-                  <button className="prev-product absolute -right-5 bottom-0 top-0 m-auto w-10 h-10 p-1 md:p-2 z-50">
+                  <button className="prev-product absolute -right-5 bottom-0 top-0 m-auto w-10 h-10 p-1 md:p-2 z-10 cursor-pointer">
                     <MdNavigateNext className="text-blue-800 md:text-2xl" />
                   </button>
-                  <button className="next-product absolute -left-5 bottom-0 top-0 m-auto w-10 h-10 p-1 md:p-2 z-50">
+                  <button className="next-product absolute -left-5 bottom-0 top-0 m-auto w-10 h-10 p-1 md:p-2 z-10 cursor-pointer">
                     <GrFormPrevious className="text-blue-800 md:text-2xl" />
                   </button>
       </div>
