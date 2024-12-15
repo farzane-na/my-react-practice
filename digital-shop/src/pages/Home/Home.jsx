@@ -10,7 +10,7 @@ export default function Home() {
         <Slider />
         <div className="wrapper">
             <CatSlider />
-            <ProductSlider off={true} category={"off"} border={true} title={"تخفیفات تکنولایف"} />
+            <ProductSlider off={true} category={"offer"} border={true} title={"تخفیفات تکنولایف"} />
         </div>
     </div>
   )

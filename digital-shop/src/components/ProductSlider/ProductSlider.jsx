@@ -1,4 +1,5 @@
-import React from "react";
+import React ,{useContext,useState,useEffect} from "react";
+import "./ProductSlider.css"
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
 import {
@@ -13,16 +14,19 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/autoplay";
+import { MdNavigateNext } from "react-icons/md";
+import { GrFormPrevious } from "react-icons/gr";
+import ProductsContext from "../../context/ProductContext";
 
-export default function ProductSlider({
-  off,
-  category,
-  border,
-  heading,
-  title,
-}) {
-  console.log(heading);
 
+export default function ProductSlider({off,category,border,heading,title,}) {
+  const contextData=useContext(ProductsContext)
+  console.log(contextData);
+  const [filteredProducts,setFilteredProducts]=useState([])
+  useEffect(()=>{
+    let mainProducts=contextData.filter(product=>product.category===category)
+    setFilteredProducts(mainProducts)
+  },[])
   return (
     <div
       className={`border ${
@@ -52,44 +56,71 @@ export default function ProductSlider({
           </svg>
         </Link>
       </div>
-      <div className="mt-4">
+      <div className="relative mt-4 px-5">
         <Swiper
-                modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-                autoplay={{
-                  delay: 4500,
-                  disableOnInteraction: false,
-                }}
-                speed={500}
-                slidesPerView={7}
+                modules={[Navigation, Pagination, Scrollbar, A11y]}
+                spaceBetween={20}
+                slidesPerView={6}
                 navigation={{
-                  nextEl: ".next-slider",
-                  prevEl: ".prev-slider",
+                  nextEl: ".next-product",
+                  prevEl: ".prev-product",
                 }}
                 // pagination={{ clickable: true }}
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log("slide change")}
+                // onSwiper={(swiper) => console.log(swiper)}
+                // onSlideChange={() => console.log("slide change")}
                 className="relative"
               >
-                {/* {catImage.map((img, index) => {
+                {filteredProducts.map((product) => {
                   return (
-                    <SwiperSlide key={index}>
-                      <a
-                        href="#"
-                        className="flex justify-center items-center w-32 h-32  p-1 rounded-full border borde border-blue-800 hover:border-4 hover:border-blue-800 transition-all group duration-100"
-                      >
-                        <img src={img} alt="" />
-                      </a>
+                    <SwiperSlide key={product.id}>
+                      {
+                        product.off>0 && (
+                          <div className="off-slider relative w-full flex justify-between items-center py-0.5 font-shabnamBold text-blue-600 mb-2">
+                            <span className="text-sm">فروش ویژه</span>
+                            <span>1:30:05</span>
+                          </div>
+                        )
+                      }
+                      <div className="item-slider flex flex-col gap-y-2 pl-2">
+                        <div className="flex justify-center items-center">
+                          <img src={product.image} alt="" />
+                        </div>
+                        <h4 className="text-sm line-clamp-2 leading-6">{product.name}</h4>
+                        <div className="flex justify-between items-start">
+                          <span className="bg-blue-500 px-1 py-0.5 rounded text-sm text-white">
+                            {
+                              (100-Math.ceil((product.off*100)/product.price))+" %"
+                            }
+                          </span>
+                          <div className="flex flex-col font-shabnamMedium">
+                            {
+                              product.off>0 && (
+                                <span className="flex justify-center items-center gap-0.5">
+                                <span>{product.off.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
+                                <span className="text-xs">تومان</span>
+                                </span>
+                              )
+                            }
+                            <span className={`flex justify-center items-center gap-0.5 ${product.off>0 ? "text-gray-500 total-price-in-off" : "text-black"}`}>
+                              {
+                                product.price.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                              }
+                              <span className="text-xs">تومان</span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
                     </SwiperSlide>
                   );
-                })} */}
+                })}
         
-                  <button className="prev-slider absolute right-0 bottom-0 top-0 m-auto w-10 h-10 p-1 md:p-2 hover:bg-slate-300 rounded-full cursor-pointer transition-all">
+              </Swiper>
+                  <button className="prev-product absolute -right-5 bottom-0 top-0 m-auto w-10 h-10 p-1 md:p-2 z-50">
                     <MdNavigateNext className="text-blue-800 md:text-2xl" />
                   </button>
-                  <button className="next-slider absolute left-0 bottom-0 top-0 m-auto w-10 h-10 p-1 md:p-2 hover:bg-slate-300 rounded-full cursor-pointer transition-all">
+                  <button className="next-product absolute -left-5 bottom-0 top-0 m-auto w-10 h-10 p-1 md:p-2 z-50">
                     <GrFormPrevious className="text-blue-800 md:text-2xl" />
                   </button>
-              </Swiper>
       </div>
     </div>
   );

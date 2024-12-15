@@ -52,8 +52,8 @@ export default function CatSlider() {
           prevEl: ".prev-slider",
         }}
         // pagination={{ clickable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
+        // onSwiper={(swiper) => console.log(swiper)}
+        // onSlideChange={() => console.log("slide change")}
         className="relative"
       >
         {catImage.map((img, index) => {

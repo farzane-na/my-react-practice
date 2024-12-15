@@ -1,0 +1,18 @@
+.item-slider {
+    border-left: 1px solid #e5e7eb;
+  }
+  .item-slider:last-child(){
+    border: none !important;
+  }
+  .total-price-in-off{
+    position: relative;
+  }
+  .total-price-in-off:after{
+    content: "";
+    width: 100%;
+    height: 0.5px;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    background-color: #6b7280;
+  }

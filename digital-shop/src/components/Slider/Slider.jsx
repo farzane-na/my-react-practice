@@ -46,8 +46,8 @@ export default function Slider() {
           prevEl: ".prev-slider",
         }}
         pagination={{ clickable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
+        // onSwiper={(swiper) => console.log(swiper)}
+        // onSlideChange={() => console.log("slide change")}
       >
         {imageGetter.map((img, index) => {
           return (
