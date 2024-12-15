@@ -25,7 +25,7 @@ export default function Home() {
         <Slider />
         <div className="wrapper">
             <CatSlider />
-            <ProductSlider off={true} category={"offer"} border={true} title={"تخفیفات تکنولایف"} />
+            <ProductSlider category={"offer"} border={true} title={"تخفیفات تکنولایف"} />
 
             <div className="flex flex-col md:flex-row items-center gap-4 mb-10">
               {
@@ -40,7 +40,7 @@ export default function Home() {
               }
             </div>
 
-            <ProductSlider off={false} category={"mobile"} border={false} title={"پرچمداران هوشمند"} />
+            <ProductSlider category={"mobile"} border={false} title={"پرچمداران هوشمند"} />
 
             <div className="flex flex-col gap-4 mb-10">
               <h2 className='font-shabnamBold text-2xl text-center'>برترین های موبایل</h2>
@@ -62,7 +62,7 @@ export default function Home() {
               <img src={ban} alt="" className='w-full' />
             </div>
 
-            <ProductSlider off={false} category={"laptop"} border={false} title={"لپ‌تاپ‌ها در تکنولایف"} />
+            <ProductSlider category={"laptop"} border={false} title={"لپ‌تاپ‌ها در تکنولایف"} />
         </div>
     </div>
   )

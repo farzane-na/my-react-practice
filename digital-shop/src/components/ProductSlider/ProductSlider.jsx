@@ -6,8 +6,7 @@ import {
   Navigation,
   Pagination,
   Scrollbar,
-  A11y,
-  Autoplay,
+  A11y
 } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -17,9 +16,10 @@ import "swiper/css/autoplay";
 import { MdNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
 import ProductsContext from "../../context/ProductContext";
+import Countdown from 'react-countdown';
 
 
-export default function ProductSlider({off,category,border,heading,title,}) {
+export default function ProductSlider({category,border,title}) {
   const contextData=useContext(ProductsContext)
   console.log(contextData);
   const [filteredProducts,setFilteredProducts]=useState([])
@@ -27,6 +27,13 @@ export default function ProductSlider({off,category,border,heading,title,}) {
     let mainProducts=contextData.filter(product=>product.category===category)
     setFilteredProducts(mainProducts)
   },[])
+  const [hour,setHour]=useState(7)
+  const [minute,setMinute]=useState(20)
+  const [second,setSecond]=useState(0)
+
+  const countTimer=()=>{
+
+  }
   return (
     <div
       className={`border ${
@@ -77,7 +84,8 @@ export default function ProductSlider({off,category,border,heading,title,}) {
                         product.off>0 ? (
                           <div className="off-slider relative w-full flex justify-between items-center py-0.5 font-shabnamBold text-blue-600 mb-2">
                             <span className="text-sm">فروش ویژه</span>
-                            <span>1:30:05</span>
+                            {/* <span>1:30:05</span> */}
+                            <Countdown date={Date.now() + product.time } />
                           </div>
                         ) : (
                           <div className="h-7 w-full"></div>

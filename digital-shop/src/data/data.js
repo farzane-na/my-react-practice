@@ -44,70 +44,80 @@ const products=[
         price:"11250000",
         off:"10700000",
         category:"offer",
-        image:off1
+        image:off1,
+        time:259200000
     },
     {
         name:"گوشی موبایل آنر X5 Plus 4G ظرفیت 64 گیگابایت رم 4 گیگابایت",
         price:"6380000",
         off:"6270000",
         category:"offer",
-        image:off2
+        image:off2,
+        time:518400000
     },
     {
         name:"دستگاه تصفیه هوا پاکشوما مدل گیگا MPK-700",
         price:"12750000",
         off:"10790000",
         category:"offer",
-        image:off3
+        image:off3,
+        time:86400000
     },
     {
         name:"پارتی باکس جی بی ال مدل partybox Stage 320",
         price:"31990000",
         off:"29999000",
         category:"offer",
-        image:off4
+        image:off4,
+        time:1555200000
     },
     {
         name:"لپ تاپ ایسوس 15.6 اینچی مدل Vivobook 15 X1504VA i7 1355U 8GB 512GB",
         price:"40299000",
         off:"38099000",
         category:"offer",
-        image:off5
+        image:off5,
+        time:1555200000
     },
     {
         name:"گوشی موبایل سامسونگ Galaxy S24 Ultra 5G ظرفیت 256 گیگابایت رم 12 گیگابایت - ویتنام",
         price:"66999000",
         off:"65899000",
         category:"offer",
-        image:off6
+        image:off6,
+        time:86400000
     },
     {
         name:"مانیتور ایکس ویژن مدل XS2260H سایز 22 اینچ",
         price:"4688000",
         off:"4479000",
         category:"offer",
-        image:off7
+        image:off7,
+        time:259200000
     },
     {
         name:"کولر گازی جی پلاس 18 هزار مدل GAC-HV18TV1",
         price:"38800000",
         off:"30700000",
         category:"offer",
-        image:off8
+        image:off8,
+        time:1555200000
     },
     {
         name:"مچ بند هوشمند شیائومی مدل Mi Band 9 - گلوبال",
         price:"2099000",
         off:"1989000",
         category:"offer",
-        image:off9
+        image:off9,
+        time:25200000
     },
     {
         name:"گوشی موبایل ریلمی مدل Note 50 4G ظرفیت 64 گیگابایت رم 3 گیگابایت",
         price:"5140000",
         off:"4970000",
         category:"offer",
-        image:off10
+        image:off10,
+        time:777600000
     },
     {
         name:"گوشی موبایل سامسونگ Galaxy S24 Ultra 5G ظرفیت 1 ترابایت رم 12 گیگابایت - ویتنام",
@@ -135,7 +145,8 @@ const products=[
         price:"47700000",
         off:"46990000",
         category:"mobile",
-        image:mobile4
+        image:mobile4,
+        time:777600000
     },
     {
         name:"گوشی موبایل آنر مدل 90 ظرفیت 256 گیگابایت رم 8 گیگابایت",
@@ -149,7 +160,8 @@ const products=[
         price:"29800000",
         off:"29799000",
         category:"mobile",
-        image:mobile6
+        image:mobile6,
+        time:259200000
     },
     {
         name:"گوشی موبايل شیائومی مدل 14T Pro ظرفیت 512 گیگابایت رم 12 گیگابایت",
