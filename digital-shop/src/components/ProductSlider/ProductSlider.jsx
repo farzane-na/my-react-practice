@@ -21,19 +21,11 @@ import Countdown from 'react-countdown';
 
 export default function ProductSlider({category,border,title}) {
   const contextData=useContext(ProductsContext)
-  console.log(contextData);
   const [filteredProducts,setFilteredProducts]=useState([])
   useEffect(()=>{
     let mainProducts=contextData.filter(product=>product.category===category)
     setFilteredProducts(mainProducts)
   },[])
-  const [hour,setHour]=useState(7)
-  const [minute,setMinute]=useState(20)
-  const [second,setSecond]=useState(0)
-
-  const countTimer=()=>{
-
-  }
   return (
     <div
       className={`border ${
@@ -85,7 +77,7 @@ export default function ProductSlider({category,border,title}) {
                           <div className="off-slider relative w-full flex justify-between items-center py-0.5 font-shabnamBold text-blue-600 mb-2">
                             <span className="text-sm">فروش ویژه</span>
                             {/* <span>1:30:05</span> */}
-                            <Countdown date={Date.now() + product.time } />
+                            <Countdown date={1734269834600 + product.time } />
                           </div>
                         ) : (
                           <div className="h-7 w-full"></div>
