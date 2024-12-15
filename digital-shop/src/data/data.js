@@ -38,6 +38,17 @@ import comp7 from "./../asset/product/com/comp7.webp"
 import comp8 from "./../asset/product/com/comp8.webp"
 import comp9 from "./../asset/product/com/comp9.webp"
 
+import fer1 from "./../asset/product/fearniture/1.webp"
+import fer2 from "./../asset/product/fearniture/2.webp"
+import fer3 from "./../asset/product/fearniture/3.webp"
+import fer4 from "./../asset/product/fearniture/4.webp"
+import fer5 from "./../asset/product/fearniture/5.webp"
+import fer6 from "./../asset/product/fearniture/6.webp"
+import fer7 from "./../asset/product/fearniture/7.webp"
+import fer8 from "./../asset/product/fearniture/8.webp"
+import fer9 from "./../asset/product/fearniture/9.webp"
+import fer10 from "./../asset/product/fearniture/10.webp"
+
 const products=[
     {
         name:"گوشی موبایل شیائومی مدل Redmi Note 13 4G ظرفیت 256 گیگابایت رم 8 گیگابایت - رام گلوبال پک اندونزی",
@@ -238,7 +249,8 @@ const products=[
         price:"8250000",
         off:"7699000",
         category:"comp",
-        image:comp1
+        image:comp1,
+        time:1555200000
     },
     {
         name:"تبلت سامسونگ مدل Galaxy Tab A9 4G ظرفیت 128 گیگابایت رم 8 گیگابایت (SM-X115)",
@@ -252,7 +264,8 @@ const products=[
         price:"30800000",
         off:"29988000",
         category:"comp",
-        image:comp3
+        image:comp3,
+        time:1555200000
     },
     {
         name:"مودم روتر 4G LTE N300 نتربیت مدل NWR–M920 V2",
@@ -287,15 +300,94 @@ const products=[
         price:"1715000",
         off:"1660000",
         category:"comp",
-        image:comp8
+        image:comp8,
+        time:1555200000
     },
     {
         name:"مادربرد ایسوس مدل PRIME H610M-R-Si-D5",
         price:"6100000",
         off:"5945000",
         category:"comp",
-        image:comp9
+        image:comp9,
+        time:1555200000
     },
+    {
+        name:"ماشین ظرفشویی اسنوا 13 نفره مدل SDW-A11S",
+        price:"24000000",
+        off:"22290000",
+        category:"fer",
+        image:fer1,
+        time:259200000
+    },
+    {
+        name:"اجاق گاز فردار اسنوا سری آدرینا مدل SGC5-3122N",
+        price:"22000000",
+        off:"15890000",
+        category:"fer",
+        image:fer2,
+        time:259200000
+    },
+    {
+        name:"تلویزیون اسنوا LED سایز 55 اینچ مدل SSD-55LS540U",
+        price:"26000000",
+        off:"21890000",
+        category:"fer",
+        image:fer3,
+        time:259200000
+    },
+    {
+        name:"چای ساز اسنوا مدل STM-GS1650BK",
+        price:"3900000",
+        off:"3219000",
+        category:"fer",
+        image:fer4,
+        time:259200000
+    },
+    {
+        name:"اجاق گاز فردار اسنوا سری آدرینا مدل SGC5-31122",
+        price:"17500000",
+        off:"15980000",
+        category:"fer",
+        image:fer5,
+        time:259200000
+    },
+    {
+        name:"تلویزیون اسنوا LED سایز 55 اینچ مدل SSD-55LS510U",
+        price:"25667000",
+        off:"21600000",
+        category:"fer",
+        image:fer6
+    },
+    {
+        name:"آبمیوه گیری پارس خزر مدل VitaFruit Glass همراه با پارچ پلاستیکی",
+        price:"4455800",
+        off:"3860000",
+        category:"fer",
+        image:fer7,
+        time:259200000
+    },
+    {
+        name:"تب سنج دیجیتال بیورر مدل FT09",
+        price:"275000",
+        off:"255000",
+        category:"fer",
+        image:fer8
+    },
+    {
+        name:"دستگاه بخور سرد و گرم بیورر مدل LB88",
+        price:"6890000",
+        off:"6330000",
+        category:"fer",
+        image:fer9,
+        time:259200000
+    },
+    {
+        name:"ضربان سنج قلب بیورر مدل PM 70",
+        price:"5300000",
+        off:"4869000",
+        category:"fer",
+        image:fer10
+    }
 ]
 
 const productsWithIds = products.map(product => ({

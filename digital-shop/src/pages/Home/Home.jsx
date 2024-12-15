@@ -37,6 +37,10 @@ export default function Home() {
             <BannersSection category={"seventh-section"} center={false} rounded={true} />
 
             <ProductSlider category={"comp"} border={false} title={"کامپیوتر و تجهیزات"} />
+
+            <BannersSection category={"eight-section"} center={false} rounded={true} />
+
+            <ProductSlider category={"fer"} border={false} title={"لوازم خانگی تکنولایف"} />
         </div>
         </BannerContext.Provider>
     </div>

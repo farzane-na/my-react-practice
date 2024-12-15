@@ -182,6 +182,11 @@ const banners=[
         id:uuidv4(),
         category:"eight-section",
         image:banner8
+    },
+    {
+        id:uuidv4(),
+        category:"eight-section",
+        image:banner9
     }
 ]
 export default banners
