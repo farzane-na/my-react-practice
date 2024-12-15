@@ -54,27 +54,32 @@ const banners=[
     {
         id:uuidv4(),
         category:"second-section",
-        image:mobile1
+        image:mobile1,
+        name:"سامسونگ"
     },
     {
         id:uuidv4(),
         category:"second-section",
-        image:mobile2
+        image:mobile2,
+        name:"پوکو"
     },
     {
         id:uuidv4(),
         category:"second-section",
-        image:mobile3
+        image:mobile3,
+        name:"آیفون"
     },
     {
         id:uuidv4(),
         category:"second-section",
-        image:mobile4
+        image:mobile4,
+        name:"آنر"
     },
     {
         id:uuidv4(),
         category:"second-section",
-        image:mobile5
+        image:mobile5,
+        name:"شیائومی"
     },
     {
         id:uuidv4(),
@@ -84,27 +89,32 @@ const banners=[
     {
         id:uuidv4(),
         category:"forth-section",
-        image:laptop1
+        image:laptop1,
+        name:"ایسوس"
     },
     {
         id:uuidv4(),
         category:"forth-section",
-        image:laptop2
+        image:laptop2,
+        name:"اچ پی"
     },
     {
         id:uuidv4(),
         category:"forth-section",
-        image:laptop3
+        image:laptop3,
+        name:"مک بوک"
     },
     {
         id:uuidv4(),
         category:"forth-section",
-        image:laptop4
+        image:laptop4,
+        name:"لنوو"
     },
     {
         id:uuidv4(),
         category:"forth-section",
-        image:laptop5
+        image:laptop5,
+        name:"ایسر"
     },
     {
         id:uuidv4(),
@@ -119,37 +129,44 @@ const banners=[
     {
         id:uuidv4(),
         category:"sixth-section",
-        image:airpod1
+        image:airpod1,
+        name:"کیوسی وای"
     },
     {
         id:uuidv4(),
         category:"sixth-section",
-        image:airpod2
+        image:airpod2,
+        name:"هایلو"
     },
     {
         id:uuidv4(),
         category:"sixth-section",
-        image:airpod3
+        image:airpod3,
+        name:"شیائومی"
     },
     {
         id:uuidv4(),
         category:"sixth-section",
-        image:airpod4
+        image:airpod4,
+        name:"اپل"
     },
     {
         id:uuidv4(),
         category:"sixth-section",
-        image:airpod5
+        image:airpod5,
+        name:"سامسونگ"
     },
     {
         id:uuidv4(),
         category:"sixth-section",
-        image:airpod6
+        image:airpod6,
+        name:"هوآوی"
     },
     {
         id:uuidv4(),
         category:"sixth-section",
-        image:airpod7
+        image:airpod7,
+        name:"انکر"
     },
     {
         id:uuidv4(),

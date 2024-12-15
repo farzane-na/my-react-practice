@@ -64,9 +64,6 @@ export default function ProductSlider({category,border,title}) {
                   nextEl: ".next-product",
                   prevEl: ".prev-product",
                 }}
-                // pagination={{ clickable: true }}
-                // onSwiper={(swiper) => console.log(swiper)}
-                // onSlideChange={() => console.log("slide change")}
                 className="relative"
               >
                 {filteredProducts.map((product) => {
@@ -76,7 +73,6 @@ export default function ProductSlider({category,border,title}) {
                         product.off>0 ? (
                           <div className="off-slider relative w-full flex justify-between items-center py-0.5 font-shabnamBold text-blue-600 mb-2">
                             <span className="text-sm">فروش ویژه</span>
-                            {/* <span>1:30:05</span> */}
                             <Countdown date={1734269834600 + product.time } />
                           </div>
                         ) : (
@@ -93,7 +89,11 @@ export default function ProductSlider({category,border,title}) {
                             product.off>0 && (
                               <span className="bg-blue-500 px-1 py-0.5 rounded text-sm text-white">
                             {
-                              (100-Math.ceil((product.off*100)/product.price))+" %"
+                              (100-Math.ceil((product.off*100)/product.price))===0 ? (
+                                1+" %"
+                              ) : (
+                                (100-Math.ceil((product.off*100)/product.price))+" %"
+                              )
                             }
                           </span>
                             )

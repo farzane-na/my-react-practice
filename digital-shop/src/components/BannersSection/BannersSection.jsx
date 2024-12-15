@@ -30,6 +30,11 @@ export default function BannersSection({ category, center, rounded, title }) {
               key={index}
             >
               <img src={img.image} alt="" className="w-full h-full" />
+              {
+                img.name && (
+                    <p className="text-sm font-shabnamBold text-center">{img.name}</p>
+                )
+              }
               <Link
                 href="#"
                 className="absolute w-full h-full top-0 bottom-0 left-0 right-0 z-20"

@@ -29,6 +29,14 @@ export default function Home() {
             <ProductSlider category={"laptop"} border={false} title={"لپ‌تاپ‌ها در تکنولایف"} />
 
             <BannersSection category={"forth-section"} center={true} rounded={false} title={"برترین های لپتاپ"} />
+
+            <BannersSection category={"fifth-section"} center={false} rounded={true} />
+
+            <BannersSection category={"sixth-section"} title={"برترین های هندزفری"} center={true} rounded={false} />
+
+            <BannersSection category={"seventh-section"} center={false} rounded={true} />
+
+            <ProductSlider category={"comp"} border={false} title={"کامپیوتر و تجهیزات"} />
         </div>
         </BannerContext.Provider>
     </div>
