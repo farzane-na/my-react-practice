@@ -6,6 +6,7 @@ import ProductSlider from '../../components/ProductSlider/ProductSlider'
 
 import BannerContext from '../../context/BannerContext'
 import banners from '../../data/banner'
+import BlogSection from "./../../components/BlogSection/BlogSection"
 
 export default function Home() {
   console.log("time : ",Date.now());
@@ -41,6 +42,8 @@ export default function Home() {
             <BannersSection category={"eight-section"} center={false} rounded={true} />
 
             <ProductSlider category={"fer"} border={false} title={"لوازم خانگی تکنولایف"} />
+
+            <BlogSection />
         </div>
         </BannerContext.Provider>
     </div>
