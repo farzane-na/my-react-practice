@@ -8,6 +8,11 @@ import pay from "./../../asset/logo/technoPayFooter_new.svg"
 import gold from "./../../asset/logo/technoGoldFooter_new.svg"
 import bus from "./../../asset/logo/technoBusinessFooter.svg"
 
+import lic1 from "./../../asset/licence/c5.webp"
+import lic2 from "./../../asset/licence/c4.webp"
+import lic3 from "./../../asset/licence/download.svg"
+import lic4 from "./../../asset/licence/logo.png"
+
 export default function Footer(){
     return (
         <footer className="p-8 bg-gradient-to-tl from-blue-950 to-blue-500 rounded-tr-xl rounded-tl-xl">
@@ -20,35 +25,200 @@ export default function Footer(){
                     </svg>
                 </a>
             </div>
-            <div className="flex justify-between items-start pt-14">
-                <div className="flex flex-col gap-5 text-white">
-                    <span>تلفن : 021-47708000-021-91077500</span>
-                    <span>ایمیل : info@technolife.ir</span>
+            <div className="flex items-start gap-44 pt-14">
+                <div className="flex flex-col justify-start items-start gap-10">
+                    <div className="flex flex-col gap-5 text-white">
+                        <span>تلفن : 021-47708000-021-91077500</span>
+                        <span>ایمیل : info@technolife.ir</span>
+                    </div>
+                    <div className="w-56 flex flex-col gap-3 p-4 rounded-xl bg-white">
+                        <p>شبکه‌های اجتماعی</p>
+                        <div className="flex justify-between items-center">
+                            <a href="" className="w-[30px] h-[30px]">
+                                <img src={instagram} alt=""  className="w-full h-full"/>
+                            </a>
+                            <a href="" className="w-[30px] h-[30px]">
+                                <img src={aparat} alt=""  className="w-full h-full"/>
+                            </a>
+                            <a href="" className="w-[30px] h-[30px]">
+                                <img src={telegram} alt=""  className="w-full h-full"/>
+                            </a>
+                            <a href="" className="w-[30px] h-[30px]">
+                                <img src={youtube} alt=""  className="w-full h-full"/>
+                            </a>
+                        </div>
+                    </div>
+                    <div className="flex flex-col gap-10">
+                        <img src={pay} alt="" className="w-40 h-14" />
+                        <img src={gold} alt="" className="w-40 h-14" />
+                        <img src={bus} alt="" className="w-40 h-14" />
+                    </div>
                 </div>
-                <div className="w-56 flex flex-col gap-3 p-4 rounded-xl bg-white">
-                    <p>شبکه‌های اجتماعی</p>
-                    <div className="flex justify-between items-center">
-                        <a href="" className="w-[30px] h-[30px]">
-                            <img src={instagram} alt=""  className="w-full h-full"/>
+                <div className="flex flex-col flex-grow gap-5">
+                    <div className="flex items-start justify-between">
+                        <ul className="flex flex-col gap-4 text-white">
+                            <h4 className="font-shabnamMedium text-base mb-2">دسترسی سریع</h4>
+                            <li className="text-xs">
+                                <a href="#">بلاگ</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">خرید گوشی</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">گوشی سامسونگ</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">گوشی آیفون</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">گوشی شیائومی</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">گوشی پوکو</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">مقایسه گوشی</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">قیمت لپتاپ</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">هندزفری بلوتوثی گوشی</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">بلک فرایدی</a>
+                            </li>
+                        </ul>
+                        <ul className="flex flex-col gap-4 text-white">
+                            <h4 className="font-shabnamMedium text-base mb-2">پرفروش ترین محصولات</h4>
+                            <li className="text-xs">
+                                <a href="#">گوشی s24 fe</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">آیفون13</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">گوشی 14t</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">گوشی 14t pro</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">گوشی های ارزان شیائومی</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">گوشی ارزان سامسونگ</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">ساعت هوشمند</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">پرینتر</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">هارد اکسترنال</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">لوازم خانگی</a>
+                            </li>
+                            
+                        </ul>
+                        <ul className="flex flex-col gap-4 text-white">
+                            <h4 className="font-shabnamMedium text-base mb-2">درباره ما</h4>
+                            <li className="text-xs">
+                                <a href="#">تکنولایف در یک نگاه</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">خرید گوشی</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">اهدا و تعهد های ما</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">سرگذشت تکنولایف</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">سوالات متداول</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">فروشگاه های حضوری</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">تماس با ما</a>
+                            </li>
+                        </ul>
+                        <ul className="flex flex-col gap-4 text-white">
+                            <h4 className="font-shabnamMedium text-base mb-2">پیش از خرید</h4>
+                            <li className="text-xs">
+                                <a href="#">راهنمای خرید اقساطی</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">خرید سازمانی</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">راهنما خرید از تکنولایف</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">رو های خرید از تکنولایف</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">ضمانت هفت روزه تکنولایف</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">شیوه ها و هزینه ارسال </a>
+                            </li>
+                        </ul>
+                        <ul className="flex flex-col gap-4 text-white">
+                            <h4 className="font-shabnamMedium text-base mb-2">پس از خرید</h4>
+                            <li className="text-xs">
+                                <a href="#">تضمین رجیستری</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">رویه های بازگرداندن کالا</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">سوالات متداول رجیستری</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">رهگیری سفارش ها</a>
+                            </li>
+                        </ul>
+                        <ul className="flex flex-col gap-4 text-white">
+                            <h4 className="font-shabnamMedium text-base mb-2">قوانین و مقررات</h4>
+                            <li className="text-xs">
+                                <a href="#">قوانین و مقررات</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">حریم خصوصی کاربران</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">از زبان مشتریان تکنولایف</a>
+                            </li>
+                            <li className="text-xs">
+                                <a href="#">چرا تکنولایف؟</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="flex flex-row-reverse gap-9">
+                        <a href="" className="flex justify-center items-center w-20 px-2 bg-white rounded-xl p-1">
+                            <img src={lic1} alt="" className="w-full" />
                         </a>
-                        <a href="" className="w-[30px] h-[30px]">
-                            <img src={aparat} alt=""  className="w-full h-full"/>
+                        <a href="" className="flex justify-center items-center w-20 px-2 bg-white rounded-xl p-1">
+                            <img src={lic2} alt="" className="w-full" />
                         </a>
-                        <a href="" className="w-[30px] h-[30px]">
-                            <img src={telegram} alt=""  className="w-full h-full"/>
+                        <a href="" className="flex justify-center items-center w-20 px-2 bg-white rounded-xl p-1">
+                            <img src={lic3} alt="" className="w-full" />
                         </a>
-                        <a href="" className="w-[30px] h-[30px]">
-                            <img src={youtube} alt=""  className="w-full h-full"/>
+                        <a href="" className="flex justify-center items-center w-20 px-2 bg-white rounded-xl p-1">
+                            <img src={lic4} alt="" className="w-full" />
                         </a>
                     </div>
                 </div>
-                <div className="flex">
-                    <img src={pay} alt="" className="w-40 h-14" />
-                    <img src={gold} alt="" className="w-40 h-14" />
-                    <img src={bus} alt="" className="w-40 h-14" />
-                </div>
             </div>
-            <div className="flex pt-12"></div>
+            <p className="mt-14 px-8 text-white text-xs text-center">
+            ۱۴۰۳-1391
+            تمامی حقوق مادی و معنوی این سایت متعلق به تکنولایف می‌باشد.
+            </p>
         </footer>
     )
 }
