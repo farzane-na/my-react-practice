@@ -16,7 +16,7 @@ import lic4 from "./../../asset/licence/logo.png";
 export default function Footer() {
   return (
     <footer className="p-8 bg-gradient-to-tl from-blue-950 to-blue-500 rounded-tr-xl rounded-tl-xl">
-      <div className="flex flex-col gap-5 xs:flex-row justify-between items-center pt-10 pb-11 border-b border-b-white/50">
+      <div className="flex flex-col gap-5 sm:flex-row justify-between items-center pt-10 pb-11 border-b border-b-white/50">
         <img src={logo} alt="" className="w-44" />
         <a
           href="#"
@@ -69,9 +69,9 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex flex-col flex-grow gap-5">
-          <div className="flex flex-col lg:flex-row items-start gap-y-8">
+          <div className="flex flex-wrap flex-col lg:flex-row items-start gap-y-8">
             <div className="flex flex-col sm:flex-row items-start gap-8">
-              <ul className="w-32 2xl:w-36 flex flex-col gap-4 text-white">
+              <ul className="w-32 2xl:w-52 flex flex-col gap-4 text-white">
                 <h4 className="font-shabnamMedium text-base mb-2">
                   دسترسی سریع
                 </h4>
@@ -106,7 +106,7 @@ export default function Footer() {
                   <a href="#">بلک فرایدی</a>
                 </li>
               </ul>
-              <ul className="w-32 2xl:w-36  flex flex-col gap-4 text-white">
+              <ul className="w-32 2xl:w-52  flex flex-col gap-4 text-white">
                 <h4 className="font-shabnamMedium text-base mb-2">
                   پرفروش ترین محصولات
                 </h4>
@@ -141,7 +141,7 @@ export default function Footer() {
                   <a href="#">لوازم خانگی</a>
                 </li>
               </ul>
-              <ul className="w-32 2xl:w-36  flex flex-col gap-4 text-white">
+              <ul className="w-32 2xl:w-52  flex flex-col gap-4 text-white">
                 <h4 className="font-shabnamMedium text-base mb-2">درباره ما</h4>
                 <li className="text-xs">
                   <a href="#">تکنولایف در یک نگاه</a>
@@ -167,7 +167,7 @@ export default function Footer() {
               </ul>
             </div>
             <div className="flex flex-col sm:flex-row items-start gap-8">
-              <ul className="w-32 2xl:w-36  flex flex-col gap-4 text-white">
+              <ul className="w-32 2xl:w-52  flex flex-col gap-4 text-white">
                 <h4 className="font-shabnamMedium text-base mb-2">
                   پیش از خرید
                 </h4>
@@ -226,7 +226,7 @@ export default function Footer() {
               </ul>
             </div>
           </div>
-          <div className="flex flex-col justify-start lg:justify-end sm:flex-row-reverse gap-9">
+          <div className="flex flex-col sm:ml-auto sm:mr-0 lg:mr-auto lg:ml-0 sm:flex-row-reverse gap-9">
             <div className="flex gap-9 flex-row-reverse">
               <a
                 href=""
