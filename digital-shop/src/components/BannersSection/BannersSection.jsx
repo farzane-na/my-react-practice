@@ -12,7 +12,7 @@ export default function BannersSection({ category, center, rounded, title }) {
     setFilteredBanner(mainBanners);
   }, []);
   return (
-    <div className="flex flex-col gap-4 mb-10">
+    <div className="w-full flex flex-col gap-4 mb-10">
         {
             title && (
                 <h2 className='font-shabnamBold text-2xl text-center'>{title}</h2>
@@ -26,7 +26,7 @@ export default function BannersSection({ category, center, rounded, title }) {
         {filteredBanner.map((img, index) => {
           return (
             <div
-              className={`relative ${rounded && "overflow-hidden rounded-xl"} ${title && "w-40"}`}
+              className={`relative ${rounded && "overflow-hidden rounded-xl"} ${title ? "w-40" : "w-full"}`}
               key={index}
             >
               <img src={img.image} alt="" className="w-full h-full" />

@@ -46,10 +46,25 @@ export default function CatSlider() {
           disableOnInteraction: false,
         }}
         speed={500}
-        slidesPerView={7}
         navigation={{
           nextEl: ".next-slider",
           prevEl: ".prev-slider",
+        }}
+        breakpoints={{
+          340: {
+            slidesPerView: 3,
+            spaceBetween: 5,
+          },
+          // تبلت (بین 640px تا 768px)
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 15,
+          },
+          // دسکتاپ (بیشتر از 1024px)
+          1024: {
+            slidesPerView: 7,
+            spaceBetween: 20,
+          },
         }}
         // pagination={{ clickable: true }}
         // onSwiper={(swiper) => console.log(swiper)}

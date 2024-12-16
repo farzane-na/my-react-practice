@@ -25,8 +25,8 @@ export default function ProductSlider() {
     <div
       className="border border-gray-500 px-3 py-6 rounded-3xl mb-20"
     >
-      <div className="flex justify-between items-center px-11 mb-5">
-        <h3 className="font-shabnamBold text-xl">از وبلاگ تکنولایف</h3>
+      <div className="flex justify-between items-center xs:px-11 mb-5">
+        <h3 className="font-shabnamBold xs:text-xl">از وبلاگ تکنولایف</h3>
         <Link
           href="#"
           className="cursor-pointer flex justify-center items-center gap-1 text-blue-900 font-shabnamMedium"
@@ -51,11 +51,33 @@ export default function ProductSlider() {
       <div className="relative mt-4 px-5">
         <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
-                spaceBetween={20}
-                slidesPerView={6}
                 navigation={{
                   nextEl: ".next-product",
                   prevEl: ".prev-product",
+                }}
+                breakpoints={{
+                  340: {
+                    slidesPerView: 1,
+                    spaceBetween: 5,
+                  },
+                  496: {
+                    slidesPerView: 2,
+                    spaceBetween: 5,
+                  },
+                  // تبلت (بین 640px تا 768px)
+                  768: {
+                    slidesPerView: 3,
+                    spaceBetween: 15,
+                  },
+                  // دسکتاپ (بیشتر از 1024px)
+                  1024: {
+                    slidesPerView: 5,
+                    spaceBetween: 20,
+                  },
+                  1220: {
+                    slidesPerView: 6,
+                    spaceBetween: 20,
+                  },
                 }}
                 className="relative"
               >
