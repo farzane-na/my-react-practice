@@ -103,10 +103,11 @@ export default function ProductSlider({category,border,title}) {
                         )
                       }
                       <div className="item-slider flex flex-col gap-y-2 pl-2">
-                        <div className="flex justify-center items-center">
+                        <div className="relative flex justify-center items-center">
                           <img src={product.image} alt="" />
+                          <Link to={`/product/${product.id}`} className="absolute top-0 left-0 right-0 bottom-0 w-full h-full"></Link>
                         </div>
-                        <h4 className="text-sm line-clamp-2 leading-6 h-12">{product.name}</h4>
+                        <Link to={`/product/${product.id}`} className="text-sm line-clamp-2 leading-6 h-12">{product.name}</Link>
                         <div className={`flex ${product.off>0 ? "justify-between" : "justify-end"} items-start`}>
                           {
                             product.off>0 && (
