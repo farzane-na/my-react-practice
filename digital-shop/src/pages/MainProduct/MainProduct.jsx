@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
 import { useParams } from "react-router-dom";
+import "react-inner-image-zoom/lib/InnerImageZoom/styles.min.css";
+import InnerImageZoom from "react-inner-image-zoom";
 import { IoShareSocialOutline } from "react-icons/io5";
 import { HiOutlineChatBubbleOvalLeftEllipsis } from "react-icons/hi2";
 import { GoGitCompare } from "react-icons/go";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { TbBellRinging } from "react-icons/tb";
 import ProductsContext from "../../context/ProductContext";
-
+import img from "./../../asset/product/mobile/mobile1_big.webp";
 
 export default function MainProduct() {
   const { productID } = useParams();
@@ -25,12 +27,12 @@ export default function MainProduct() {
     const cutName = dataName?.slice(0, 30);
     document.title = `خرید ${cutName} ...`;
   }, [mainData]);
-  
+
   return (
     <div className="wrapper">
       <div className="flex flex-col md:flex-row mt-10 mb-12">
         <div className="flex">
-          <div className="right-side flex flex-col gap-10 md:flex-row items-start border border-gray-300 rounded-2xl p-11">
+          <div className="right-side flex flex-col gap-36 md:flex-row items-start border border-gray-300 rounded-2xl p-11">
             <div className="right-right-side flex flex-col">
               <h2>{mainData.name}</h2>
               <p className="pb-4 border-b border-b-gray-200">comment</p>
@@ -70,11 +72,14 @@ export default function MainProduct() {
                   <IoMdHeartEmpty className="w-5 h-5 text-blue-950" />
                 </span>
               </div>
-              <div
-                className="relative overflow-hidden w-80 flex justify-center items-center"
-              >
+              <div className="relative overflow-hidden w-80 flex justify-center items-center">
                 {/* <img src={mainData.image} alt="" /> */}
-                
+                <InnerImageZoom
+                  src={mainData.image}
+                  zoomSrc={mainData.image}
+                  zoomType="hover"
+                  zoomPreload={true}
+                />
               </div>
             </div>
           </div>
