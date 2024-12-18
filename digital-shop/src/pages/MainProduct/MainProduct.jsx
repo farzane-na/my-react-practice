@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
+import {Helmet} from "react-helmet";
 import { useParams } from "react-router-dom";
 import Countdown from "react-countdown";
 import "react-inner-image-zoom/lib/InnerImageZoom/styles.min.css";
@@ -15,11 +16,13 @@ import { BsPatchCheck } from "react-icons/bs";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { IoIosArrowDown } from "react-icons/io";
 import ProductsContext from "../../context/ProductContext";
+import favIcon from "./../../asset/logo/favicon_new.webp"
 
 export default function MainProduct() {
   const { productID } = useParams();
   const [mainData, setMainData] = useState([]);
   const contextData = useContext(ProductsContext);
+  const [cutName,setcutName]=useState("") 
   useEffect(() => {
     let filterMainProduct = contextData.filter(
       (product) => product?.id === productID
@@ -27,15 +30,16 @@ export default function MainProduct() {
     setMainData(filterMainProduct[0]);
   }, []);
   useEffect(() => {
-    console.log("dara", mainData);
-
     const dataName = mainData?.name;
-    const cutName = dataName?.slice(0, 30);
-    document.title = `خرید ${cutName} ...`;
+    setcutName(dataName?.slice(0, 30))
   }, [mainData]);
 
   return (
     <div className="wrapper">
+      <Helmet>
+          <title>{`خرید ${cutName} ...`}</title>
+          <link rel="icon" href={favIcon} />
+      </Helmet>
       <div className="flex flex-col md:flex-row gap-10 mt-10 mb-12">
         <div className="right-side flex w-full md:w-[70%] flex-col-reverse md:flex-row items-start justify-between border border-gray-300 rounded-2xl p-11">
           <div className="right-right-side w-full md:w-[600px] flex flex-col gap-10">
