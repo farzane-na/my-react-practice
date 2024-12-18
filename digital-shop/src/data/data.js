@@ -26,6 +26,7 @@ import mobile4 from "./../asset/product/mobile/mobile4.webp"
 import mobile5 from "./../asset/product/mobile/mobile5.webp"
 import mobile6 from "./../asset/product/mobile/mobile6.webp"
 import mobile7 from "./../asset/product/mobile/mobile7.webp"
+import mobile8 from "./../asset/product/mobile/mobile8.webp"
 
 import comp1 from "./../asset/product/com/comp1.webp"
 import comp2 from "./../asset/product/com/comp2.webp"
@@ -56,7 +57,8 @@ const productsWithIds=[
         off:"10700000",
         category:"offer",
         image:off1,
-        time:259200000
+        time:259200000,
+        colors:["gold","white","black"]
     },
     {
         id:"d55b8847-88ca-49f9-b61f-a8ff9c8727fc",
@@ -65,7 +67,8 @@ const productsWithIds=[
         off:"6270000",
         category:"offer",
         image:off2,
-        time:518400000
+        time:518400000,
+        colors:["pink","white","black"]
     },
     {
         id:"80b71813-59ab-426e-ba80-87c995c99b57",
@@ -74,7 +77,8 @@ const productsWithIds=[
         off:"10790000",
         category:"offer",
         image:off3,
-        time:86400000
+        time:86400000,
+        colors:["black"]
     },
     {
         id:"a2ea4873-c9cf-476b-b387-574053f215b9",
@@ -83,7 +87,8 @@ const productsWithIds=[
         off:"29999000",
         category:"offer",
         image:off4,
-        time:1555200000
+        time:1555200000,
+        colors:["white","black","silver"]
     },
     {
         id:"c4e9e4aa-665a-4e8b-ba0d-203dc49504d9",
@@ -92,7 +97,8 @@ const productsWithIds=[
         off:"38099000",
         category:"offer",
         image:off5,
-        time:1555200000
+        time:1555200000,
+        colors:["black"]
     },
     {
         id:"14263b23-9c30-421c-9eda-ebb8b1f1ecf9",
@@ -101,7 +107,8 @@ const productsWithIds=[
         off:"65899000",
         category:"offer",
         image:off6,
-        time:86400000
+        time:86400000,
+        colors:["gold","white","black","blue"]
     },
     {
         id:"880f880c-4620-4d27-aba6-4c0096448827",
@@ -110,7 +117,8 @@ const productsWithIds=[
         off:"4479000",
         category:"offer",
         image:off7,
-        time:259200000
+        time:259200000,
+        colors:["white","black"]
     },
     {
         id:"4c00093c-999b-4c89-a501-cdcd492d993d",
@@ -119,7 +127,8 @@ const productsWithIds=[
         off:"30700000",
         category:"offer",
         image:off8,
-        time:1555200000
+        time:1555200000,
+        colors:["white"]
     },
     {
         id:"0e0a2ab7-cdb6-4e4a-8a78-fc82a80ba25e",
@@ -128,7 +137,8 @@ const productsWithIds=[
         off:"1989000",
         category:"offer",
         image:off9,
-        time:25200000
+        time:25200000,
+        colors:["silver"]
     },
     {
         id:"08226acd-9541-4d5c-97a2-aaa1ea949b8f",
@@ -137,7 +147,8 @@ const productsWithIds=[
         off:"4970000",
         category:"offer",
         image:off10,
-        time:777600000
+        time:777600000,
+        colors:["black"]
     },
     {
         id:"f79e2c17-2b76-487d-afa1-3b13e8c12cd3",
@@ -145,7 +156,8 @@ const productsWithIds=[
         price:"105000000",
         off:"0",
         category:"mobile",
-        image:mobile1
+        image:mobile1,
+        colors:["gold","white","black"]
     },
     {
         id:"1e141e25-7391-4328-b794-64b4fd54e35f",
@@ -153,7 +165,8 @@ const productsWithIds=[
         price:"49740000",
         off:"0",
         category:"mobile",
-        image:mobile2
+        image:mobile2,
+        colors:["gold","white","black","green","blue"]
     },
     {
         id:"d0106c2e-6ef2-494c-8646-ba2041a906eb",
@@ -161,7 +174,8 @@ const productsWithIds=[
         price:"42299000",
         off:"0",
         category:"mobile",
-        image:mobile3
+        image:mobile3,
+        colors:["blue","black"]
     },
     {
         id:"7bb8f616-aaa6-4759-95fd-5fc937b9f6da",
@@ -170,7 +184,8 @@ const productsWithIds=[
         off:"46990000",
         category:"mobile",
         image:mobile4,
-        time:777600000
+        time:777600000,
+        colors:["black"]
     },
     {
         id:"2a1394a8-36de-4da1-8f1b-3da8d2ba20ce",
@@ -178,7 +193,8 @@ const productsWithIds=[
         price:"21079000",
         off:"0",
         category:"mobile",
-        image:mobile5
+        image:mobile5,
+        colors:["green","white","black"]
     },
     {
         id:"f7762b04-9d36-479e-a796-44df8508cfcf",
@@ -187,7 +203,8 @@ const productsWithIds=[
         off:"29799000",
         category:"mobile",
         image:mobile6,
-        time:259200000
+        time:259200000,
+        colors:["green","white","black"]
     },
     {
         id:"720751e5-0c8c-4981-beff-de3fb7a46668",
@@ -195,7 +212,17 @@ const productsWithIds=[
         price:"41800000",
         off:"0",
         category:"mobile",
-        image:mobile7
+        image:mobile7,
+        colors:["white","black"]
+    },
+    {
+        id:"720751e5-0c8c-4981-beff-de3fb7a46668",
+        name:"گوشی موبايل شیائومی مدل 14T Pro ظرفیت 128 گیگابایت رم 12 گیگابایت",
+        price:"41800000",
+        off:"0",
+        category:"mobile",
+        image:mobile8,
+        colors:["white","black"]
     },
     {
         id:"dbce861d-916e-4080-b9a2-88eb2ccf1ed1",
@@ -203,7 +230,8 @@ const productsWithIds=[
         price:"55000000",
         off:"0",
         category:"laptop",
-        image:laptop1
+        image:laptop1,
+        colors:["silver","black"]
     },
     {
         id:"05c2cd1e-c3a5-4342-9f10-6f14fc55a59c",
@@ -211,7 +239,8 @@ const productsWithIds=[
         price:"50499000",
         off:"0",
         category:"laptop",
-        image:laptop2
+        image:laptop2,
+        colors:["silver","black"]
     },
     {
         id:"d9be6675-bc9d-4503-996b-c133047afb87",
@@ -219,7 +248,8 @@ const productsWithIds=[
         price:"27640000",
         off:"0",
         category:"laptop",
-        image:laptop3
+        image:laptop3,
+        colors:["white"]
     },
     {
         id:"bb594e07-91f7-4227-b766-4e1e3baed59d",
@@ -227,7 +257,8 @@ const productsWithIds=[
         price:"69500000",
         off:"0",
         category:"laptop",
-        image:laptop4
+        image:laptop4,
+        colors:["silver"]
     },
     {
         id:"942c8745-9511-4fa6-9a55-4f7488fa39b7",
@@ -235,7 +266,8 @@ const productsWithIds=[
         price:"15300000",
         off:"0",
         category:"laptop",
-        image:laptop5
+        image:laptop5,
+        colors:["silver","white","black"]
     },
     {
         id:"eed1fe5e-12ea-4875-ae82-4e43221e0662",
@@ -243,7 +275,8 @@ const productsWithIds=[
         price:"49999000",
         off:"0",
         category:"laptop",
-        image:laptop6
+        image:laptop6,
+        colors:["black"]
     },
     {
         id:"72c07979-1182-4f1d-955c-6fbcbcc254f7",
@@ -251,7 +284,8 @@ const productsWithIds=[
         price:"92000000",
         off:"0",
         category:"laptop",
-        image:laptop7
+        image:laptop7,
+        colors:["silver"]
     },
     {
         id:"65aa913f-b475-4e30-975a-61d845a4f55d",
@@ -259,7 +293,8 @@ const productsWithIds=[
         price:"22900000",
         off:"0",
         category:"laptop",
-        image:laptop8
+        image:laptop8,
+        colors:["silver","black"]
     },
     {
         id:"fc01024d-279e-4d79-94a3-4a93baf1206c",
@@ -267,7 +302,8 @@ const productsWithIds=[
         price:"91499000",
         off:"0",
         category:"laptop9",
-        image:laptop9
+        image:laptop9,
+        colors:["black"]
     },
     {
         id:"af132c8d-0e2c-47c6-b998-1912cb4865ae",
@@ -276,7 +312,8 @@ const productsWithIds=[
         off:"7699000",
         category:"comp",
         image:comp1,
-        time:1555200000
+        time:1555200000,
+        colors:["silver","black"]
     },
     {
         id:"c78c67a3-6acb-430b-aa8d-43be2057fc40",
@@ -284,7 +321,8 @@ const productsWithIds=[
         price:"12830000",
         off:"0",
         category:"comp",
-        image:comp2
+        image:comp2,
+        colors:["green","white","black"]
     },
     {
         id:"8faa295b-92a9-46e4-90ed-f2f1ce11bb4f",
@@ -293,7 +331,8 @@ const productsWithIds=[
         off:"29988000",
         category:"comp",
         image:comp3,
-        time:1555200000
+        time:1555200000,
+        colors:["black"]
     },
     {
         id:"d0dd2888-0ebc-43b1-a3e7-143a187fbc19",
@@ -301,7 +340,8 @@ const productsWithIds=[
         price:"2420000",
         off:"0",
         category:"comp",
-        image:comp4
+        image:comp4,
+        colors:["black"]
     },
     {
         id:"c2e83e97-2ff5-4b2d-b588-b4b2bd20ffa8",
@@ -309,7 +349,8 @@ const productsWithIds=[
         price:"19400000",
         off:"0",
         category:"comp",
-        image:comp5
+        image:comp5,
+        colors:["white"]
     },
     {
         id:"1b29ebb5-da08-4f4a-9c1e-29a0bf10b77e",
@@ -317,7 +358,8 @@ const productsWithIds=[
         price:"730000",
         off:"0",
         category:"comp",
-        image:comp6
+        image:comp6,
+        colors:["black","white"]
     },
     {
         id:"cb708b3a-5651-4323-bb89-76ad12c6f8ac",
@@ -325,7 +367,8 @@ const productsWithIds=[
         price:"3700000",
         off:"0",
         category:"comp",
-        image:comp7
+        image:comp7,
+        colors:["black"]
     },
     {
         id:"a3064815-7bca-4189-80cc-cbd64f7ebe2f",
@@ -334,7 +377,8 @@ const productsWithIds=[
         off:"1660000",
         category:"comp",
         image:comp8,
-        time:1555200000
+        time:1555200000,
+        colors:["black"]
     },
     {
         id:"ad8ff3e8-b990-43a8-8162-278dd529c38b",
@@ -343,7 +387,8 @@ const productsWithIds=[
         off:"5945000",
         category:"comp",
         image:comp9,
-        time:1555200000
+        time:1555200000,
+        colors:["black"]
     },
     {
         id:"c35c4ad1-f02d-4a4b-8f8a-7e7a9d9e935b",
@@ -352,7 +397,8 @@ const productsWithIds=[
         off:"22290000",
         category:"fer",
         image:fer1,
-        time:259200000
+        time:259200000,
+        colors:["black","silver"]
     },
     {
         id:"9ff6cc46-dba5-431d-b250-9ef797da68ab",
@@ -361,7 +407,8 @@ const productsWithIds=[
         off:"15890000",
         category:"fer",
         image:fer2,
-        time:259200000
+        time:259200000,
+        colors:["black","silver"]
     },
     {
         id:"c60dc8ff-6914-402a-a3ac-aa8d9f22cbd2",
@@ -370,7 +417,8 @@ const productsWithIds=[
         off:"21890000",
         category:"fer",
         image:fer3,
-        time:259200000
+        time:259200000,
+        colors:["black"]
     },
     {
         id:"ad626a0b-6390-42c0-9487-3ecc1a1edb02",
@@ -379,7 +427,8 @@ const productsWithIds=[
         off:"3219000",
         category:"fer",
         image:fer4,
-        time:259200000
+        time:259200000,
+        colors:["black"]
     },
     {
         id:"fbc43891-ed6d-4e0e-91b9-6138ea356fda",
@@ -388,7 +437,8 @@ const productsWithIds=[
         off:"15980000",
         category:"fer",
         image:fer5,
-        time:259200000
+        time:259200000,
+        colors:["black","silver"]
     },
     {
         id:"14c9ffd5-8137-4fd1-b553-6fc2ddcd7e03",
@@ -396,7 +446,8 @@ const productsWithIds=[
         price:"25667000",
         off:"21600000",
         category:"fer",
-        image:fer6
+        image:fer6,
+        colors:["black"]
     },
     {
         id:"48531c46-de9c-4231-94e0-2e2b3d6e4471",
@@ -405,7 +456,8 @@ const productsWithIds=[
         off:"3860000",
         category:"fer",
         image:fer7,
-        time:259200000
+        time:259200000,
+        colors:["silver","white"]
     },
     {
         id:"e652a087-36bf-447c-8dbb-3d0ae303595c",
@@ -413,7 +465,8 @@ const productsWithIds=[
         price:"275000",
         off:"255000",
         category:"fer",
-        image:fer8
+        image:fer8,
+        colors:["black","white"]
     },
     {
         id:"3cf36bb8-83a0-4616-be8e-ff937a90394f",
@@ -422,7 +475,8 @@ const productsWithIds=[
         off:"6330000",
         category:"fer",
         image:fer9,
-        time:259200000
+        time:259200000,
+        colors:["black","white"]
     },
     {
         id:"ef462c50-8d0a-444c-849f-5fbea273eb94",
@@ -430,7 +484,8 @@ const productsWithIds=[
         price:"5300000",
         off:"4869000",
         category:"fer",
-        image:fer10
+        image:fer10,
+        colors:["black"]
     }
 ]
 
