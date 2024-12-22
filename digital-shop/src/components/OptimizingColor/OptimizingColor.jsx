@@ -22,11 +22,11 @@ export default function OptimizingColor({colorName,isSelect,onSelect}){
     }
     return(
         <div 
-        className={`colorOption w-16 flex items-center border rounded p-0.5 gap-1 ${isSelect ? "border-gray-900" : "border-gray-300"}`}
+        className={`colorOption w-16 flex items-center border rounded p-0.5 gap-1 ${isSelect ? "border-blue-900" : "border-gray-300"}`}
         onClick={onSelect}
         >
             <span 
-            className='rounded-full w-3 h-3'
+            className='rounded-full w-3 h-3 shadow-sm'
             style={{backgroundColor:allColors[colorName]}}
             ></span>
             <span className='text-sm'>

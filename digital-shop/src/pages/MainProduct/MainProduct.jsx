@@ -25,6 +25,7 @@ export default function MainProduct() {
   const contextData = useContext(ProductsContext);
   const [cutName,setcutName]=useState("") 
   const [selectColor,setSelectColor]=useState("")
+  const [isLikeProduct,setIsLikeProduct]=useState(false)
   useEffect(() => {
     let filterMainProduct = contextData.filter(
       (product) => product?.id === productID
@@ -71,8 +72,8 @@ export default function MainProduct() {
               </div>
             </div>
             <div className="flex flex-col">
-              <h3>property</h3>
-              <div className="border border-gray-200 rounded-xl py-4 px-5">
+              {/* <h3>property</h3> */}
+              {/* <div className="border border-gray-200 rounded-xl py-4 px-5">
                 <p>
                   <span></span>
                   <span></span>
@@ -81,7 +82,7 @@ export default function MainProduct() {
                   <span></span>
                   <span></span>
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="left-right-side w-full md:w-auto">
@@ -99,7 +100,7 @@ export default function MainProduct() {
                 <TbBellRinging className="w-5 h-5 text-blue-950" />
               </span>
               <span className="flex justify-center items-center w-8 h-8 rounded-lg bg-white shadow-[2px_2px_10px_rgba(0,0,0,0.2)] p-1 cursor-pointer">
-                <IoMdHeartEmpty className="w-5 h-5 text-blue-950" />
+                <IoMdHeartEmpty className={`w-5 h-5 text-blue-950 ${isLikeProduct ? "fill-red-600" : "fill-current"}`} onClick={()=>setIsLikeProduct(true)} />
               </span>
             </div>
             <div className="relative overflow-hidden w-full md:w-80 flex justify-center items-center">
