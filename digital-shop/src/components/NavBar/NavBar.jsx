@@ -36,7 +36,9 @@ export default function NavBar() {
               </div>
             </div>
             <div className="cart border border-slate-100 rounded-md p-2">
-              <CiShoppingCart className="text-slate-950 w-6 h-6 cursor-pointer" />
+              <Link to={"/cart"}>
+                <CiShoppingCart className="text-slate-950 w-6 h-6 cursor-pointer" /> 
+              </Link>
             </div>
           </div>
         </div>
