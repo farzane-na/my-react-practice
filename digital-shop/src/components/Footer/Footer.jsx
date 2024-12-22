@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "./../../asset/logo/static_white_logo_techno.svg";
 import instagram from "./../../asset/social/static_instagram.svg";
 import telegram from "./../../asset/social/static_telegram.svg";
@@ -17,7 +18,7 @@ export default function Footer() {
   return (
     <footer className="p-8 bg-gradient-to-tl from-blue-950 to-blue-500 rounded-tr-xl rounded-tl-xl">
       <div className="flex flex-col gap-5 sm:flex-row justify-between items-center pt-10 pb-11 border-b border-b-white/50">
-        <img src={logo} alt="" className="w-44" />
+        <Link to={"/"}><img src={logo} alt="" className="w-44" /></Link>
         <a
           href="#"
           className="w-44 flex justify-between items-center gap-3 bg-white py-2 px-4 rounded-xl font-shabnamMedium"

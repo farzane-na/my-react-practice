@@ -14,9 +14,9 @@ export default function NavBar() {
       <nav className="navbar hidden lg:flex flex-col gap-y-5">
         <div className="w-full flex justify-between items-center">
           <div className="flex gap-x-8">
-            <div className="logo flex justify-center items-center">
+            <Link to={"/"} className="logo flex justify-center items-center">
               <img src={logo} alt="تکنولایف" />
-            </div>
+            </Link>
             <div className="searchbar flex items-center gap-x-5 p-4 bg-slate-100 rounded-md w-[450px]">
               <CiSearch className="text-slate-500 cursor-pointer w-6 h-6" />
               <input

@@ -17,6 +17,8 @@ import { BsPatchCheck } from "react-icons/bs";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { IoIosArrowDown } from "react-icons/io";
 import ProductsContext from "../../context/ProductContext";
+import { FaRegCircleXmark } from "react-icons/fa6";
+import { FaRegCircleCheck } from "react-icons/fa6";
 import favIcon from "./../../asset/logo/favicon_new.webp"
 
 export default function MainProduct() {
@@ -26,6 +28,7 @@ export default function MainProduct() {
   const [cutName,setcutName]=useState("") 
   const [selectColor,setSelectColor]=useState("")
   const [isLikeProduct,setIsLikeProduct]=useState(false)
+  const [isBuy,setIsBuy]=useState(true)
   useEffect(() => {
     let filterMainProduct = contextData.filter(
       (product) => product?.id === productID
@@ -38,7 +41,7 @@ export default function MainProduct() {
     mainData?.colors?.length>0 && setSelectColor(mainData.colors[0])
   }, [mainData]);
   return (
-    <div className="wrapper">
+    <div className="wrapper relative">
       <Helmet>
           <title>{`خرید ${cutName} ...`}</title>
           <link rel="icon" href={favIcon} />
@@ -55,7 +58,7 @@ export default function MainProduct() {
             </p>
             <div className="flex-flex-col border-b border-b-gray-200 pb-4">
               <p className="color pb-2">رنگ</p>
-              <div className="colors">
+              <div className="colors flex items-center gap-2">
                 {
                   mainData?.colors?.map((color,index)=>
                      (
@@ -191,13 +194,49 @@ export default function MainProduct() {
               }
               
             </div>
-            <button className="fixed bottom-0 left-0 right-0 md:relative w-full py-3 bg-blue-800 md:rounded-xl text-white cursor-pointer">
+            <button 
+            className={`fixed bottom-0 left-0 right-0 md:relative w-full py-3 md:rounded-xl cursor-pointer ${isBuy ? "bg-white border border-blue-800 text-blue-800" : "bg-blue-800 text-white "}`}
+            onClick={()=>setIsBuy(true)}
+            >
               افزودن به سبد خرید
-              <RiShoppingCartLine className="absolute top-0 bottom-0 m-auto left-6 w-5 h-5" />
+              {
+                isBuy ? (
+                  <IoIosArrowDown className="absolute top-0 bottom-0 m-auto left-6 w-5 h-5 rotate-90" />
+                ) : (
+                  <RiShoppingCartLine className="absolute top-0 bottom-0 m-auto left-6 w-5 h-5" />
+                )
+              }
             </button>
           </div>
         </div>
       </div>
+      {
+        isBuy && (
+          <div 
+          className="overlay fixed top-0 left-0 bottom-0 right-0 bg-gray-500/50 flex justify-center items-center"
+          onClick={()=>setIsBuy(false)}
+          >
+            <div className="w-96 flex flex-col bg-white rounded-2xl py-5 px-5">
+              <div className="flex items-center justify-between pb-5 border-b border-b-blue-800">
+                <div className="flex items-center gap-2">
+                  <FaRegCircleCheck className="w-6 h-6" />
+                  <span className="text-lg">کالا به سبد خرید اضافه شد</span>
+                </div>
+                <FaRegCircleXmark 
+                className="w-6 h-6 cursor-pointer"
+                onClick={()=>setIsBuy(false)}
+                />
+              </div>
+              <button 
+            className={`w-full flex justify-center items-center gap-2 py-3 md:rounded-xl cursor-pointer bg-white border border-blue-800 text-blue-800 mt-6`}
+            >
+              افزودن به سبد خرید
+              <IoIosArrowDown className="w-5 h-5 rotate-90" />
+            </button>
+            </div>
+          </div>
+        )
+      }
     </div>
   );
 }
