@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext, useRef } from "react";
 import {Helmet} from "react-helmet";
 import { useParams } from "react-router-dom";
 import Countdown from "react-countdown";
+import OptimizingColor from "../../components/OptimizingColor/OptimizingColor";
 import "react-inner-image-zoom/lib/InnerImageZoom/styles.min.css";
 import InnerImageZoom from "react-inner-image-zoom";
 import { IoShareSocialOutline } from "react-icons/io5";
@@ -23,6 +24,7 @@ export default function MainProduct() {
   const [mainData, setMainData] = useState([]);
   const contextData = useContext(ProductsContext);
   const [cutName,setcutName]=useState("") 
+  const [selectColor,setSelectColor]=useState("")
   useEffect(() => {
     let filterMainProduct = contextData.filter(
       (product) => product?.id === productID
@@ -32,8 +34,8 @@ export default function MainProduct() {
   useEffect(() => {
     const dataName = mainData?.name;
     setcutName(dataName?.slice(0, 30))
+    mainData?.colors?.length>0 && setSelectColor(mainData.colors[0])
   }, [mainData]);
-
   return (
     <div className="wrapper">
       <Helmet>
@@ -50,9 +52,23 @@ export default function MainProduct() {
               <span>نظرات کاربران &nbsp; </span>
               <span className="text-blue-700">0 نظر</span>
             </p>
-            <div className="flex-flex-col">
-              <p className="color pb-4 border-b border-b-gray-200"></p>
-              <div className="colors"></div>
+            <div className="flex-flex-col border-b border-b-gray-200 pb-4">
+              <p className="color pb-2">رنگ</p>
+              <div className="colors">
+                {
+                  mainData?.colors?.map((color,index)=>
+                     (
+                      <OptimizingColor 
+                      key={index}
+                      colorName={color}
+                      isSelect={selectColor===color}
+                      onSelect={()=>setSelectColor(color)}
+                       />
+                    )
+                  
+                  )
+                }
+              </div>
             </div>
             <div className="flex flex-col">
               <h3>property</h3>
