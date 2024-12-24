@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
 import {Helmet} from "react-helmet";
-import { useParams } from "react-router-dom";
+import { useParams , Link  } from "react-router-dom";
 import Countdown from "react-countdown";
 import OptimizingColor from "../../components/OptimizingColor/OptimizingColor";
 import "react-inner-image-zoom/lib/InnerImageZoom/styles.min.css";
@@ -21,6 +21,7 @@ import { FaRegCircleXmark } from "react-icons/fa6";
 import { FaRegCircleCheck } from "react-icons/fa6";
 import favIcon from "./../../asset/logo/favicon_new.webp"
 
+
 export default function MainProduct() {
   const { productID } = useParams();
   const [mainData, setMainData] = useState([]);
@@ -28,18 +29,36 @@ export default function MainProduct() {
   const [cutName,setcutName]=useState("") 
   const [selectColor,setSelectColor]=useState("")
   const [isLikeProduct,setIsLikeProduct]=useState(false)
-  const [isBuy,setIsBuy]=useState(true)
+  const [isBuy,setIsBuy]=useState(false)
+  const [cartList,setCartList]=useState([])
+
+  const checkingLocalStorage=()=>{
+    let localStorageData=localStorage.getItem("cart")
+    console.log(localStorageData);
+     !localStorageData ?
+       localStorage.setItem("cart",JSON.stringify([])) :
+       setCartList(JSON.parse(localStorageData))
+  }
+
   useEffect(() => {
     let filterMainProduct = contextData.filter(
       (product) => product?.id === productID
     );
     setMainData(filterMainProduct[0]);
+    checkingLocalStorage()
   }, []);
   useEffect(() => {
     const dataName = mainData?.name;
     setcutName(dataName?.slice(0, 30))
     mainData?.colors?.length>0 && setSelectColor(mainData.colors[0])
   }, [mainData]);
+  const buyingProduct=()=>{
+    setIsBuy(true)
+    const newCart = [...cartList, mainData];
+    setCartList(newCart)
+    localStorage.setItem("cart",JSON.stringify(newCart))
+  }
+
   return (
     <div className="wrapper relative">
       <Helmet>
@@ -196,7 +215,7 @@ export default function MainProduct() {
             </div>
             <button 
             className={`fixed bottom-0 left-0 right-0 md:relative w-full py-3 md:rounded-xl cursor-pointer ${isBuy ? "bg-white border border-blue-800 text-blue-800" : "bg-blue-800 text-white "}`}
-            onClick={()=>setIsBuy(true)}
+            onClick={()=>buyingProduct()}
             >
               افزودن به سبد خرید
               {
@@ -227,12 +246,13 @@ export default function MainProduct() {
                 onClick={()=>setIsBuy(false)}
                 />
               </div>
-              <button 
+              <Link
+              to={"/cart"} 
             className={`w-full flex justify-center items-center gap-2 py-3 md:rounded-xl cursor-pointer bg-white border border-blue-800 text-blue-800 mt-6`}
             >
-              افزودن به سبد خرید
+              رفتن به سبد خرید
               <IoIosArrowDown className="w-5 h-5 rotate-90" />
-            </button>
+            </Link>
             </div>
           </div>
         )
