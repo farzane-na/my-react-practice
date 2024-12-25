@@ -54,7 +54,8 @@ export default function MainProduct() {
   }, [mainData]);
   const buyingProduct=()=>{
     setIsBuy(true)
-    const newCart = [...cartList, mainData];
+    const newMainData={count:1,color:selectColor,...mainData}
+    const newCart = [...cartList, newMainData];
     setCartList(newCart)
     localStorage.setItem("cart",JSON.stringify(newCart))
   }
