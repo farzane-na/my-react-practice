@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 export default function Cart(){
     const [productsInCart,setProductsInCart]=useState([])
     useEffect(()=>{
-        setProductsInCart(JSON.parse(localStorage.getItem("cart")))
+        const storedCart = localStorage.getItem("cart");
+        setProductsInCart(storedCart ? JSON.parse(storedCart) : []);
     },[])
     const removeFromCartList=(productID)=>{
         let filteredProduct=productsInCart.filter(product=>product.id!==productID)
