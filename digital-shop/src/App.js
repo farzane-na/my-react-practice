@@ -4,6 +4,7 @@ import { useRoutes , useLocation } from "react-router-dom";
 import routes from "./routes";
 import ProductsContext from "./context/ProductContext";
 import productsWithIds from "./data/data"
+import CartContext from "./context/CartContext"
 
 function App() {
   const location=useLocation()
@@ -21,9 +22,11 @@ function App() {
   },[location])
   return (
     <div className="App">
-      <ProductsContext.Provider value={allProduct} >
-        {router}
-      </ProductsContext.Provider>
+      <CartContext>
+        <ProductsContext.Provider value={allProduct} >
+          {router}
+        </ProductsContext.Provider>
+      </CartContext>
     </div>
   );
 }

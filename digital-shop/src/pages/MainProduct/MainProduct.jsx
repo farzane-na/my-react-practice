@@ -56,9 +56,15 @@ export default function MainProduct() {
     setIsBuy(true)
     const newMainData={count:1,color:selectColor,...mainData}
     const newCart = [...cartList, newMainData];
+    console.log(newCart)
     setCartList(newCart)
-    localStorage.setItem("cart",JSON.stringify(newCart))
+    console.log(newCart);
+    
   }
+  useEffect(()=>{
+    localStorage.setItem("cart",JSON.stringify(cartList))
+
+  },[cartList])
 
   return (
     <div className="wrapper relative">
