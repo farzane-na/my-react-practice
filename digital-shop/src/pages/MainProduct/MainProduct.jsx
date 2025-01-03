@@ -21,6 +21,7 @@ import ProductsContext from "../../context/ProductContext";
 import { FaRegCircleXmark } from "react-icons/fa6";
 import { FaRegCircleCheck } from "react-icons/fa6";
 import favIcon from "./../../asset/logo/favicon_new.webp"
+import StylingNumber from "../../GlobalFunc/StylingNumber";
 
 
 export default function MainProduct() {
@@ -52,6 +53,7 @@ export default function MainProduct() {
     console.log("inja : ",state,dispatch)
   }, []);
   useEffect(() => {
+    console.log("data : ",mainData)
     const dataName = mainData?.name;
     setcutName(dataName?.slice(0, 30))
     mainData?.colors?.length>0 && setSelectColor(mainData.colors[0])
@@ -59,17 +61,18 @@ export default function MainProduct() {
   const buyingProduct=()=>{
     setIsBuy(true)
     const newMainData={count:1,color:selectColor,...mainData}
-    const newCart = [...cartList, newMainData];
-    console.log(newCart)
-    setCartList(newCart)
-    console.log(newCart);
+    dispatch({ type: "ADD_TO_CART", payload: newMainData });
+    // const newCart = [...cartList, newMainData];
+    // console.log(newCart)
+    // setCartList(newCart)
+    // console.log(newCart);
 
   }
-  useEffect(()=>{
-    // localStorage.setItem("cart",JSON.stringify(cartList))
-    dispatch({ type: "ADD_TO_CART", payload: cartList });
-
-  },[cartList])
+  // useEffect(()=>{
+  //   // localStorage.setItem("cart",JSON.stringify(cartList))
+  //   dispatch({ type: "ADD_TO_CART", payload: cartList });
+  //
+  // },[cartList])
 
   return (
     <div className="wrapper relative">
@@ -207,19 +210,29 @@ export default function MainProduct() {
             {
               mainData.off>0 && (
                 <span className="p-1 bg-blue-500 text-white text-sm rounded-xl">
-                  {`${mainData.price-mainData.off} تومان تخفیف`}
+                  {`${StylingNumber(mainData?.price-mainData?.off)} تومان تخفیف`}
                 </span>
               )
             }
             <div className="flex items-center flex-row-reverse gap-2 font-shabnamMedium">
-              <span>
-                {mainData.off?.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                تومان
-              </span>
               {
-                mainData.off>0 && (
-                  <span className="text-gray-500 total-price-in-off">
-                    {mainData.price.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                mainData.off>0 ? (
+                    <span>
+                        {StylingNumber(mainData?.off)}
+                      تومان
+                    </span>
+                ) : (
+                    <span>
+                        {StylingNumber(mainData?.price)}
+                         تومان
+                    </span>
+                )
+              }
+
+              {
+                  mainData.off > 0 && (
+                      <span className="text-gray-500 total-price-in-off">
+                    {StylingNumber(mainData?.price)}
                   </span>
                 )
               }

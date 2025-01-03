@@ -1,6 +1,6 @@
 import { ADD_TO_CART,REMOVE_FROM_CART,CHANGE_COUNT,TOTAL_PRODUCT,TOTAL_PRICE,CLEAR_CART } from "./actionType";
 
-const initState={
+export const initState={
     cart:[],
     totalPrice:0,
     totalProduct:0
@@ -9,7 +9,7 @@ const initState={
 export const CartReducer=(state=initState , action)=>{
     switch(action.type){
         case ADD_TO_CART :
-            localStorage.setItem("cart", JSON.stringify(action.payload));
+            localStorage.setItem("cart", JSON.stringify([...state.cart,action.payload]));
             console.log("hello")
             return {
                 ...state,
@@ -17,10 +17,10 @@ export const CartReducer=(state=initState , action)=>{
             };
         case TOTAL_PRICE :
             let totalPrice=0;
-            action.payload?.forEach((product)=>{
+            console.log("act :",action.payload)
+            action?.payload?.forEach((product)=>{
                 product.off > 0 ? totalPrice+=+product.off : totalPrice+=+product.price
             })
-            // return new Intl.NumberFormat("fa-IR").format(totalPrice);
             return {
                 ...state,
                 totalPrice: totalPrice
@@ -38,6 +38,17 @@ export const CartReducer=(state=initState , action)=>{
                 totalProduct: 0,
                 totalPrice: 0
             };
+        case REMOVE_FROM_CART:
+            console.log("hello in remove")
+            console.log("in rem : ",state)
+            console.log("payload : ",action.payload)
+            let filterProduct=state.cart?.filter(product=>product.id!==action.payload);
+            console.log("fil pro : ",filterProduct)
+            localStorage.setItem("cart",JSON.stringify(filterProduct))
+            return {
+                ...state,
+                cart:filterProduct
+            }
         default:
             return {...state};
 

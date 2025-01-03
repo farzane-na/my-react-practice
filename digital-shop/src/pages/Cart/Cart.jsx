@@ -3,14 +3,14 @@ import ProductInCart from "../../components/ProductInCart/ProductInCart";
 import empty from "./../../asset/cart/static_emptyBasket.webp"
 import { Link } from "react-router-dom";
 import {CartContext} from "../../context/cartContext";
-import StylingNumber from "../../GlobalFunc/StylingNumber";
-import stylingNumber from "../../GlobalFunc/StylingNumber";
+import StylingNumber from "../../GlobalFunc/StylingNumber.js";
 
 export default function Cart(){
     const { state, dispatch } = useContext(CartContext);
     const [productsInCart,setProductsInCart]=useState([])
     const [checkRule,setCheckRule]=useState(false)
     const [totalPrice,setTotalPrice]=useState(0)
+
     useEffect(()=>{
         const storedCart = localStorage.getItem("cart");
         setProductsInCart(storedCart ? JSON.parse(storedCart) : []);
@@ -18,17 +18,13 @@ export default function Cart(){
     useEffect(() => {
         console.log("hello")
         console.log("state ",state)
+        console.log("pro in :" ,productsInCart)
         dispatch({ type: "TOTAL_PRICE", payload: productsInCart })
         dispatch({ type: "TOTAL_PRODUCT", payload: productsInCart })
         setTotalPrice(state.totalPrice)
         console.log("in cart :",totalPrice)
     }, [productsInCart]);
-    const removeFromCartList=(productID)=>{
-        let filteredProduct=productsInCart.filter(product=>product.id!==productID)
-        console.log(filteredProduct);
-        
-        localStorage.setItem("cart",JSON.stringify(filteredProduct))
-    }
+
     const changeStatus=()=>{
         setCheckRule(prev=>!prev)
     }
@@ -45,7 +41,7 @@ export default function Cart(){
                                     console.log(product);
 
                                     return (
-                                        <ProductInCart key={product.id} onRemove={removeFromCartList}  {...product} />
+                                        <ProductInCart key={product.id} {...product} />
                                     )
                                 })) : (
                                 <div className="flex flex-col justify-center items-center gap-4">
@@ -82,9 +78,9 @@ export default function Cart(){
                             <span className={"text-blue-900 font-bold"}>
                                 {
                                     productsInCart.length ? (
-                                       ` ${stylingNumber(80000)} تومان`
+                                       ` ${StylingNumber(80000)} تومان`
                                     ) : (
-                                        0
+                                        "سبد خالی است"
                                     )
                                 }
                             </span>
@@ -94,7 +90,13 @@ export default function Cart(){
                                 مبلغ نهایی
                             </h2>
                             <span className={"text-blue-900 font-bold"}>
-                                {StylingNumber((state?.totalPrice + 80000))} تومان
+                                {
+                                productsInCart.length ? (
+                                       ` ${StylingNumber((state?.totalPrice + 80000))} تومان`
+                                    ) : (
+                                        "سبد خالی است"
+                                    )
+                                }
                             </span>
                         </div>
                         <form className={"flex items-center gap-2"}>

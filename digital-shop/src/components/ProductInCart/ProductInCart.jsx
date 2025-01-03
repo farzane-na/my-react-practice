@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState , useContext } from "react";
 import { CiTrash } from "react-icons/ci";
 import { LuPlus } from "react-icons/lu";
 import { HiMinus } from "react-icons/hi";
 import OptimizingColor from "../OptimizingColor/OptimizingColor";
+import {CartContext} from "../../context/cartContext";
 
 export default function ProductInCart({
   id,
@@ -12,11 +13,11 @@ export default function ProductInCart({
   off,
   count,
   color,
-  onRemove
+  onLoading
 }) {
   const [productCount, setProductCount] = useState(count);
   const [finalPrice, setFinalPrice] = useState("");
-
+  const {state,dispatch}=useContext(CartContext)
 
   useEffect(() => {
     setFinalPrice(off > 0 ? off : price);
@@ -29,6 +30,11 @@ export default function ProductInCart({
   const minusProduct = () => {
     setProductCount((prev) => prev - 1);
   };
+
+  const removeProductFromCart=(productID)=>{
+    dispatch({type:"REMOVE_FROM_CART",payload:productID})
+    onLoading()
+  }
 
 
   useEffect(() => {
@@ -49,7 +55,7 @@ export default function ProductInCart({
           {productCount == 1 ? (
             <CiTrash
               className="w-4 h-4 text-blue-950 cursor-pointer"
-              onClick={() => onRemove(id)}
+              onClick={() => removeProductFromCart(id)}
             />
           ) : (
             <HiMinus
