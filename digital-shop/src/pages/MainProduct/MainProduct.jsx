@@ -49,6 +49,7 @@ export default function MainProduct() {
     );
     setMainData(filterMainProduct[0]);
     checkingLocalStorage()
+    console.log("inja : ",state,dispatch)
   }, []);
   useEffect(() => {
     const dataName = mainData?.name;
@@ -66,7 +67,7 @@ export default function MainProduct() {
   }
   useEffect(()=>{
     // localStorage.setItem("cart",JSON.stringify(cartList))
-    // dispatch({ type: "ADD_TO_CART", payload: cartList });
+    dispatch({ type: "ADD_TO_CART", payload: cartList });
 
   },[cartList])
 
