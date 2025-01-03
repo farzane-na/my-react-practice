@@ -3,6 +3,8 @@ import ProductInCart from "../../components/ProductInCart/ProductInCart";
 import empty from "./../../asset/cart/static_emptyBasket.webp"
 import { Link } from "react-router-dom";
 import {CartContext} from "../../context/cartContext";
+import StylingNumber from "../../GlobalFunc/StylingNumber";
+import stylingNumber from "../../GlobalFunc/StylingNumber";
 
 export default function Cart(){
     const { state, dispatch } = useContext(CartContext);
@@ -17,7 +19,8 @@ export default function Cart(){
         console.log("hello")
         console.log("state ",state)
         dispatch({ type: "TOTAL_PRICE", payload: productsInCart })
-        setTotalPrice(state)
+        dispatch({ type: "TOTAL_PRODUCT", payload: productsInCart })
+        setTotalPrice(state.totalPrice)
         console.log("in cart :",totalPrice)
     }, [productsInCart]);
     const removeFromCartList=(productID)=>{
@@ -60,29 +63,39 @@ export default function Cart(){
                             <h2>
                                 تعداد کل محصولات
                             </h2>
-                            <span>
-
+                            <span className={"text-blue-900 font-bold"}>
+                                {StylingNumber(state?.totalProduct)} محصول
                             </span>
                         </div>
                         <div className={"flex justify-between items-center border-b border-b-gray-200 pb-3"}>
                             <h2>
                                 مبلغ خرید شما
                             </h2>
-                            <span>
-                                {totalPrice} تومان
+                            <span className={"text-blue-900 font-bold"}>
+                                {StylingNumber(state.totalPrice)} تومان
                             </span>
                         </div>
                         <div className={"flex justify-between items-center border-b border-b-gray-200 pb-3"}>
                             <h2>
                                 هزینه ارسال
                             </h2>
-                            <span></span>
+                            <span className={"text-blue-900 font-bold"}>
+                                {
+                                    productsInCart.length ? (
+                                       ` ${stylingNumber(80000)} تومان`
+                                    ) : (
+                                        0
+                                    )
+                                }
+                            </span>
                         </div>
                         <div className={"flex justify-between items-center border-b border-b-gray-200 pb-3"}>
                             <h2>
                                 مبلغ نهایی
                             </h2>
-                            <span></span>
+                            <span className={"text-blue-900 font-bold"}>
+                                {StylingNumber((state?.totalPrice + 80000))} تومان
+                            </span>
                         </div>
                         <form className={"flex items-center gap-2"}>
                             <input
