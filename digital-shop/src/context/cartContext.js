@@ -1,10 +1,12 @@
 import React ,{useReducer,createContext} from "react";
-import { CartReducer } from "./reduce/CartReducer";
+import { CartReducer } from "./reduce/cartReducer";
 
-const CartContext=createContext()
+export const CartContext=createContext()
 
 const CartProvider=({children})=>{
-    const [state,dispatch]=useReducer(CartReducer,{cart:[]})
+    const initialCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const [state,dispatch]=useReducer(CartReducer,initialCart)
 
     return (
         <CartContext.Provider value={{state,dispatch}}>

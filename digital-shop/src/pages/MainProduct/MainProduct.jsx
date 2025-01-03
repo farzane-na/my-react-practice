@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
 import {Helmet} from "react-helmet";
+import {CartContext} from "../../context/cartContext";
 import { useParams , Link  } from "react-router-dom";
 import Countdown from "react-countdown";
 import OptimizingColor from "../../components/OptimizingColor/OptimizingColor";
@@ -23,6 +24,8 @@ import favIcon from "./../../asset/logo/favicon_new.webp"
 
 
 export default function MainProduct() {
+  console.log("in : ",CartContext)
+  const { state, dispatch } = useContext(CartContext);
   const { productID } = useParams();
   const [mainData, setMainData] = useState([]);
   const contextData = useContext(ProductsContext);
@@ -59,10 +62,11 @@ export default function MainProduct() {
     console.log(newCart)
     setCartList(newCart)
     console.log(newCart);
-    
+
   }
   useEffect(()=>{
-    localStorage.setItem("cart",JSON.stringify(cartList))
+    // localStorage.setItem("cart",JSON.stringify(cartList))
+    // dispatch({ type: "ADD_TO_CART", payload: cartList });
 
   },[cartList])
 
