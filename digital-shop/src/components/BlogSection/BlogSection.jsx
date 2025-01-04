@@ -15,20 +15,19 @@ import "swiper/css/autoplay";
 import { MdNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
 import BlogContext from "../../context/BlogContext";
-import blog from "../../data/blog";
 
 
 export default function ProductSlider() {
-    const [allBlog,setAllBlog]=useState(blog)
+  const dataContext=useContext(BlogContext)
+    const [allBlog,setAllBlog]=useState(dataContext)
   return (
-    <BlogContext.Provider value={allBlog} >
     <div
       className="border border-gray-500 px-3 py-6 rounded-3xl mb-20"
     >
       <div className="flex justify-between items-center xs:px-11 mb-5">
         <h3 className="font-shabnamBold xs:text-xl">از وبلاگ تکنولایف</h3>
         <Link
-          href="#"
+          to={"/blog"}
           className="cursor-pointer flex justify-center items-center gap-1 text-blue-900 font-shabnamMedium"
         >
           <span> نمایش بیشتر در بلاگ</span>
@@ -106,6 +105,5 @@ export default function ProductSlider() {
                   </button>
       </div>
     </div>
-    </BlogContext.Provider>
   );
 }

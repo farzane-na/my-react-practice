@@ -5,6 +5,8 @@ import routes from "./routes";
 import ProductsContext from "./context/ProductContext";
 import productsWithIds from "./data/data"
 import CartProvider from "./context/cartContext"
+import BlogContext from "./context/BlogContext";
+import blog from "./data/blog";
 
 function App() {
   const isCart=localStorage.getItem("cart")
@@ -23,7 +25,9 @@ function App() {
     <div className="App">
       <CartProvider>
         <ProductsContext.Provider value={allProduct} >
-          {router}
+          <BlogContext.Provider value={blog}>
+            {router}
+          </BlogContext.Provider>
         </ProductsContext.Provider>
       </CartProvider>
     </div>

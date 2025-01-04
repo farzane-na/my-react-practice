@@ -5,6 +5,7 @@ import VerifyLogin from "./pages/VerifyLogin/VerifyLogin"
 import MainProduct from "./pages/MainProduct/MainProduct"
 import Cart from "./pages/Cart/Cart"
 import OffPage from "./pages/OffPage/OffPage";
+import BlogPage from "./pages/BlogPage/BlogPage";
 
 let routes=[
     {
@@ -38,6 +39,11 @@ let routes=[
         path:'/off-page',
         element:<OrgLayout><OffPage /></OrgLayout>,
         title:"تکنو آف"
+    },
+    {
+        path:'/blog',
+        element:<OrgLayout><BlogPage /></OrgLayout>,
+        title:"وبلاگ"
     },
 ]
 export default routes
