@@ -1,4 +1,4 @@
-import React, { useEffect, useState , useContext } from "react";
+import React, { useEffect, useState , useContext , useMemo} from "react";
 import { CiTrash } from "react-icons/ci";
 import { LuPlus } from "react-icons/lu";
 import { HiMinus } from "react-icons/hi";
@@ -37,12 +37,13 @@ export default function ProductInCart({
 
 
   useEffect(() => {
-    // const updatedProducts = products.map((product) => (product?.id === id ? {...product , count :productCount } : {...product}));
-    // console.log(updatedProducts)
     const newPayload={productID:id,count:productCount}
     dispatch({type:"CHANGE_COUNT",payload:newPayload})
-    // localStorage.setItem("cart", JSON.stringify(updatedProducts));
   }, [productCount]);
+
+  // const  = useMemo(() => {
+  //
+  // }, []);
 
   return (
     <div className="w-full flex items-center justify-between border border-gray-200 rounded-2xl p-4">

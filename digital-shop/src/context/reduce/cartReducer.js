@@ -21,7 +21,7 @@ export const CartReducer=(state=initState , action)=>{
         case TOTAL_PRICE :
             let totalPrice=0;
             action?.payload?.forEach((product)=>{
-                product.off > 0 ? totalPrice+=+product.off : totalPrice+=+product.price
+                product.off > 0 ? totalPrice+=(+product.off * product.count) : totalPrice+=(+product.price * product.count)
             })
             return {
                 ...state,
