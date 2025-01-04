@@ -36,13 +36,13 @@ export default function ProductInCart({
   }
 
 
-  // useEffect(() => {
-  //   const products = JSON.parse(localStorage.getItem("cart"));
-  //   const updatedProducts = products.map((product) => (product?.id === id ? {...product , count :productCount } : {...product}));
-  //   console.log(updatedProducts)
-  //
-  //   localStorage.setItem("cart", JSON.stringify(updatedProducts));
-  // }, [productCount]);
+  useEffect(() => {
+    // const updatedProducts = products.map((product) => (product?.id === id ? {...product , count :productCount } : {...product}));
+    // console.log(updatedProducts)
+    const newPayload={productID:id,count:productCount}
+    dispatch({type:"CHANGE_COUNT",payload:newPayload})
+    // localStorage.setItem("cart", JSON.stringify(updatedProducts));
+  }, [productCount]);
 
   return (
     <div className="w-full flex items-center justify-between border border-gray-200 rounded-2xl p-4">

@@ -7,23 +7,18 @@ import StylingNumber from "../../GlobalFunc/StylingNumber.js";
 
 export default function Cart(){
     const { state, dispatch } = useContext(CartContext);
-    const [productsInCart,setProductsInCart]=useState([])
+    // const [productsInCart,setProductsInCart]=useState([])
     const [checkRule,setCheckRule]=useState(false)
     const [totalPrice,setTotalPrice]=useState(0)
 
-    useEffect(()=>{
-        // const storedCart = localStorage.getItem("cart");
-        setProductsInCart(state?.cart);
-    },[])
     useEffect(() => {
-        dispatch({ type: "TOTAL_PRICE", payload: productsInCart })
-        dispatch({ type: "TOTAL_PRODUCT", payload: productsInCart })
-        setTotalPrice(state.totalPrice)
-    }, [productsInCart]);
+        dispatch({ type: "TOTAL_PRICE", payload: state.cart })
+        dispatch({ type: "TOTAL_PRODUCT", payload: state.cart })
+    }, [state.cart]);
 
     useEffect(() => {
-        setProductsInCart(state?.cart); // همگام‌سازی محصولات در استیت محلی
-    }, [state.cart]);
+        setTotalPrice(state.totalPrice);
+    }, [state.totalPrice]);
 
     const changeStatus=()=>{
         setCheckRule(prev=>!prev)
@@ -34,7 +29,7 @@ export default function Cart(){
                 <h2>سبد خرید</h2>
                 <div className="flex flex-col lg:flex-row items-start gap-3 mt-3">
                     <div
-                        className={`cart-wrapper w-full min-h-[540px] flex flex-col ${!productsInCart && "justify-center items-center"}  gap-y-5 border border-gray-200 rounded-2xl p-3`}>
+                        className={`cart-wrapper w-full min-h-[540px] flex flex-col ${!state.cart && "justify-center items-center"}  gap-y-5 border border-gray-200 rounded-2xl p-3`}>
                         {
                             state.cart.length ? (
                                 state.cart?.map(product => {
@@ -75,7 +70,7 @@ export default function Cart(){
                             </h2>
                             <span className={"text-blue-900 font-bold"}>
                                 {
-                                    productsInCart.length ? (
+                                    state.cart?.length ? (
                                        ` ${StylingNumber(80000)} تومان`
                                     ) : (
                                         "سبد خالی است"
@@ -89,7 +84,7 @@ export default function Cart(){
                             </h2>
                             <span className={"text-blue-900 font-bold"}>
                                 {
-                                productsInCart.length ? (
+                                state.cart?.length ? (
                                        ` ${StylingNumber((state?.totalPrice + 80000))} تومان`
                                     ) : (
                                         "سبد خالی است"

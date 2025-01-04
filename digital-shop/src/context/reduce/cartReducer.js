@@ -57,6 +57,9 @@ export const CartReducer=(state=initState , action)=>{
                 ...state,
                 cart:filterProducts
             }
+        case CHANGE_COUNT:
+            const updatedProducts = state.cart?.map((product) => (product?.id === action.payload.productID ? {...product , count :action.payload.count } : {...product}));
+            console.log(updatedProducts)
         default:
             return {...state};
 
