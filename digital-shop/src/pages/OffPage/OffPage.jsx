@@ -1,4 +1,4 @@
-import React , {useState,useContext,useEffect} from "react";
+import React , {useState,useContext,useEffect,useMemo} from "react";
 import "./OffPage.css"
 import ProductsContext from "../../context/ProductContext";
 import ProductCart from "../../components/ProductCart/ProductCart";
@@ -9,26 +9,19 @@ import StylingNumber from "../../GlobalFunc/StylingNumber";
 export default function OffPage(){
     const productsContext=useContext(ProductsContext)
     const [offerProducts,setOfferProducts]=useState([])
-    const [filterPrice,setFillterPrice]=useState(150_000_000)
+    const [filterPrice,setFillterPrice]=useState(50_000_000)
 
     useEffect(() => {
         const filterOffProducts=productsContext.filter(product=>{
-            return product.off>0
+            return +product.off>0
         })
         setOfferProducts(filterOffProducts)
     }, []);
 
-    useEffect(()=>{
-        console.log(typeof filterPrice)
-        let filterByPrice=productsContext.filter(product=>{
-            console.log(typeof product.off)
-            if(+product.off<+filterPrice){
-                return product
-            }
-        })
-        console.log(filterByPrice)
-        setOfferProducts(filterByPrice)
-    },[filterPrice])
+    const filteredProducts = useMemo(() => {
+        return offerProducts.filter(product => +product.price <= filterPrice);
+    }, [offerProducts, filterPrice]);
+
     return (
         <div className={"off-page my-7"}>
             <div className={"wrapper"}>
@@ -46,7 +39,7 @@ export default function OffPage(){
                             </p>
                             <input type={"range"}
                                     value={filterPrice}
-                                   max={150000000}
+                                   max={50000000}
                                    min={100000}
                                    onChange={(event)=>setFillterPrice(event.target.value)}
                                    className={"range-input w-full"}
@@ -56,7 +49,7 @@ export default function OffPage(){
                     </div>
                     <div className={"w-[74%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3"}>
                         {
-                            offerProducts.map(product => {
+                            filteredProducts?.map(product => {
                                 return (
                                     <ProductCart key={product.id} {...product} />
                                 )
