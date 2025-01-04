@@ -1,0 +1,49 @@
+ .range-input::-webkit-slider-thumb {
+     appearance: none;
+     height: 20px;
+     width: 20px;
+     background-color: #1e3a8a; /* رنگ ثابت */
+     border-radius: 50%;
+     box-shadow: 0 0 5px rgba(30, 58, 138, 0.5);
+     transition: transform 0.2s ease-in-out;
+     cursor: pointer;
+ }
+
+.range-input::-webkit-slider-thumb:hover {
+    transform: scale(1.2); /* فقط اندازه تغییر کند */
+}
+
+.range-input::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    background-color: #1e3a8a; /* رنگ ثابت */
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(30, 58, 138, 0.5);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.range-input::-moz-range-thumb:hover {
+    transform: scale(1.2);
+}
+
+.range-input::-ms-thumb {
+    height: 20px;
+    width: 20px;
+    background-color: #1e3a8a; /* رنگ ثابت */
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(30, 58, 138, 0.5);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.range-input::-ms-thumb:hover {
+    transform: scale(1.2);
+}
+
+/* استایل نوار اسلایدر */
+.range-input {
+    accent-color: #1e3a8a; /* برای سازگاری بیشتر */
+}
