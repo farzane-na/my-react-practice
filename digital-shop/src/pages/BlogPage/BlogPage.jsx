@@ -13,7 +13,7 @@ import {Link} from 'react-router-dom'
               AllDataContext?.map((blog)=>{
                return (
                    <div className={"relative border border-gray-200 rounded-xl p-2 flex flex-col gap-2"}>
-                       <Link to={"/"} className={"absolute w-full h-full inset-0"}></Link>
+                       <Link to={`/blog/${blog.id}`} className={"absolute w-full h-full inset-0"}></Link>
                        <img src={blog.image} className={"w-full rounded"} />
                        <h2 className={"line-clamp-2"}>
                            {blog.title}

@@ -6,6 +6,7 @@ import MainProduct from "./pages/MainProduct/MainProduct"
 import Cart from "./pages/Cart/Cart"
 import OffPage from "./pages/OffPage/OffPage";
 import BlogPage from "./pages/BlogPage/BlogPage";
+import MainBlog from "./pages/MainBlog/MainBlog";
 
 let routes=[
     {
@@ -43,6 +44,11 @@ let routes=[
     {
         path:'/blog',
         element:<OrgLayout><BlogPage /></OrgLayout>,
+        title:"وبلاگ"
+    },
+    {
+        path:'/blog/:blogID',
+        element:<OrgLayout><MainBlog /></OrgLayout>,
         title:"وبلاگ"
     },
 ]

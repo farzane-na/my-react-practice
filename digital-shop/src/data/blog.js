@@ -10,37 +10,37 @@ import blog7 from "./../asset/blog/7.webp"
 
 const blog=[
     {
-        id:uuidv4(),
+        id:1,
         title:"مقایسه گلکسی S24 اولترا با آیفون 16 پرومکس | تاج و تخت از آن پادشاه کدام اقلیم می‌شود؟",
         image:blog1
     },
     {
-        id:uuidv4(),
+        id:2,
         title:"بازی کنید و به درآمد برسید! صفر تا صد آموزش کسب درآمد از بازی",
         image:blog2
     },
     {
-        id:uuidv4(),
+        id:3,
         title:"دریفت دسته Ps5 چیست؟ نحوه رفع دریفت دسته پلی استیشن 5",
         image:blog3
     },
     {
-        id:uuidv4(),
+        id:4,
         title:"روش تشخیص کابل اصلی آیفون از تقلبی | مطمئن خرید کنید!",
         image:blog4
     },
     {
-        id:uuidv4(),
+        id:5,
         title:"بهترین مدل و پرفروشترین مدل های جاروبرقی پارس خزر",
         image:blog5
     },
     {
-        id:uuidv4(),
+        id:6,
         title:"بهترین گوشی تا 5 میلیون تومان",
         image:blog6
     },
     {
-        id:uuidv4(),
+        id:7,
         title:"بهترین اپلیکیشن ها برای مطالعه و درس خواندن",
         image:blog7
     },
