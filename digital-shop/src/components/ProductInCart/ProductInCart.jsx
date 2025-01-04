@@ -33,17 +33,16 @@ export default function ProductInCart({
 
   const removeProductFromCart=(productID)=>{
     dispatch({type:"REMOVE_FROM_CART",payload:productID})
-    onLoading()
   }
 
 
-  useEffect(() => {
-    const products = JSON.parse(localStorage.getItem("cart"));
-    const updatedProducts = products.map((product) => (product?.id === id ? {...product , count :productCount } : {...product}));
-    console.log(updatedProducts)
-  
-    localStorage.setItem("cart", JSON.stringify(updatedProducts));
-  }, [productCount]);
+  // useEffect(() => {
+  //   const products = JSON.parse(localStorage.getItem("cart"));
+  //   const updatedProducts = products.map((product) => (product?.id === id ? {...product , count :productCount } : {...product}));
+  //   console.log(updatedProducts)
+  //
+  //   localStorage.setItem("cart", JSON.stringify(updatedProducts));
+  // }, [productCount]);
 
   return (
     <div className="w-full flex items-center justify-between border border-gray-200 rounded-2xl p-4">

@@ -8,7 +8,6 @@ import CartProvider from "./context/cartContext"
 
 function App() {
   const isCart=localStorage.getItem("cart")
-  console.log("cart :",isCart)
   !isCart && localStorage.setItem("cart",JSON.stringify([]))
   const location=useLocation()
   let router=useRoutes(routes)

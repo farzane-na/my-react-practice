@@ -12,18 +12,18 @@ export default function Cart(){
     const [totalPrice,setTotalPrice]=useState(0)
 
     useEffect(()=>{
-        const storedCart = localStorage.getItem("cart");
-        setProductsInCart(storedCart ? JSON.parse(storedCart) : []);
+        // const storedCart = localStorage.getItem("cart");
+        setProductsInCart(state?.cart);
     },[])
     useEffect(() => {
-        console.log("hello")
-        console.log("state ",state)
-        console.log("pro in :" ,productsInCart)
         dispatch({ type: "TOTAL_PRICE", payload: productsInCart })
         dispatch({ type: "TOTAL_PRODUCT", payload: productsInCart })
         setTotalPrice(state.totalPrice)
-        console.log("in cart :",totalPrice)
     }, [productsInCart]);
+
+    useEffect(() => {
+        setProductsInCart(state?.cart); // همگام‌سازی محصولات در استیت محلی
+    }, [state.cart]);
 
     const changeStatus=()=>{
         setCheckRule(prev=>!prev)
@@ -36,10 +36,8 @@ export default function Cart(){
                     <div
                         className={`cart-wrapper w-full min-h-[540px] flex flex-col ${!productsInCart && "justify-center items-center"}  gap-y-5 border border-gray-200 rounded-2xl p-3`}>
                         {
-                            productsInCart.length ? (
-                                productsInCart?.map(product => {
-                                    console.log(product);
-
+                            state.cart.length ? (
+                                state.cart?.map(product => {
                                     return (
                                         <ProductInCart key={product.id} {...product} />
                                     )
