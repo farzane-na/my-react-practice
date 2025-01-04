@@ -8,6 +8,7 @@ import {
 import { PiCoins } from "react-icons/pi";
 import { HiMiniXMark } from "react-icons/hi2";
 import favicon from "./../../asset/logo/favicon_new.webp";
+import {Link} from "react-router-dom";
 
 export default function Menu({ onToggle, mobile }) {
   const [openMenu,setOpenMenu]=useState(false)
@@ -36,8 +37,8 @@ export default function Menu({ onToggle, mobile }) {
         </a>
       </li>
       <li>
-        <a
-          href=""
+        <Link
+          to={"/off-page"}
           className="flex items-center gap-x-2 text-slate-950 group hover:text-blue-900 transition-all"
         >
           <svg
@@ -54,7 +55,7 @@ export default function Menu({ onToggle, mobile }) {
             />
           </svg>
           <span>تکنوآف</span>
-        </a>
+        </Link>
       </li>
       <li>
         <a

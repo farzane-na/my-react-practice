@@ -4,6 +4,7 @@ import Login from "./pages/Login/Login"
 import VerifyLogin from "./pages/VerifyLogin/VerifyLogin"
 import MainProduct from "./pages/MainProduct/MainProduct"
 import Cart from "./pages/Cart/Cart"
+import OffPage from "./pages/OffPage/OffPage";
 
 let routes=[
     {
@@ -32,6 +33,11 @@ let routes=[
         path:'/cart',
         element:<OrgLayout><Cart /></OrgLayout>,
         title:"سبد خرید"
+    },
+    {
+        path:'/off-page',
+        element:<OrgLayout><OffPage /></OrgLayout>,
+        title:"تکنو آف"
     },
 ]
 export default routes
