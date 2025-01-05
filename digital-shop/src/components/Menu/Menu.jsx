@@ -28,13 +28,13 @@ export default function Menu({ onToggle, mobile }) {
         </div>
       ) : null}
       <li>
-        <a
-          href=""
+        <Link
+          to={"/shop"}
           className="flex items-center gap-x-2 text-slate-950 group hover:text-blue-900 transition-all"
         >
           <CiMenuBurger className="w-6 h-6" />
-          <span>دسته بندی محصولات</span>
-        </a>
+          <span>تمامی محصولات</span>
+        </Link>
       </li>
       <li>
         <Link

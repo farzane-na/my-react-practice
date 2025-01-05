@@ -8,6 +8,7 @@ import OffPage from "./pages/OffPage/OffPage";
 import BlogPage from "./pages/BlogPage/BlogPage";
 import MainBlog from "./pages/MainBlog/MainBlog";
 import ProductCategory from './pages/ProductCategory/ProductCategory'
+import Shop from "./pages/Shop/Shop";
 
 let routes=[
     {
@@ -56,6 +57,11 @@ let routes=[
         path:'/product/category/:productCat',
         element:<OrgLayout><ProductCategory /></OrgLayout>,
         title:"دسته بندی محصولات"
+    },
+    {
+        path:'/shop',
+        element:<OrgLayout><Shop /></OrgLayout>,
+        title:"فروشگاه"
     },
 ]
 export default routes
