@@ -22,10 +22,11 @@ import Countdown from 'react-countdown';
 export default function ProductSlider({category,border,title}) {
   const contextData=useContext(ProductsContext)
   const [filteredProducts,setFilteredProducts]=useState([])
-  useEffect(()=>{
-    let mainProducts=contextData.filter(product=>product.category===category)
+  useEffect( ()=>{
+    console.log("produtc" , contextData)
+    let mainProducts=contextData?.filter(product=>product?.category===category)
     setFilteredProducts(mainProducts)
-  },[])
+  },[contextData])
   return (
     <div
       className={`border ${
@@ -104,19 +105,19 @@ export default function ProductSlider({category,border,title}) {
                       }
                       <div className="item-slider flex flex-col gap-y-2 pl-2">
                         <div className="relative flex justify-center items-center">
-                          <img src={product.image} alt="" />
+                          <img src={product?.image} alt="" />
                           <Link to={`/product/${product.id}`} className="absolute top-0 left-0 right-0 bottom-0 w-full h-full"></Link>
                         </div>
-                        <Link to={`/product/${product.id}`} className="text-sm line-clamp-2 leading-6 h-12">{product.name}</Link>
-                        <div className={`flex ${product.off>0 ? "justify-between" : "justify-end"} items-start`}>
+                        <Link to={`/product/${product?.id}`} className="text-sm line-clamp-2 leading-6 h-12">{product?.name}</Link>
+                        <div className={`flex ${product?.off>0 ? "justify-between" : "justify-end"} items-start`}>
                           {
-                            product.off>0 && (
+                            product?.off>0 && (
                               <span className="bg-blue-500 px-1 py-0.5 rounded text-sm text-white">
                             {
-                              (100-Math.ceil((product.off*100)/product.price))===0 ? (
+                              (100-Math.ceil((product?.off*100)/product?.price))===0 ? (
                                 1+" %"
                               ) : (
-                                (100-Math.ceil((product.off*100)/product.price))+" %"
+                                (100-Math.ceil((product?.off*100)/product?.price))+" %"
                               )
                             }
                           </span>
@@ -127,14 +128,14 @@ export default function ProductSlider({category,border,title}) {
                             {
                               product.off>0 && (
                                 <span className="flex justify-center items-center gap-0.5">
-                                <span>{product.off.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
+                                <span>{product?.off.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
                                 <span className="text-xs">تومان</span>
                                 </span>
                               )
                             }
-                            <span className={`flex justify-center items-center gap-0.5 ${product.off>0 ? "text-gray-500 total-price-in-off" : "text-black"}`}>
+                            <span className={`flex justify-center items-center gap-0.5 ${product?.off>0 ? "text-gray-500 total-price-in-off" : "text-black"}`}>
                               {
-                                product.price.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                                product?.price.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                               }
                               <span className="text-xs">تومان</span>
                             </span>

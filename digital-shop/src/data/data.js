@@ -489,4 +489,11 @@ const productsWithIds=[
     }
 ]
 
+let ProductDataFromApi=[]
+fetch("https://677aeda320824100c0786d73.mockapi.io/api/product/products")
+    .then(res=>res.json())
+    .then(async data=>{
+        ProductDataFromApi=await [...data]
+    })
+export {ProductDataFromApi}
 export default productsWithIds;
