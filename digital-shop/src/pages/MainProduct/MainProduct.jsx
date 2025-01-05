@@ -80,11 +80,11 @@ export default function MainProduct() {
           <title>{`خرید ${cutName} ...`}</title>
           <link rel="icon" href={favIcon} />
       </Helmet>
-      <div className="flex flex-col md:flex-row gap-10 mt-10 mb-12">
+      <div className="flex flex-col md:flex-row md:items-start gap-10 mt-10 mb-12">
         <div className="right-side flex w-full md:w-[70%] flex-col-reverse md:flex-row items-start justify-between border border-gray-300 rounded-2xl p-11">
           <div className="right-right-side w-full md:w-[600px] flex flex-col gap-10">
             <h2 className="leading-7 text-base md:text-xl font-shabnamMedium">
-              {mainData.name}
+              {mainData?.name}
             </h2>
             <p className="w-[30%] pb-4 border-b border-b-gray-200">
               <span>نظرات کاربران &nbsp; </span>
@@ -143,8 +143,8 @@ export default function MainProduct() {
             <div className="relative overflow-hidden w-full md:w-80 flex justify-center items-center">
               {/* <img src={mainData.image} alt="" /> */}
               <InnerImageZoom
-                src={mainData.image}
-                zoomSrc={mainData.image}
+                src={mainData?.image}
+                zoomSrc={mainData?.image}
                 zoomType="hover"
                 zoomPreload={true}
               />
@@ -152,10 +152,10 @@ export default function MainProduct() {
           </div>
         </div>
         <div className="left-side flex flex-col flex-grow gap-6 text-sm p-3 border shadow-[2px_2px_10px_rgba(0,0,0,0.1)]  rounded-2xl">
-          {mainData.off > 0 && (
+          {mainData?.off > 0 && (
             <div className="off-slider relative w-full flex justify-between items-center py-0.5 font-shabnamBold text-blue-600">
               <span className="text-sm">فروش ویژه</span>
-              <Countdown date={1734269834600 + mainData.time} />
+              <Countdown date={1734269834600 + mainData?.time} />
             </div>
           )}
           <div className="p-2 flex flex-col gap-2">
@@ -208,7 +208,7 @@ export default function MainProduct() {
           </div>
           <div className="flex flex-col items-end gap-5">
             {
-              mainData.off>0 && (
+              mainData?.off>0 && (
                 <span className="p-1 bg-blue-500 text-white text-sm rounded-xl">
                   {`${StylingNumber(mainData?.price-mainData?.off)} تومان تخفیف`}
                 </span>
@@ -216,7 +216,7 @@ export default function MainProduct() {
             }
             <div className="flex items-center flex-row-reverse gap-2 font-shabnamMedium">
               {
-                mainData.off>0 ? (
+                mainData?.off>0 ? (
                     <span>
                         {StylingNumber(mainData?.off)}
                       تومان
@@ -230,7 +230,7 @@ export default function MainProduct() {
               }
 
               {
-                  mainData.off > 0 && (
+                  mainData?.off > 0 && (
                       <span className="text-gray-500 total-price-in-off">
                     {StylingNumber(mainData?.price)}
                   </span>

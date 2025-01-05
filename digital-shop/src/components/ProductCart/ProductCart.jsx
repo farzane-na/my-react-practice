@@ -29,18 +29,34 @@ export default function ProductCart ({id,image,price,off,name,colors}){
             <p className={"line-clamp-2 text-sm"}>
                 {name}
             </p>
-            <div className={"w-full flex justify-between items-start"}>
-                <span className={"bg-blue-600 rounded text-white text-center px-3 py-1 text-xs"}>
-                    {Math.ceil((price-off)*100/price)}%
-                </span>
+            <div className={`w-full flex ${off>0 ? "justify-between" : "justify-end"} items-start`}>
+                {
+                    off>0 && (
+                        <span className={"bg-blue-600 rounded text-white text-center px-3 py-1 text-xs"}>
+                            {Math.ceil((price - off) * 100 / price)}%
+                        </span>
+                    )
+                }
+
                 <div className={"flex flex-col gap-2"}>
-                    <span className={"text-blue-900 font-black text-sm"}>
-                        {StylingNumber(off)} تومان
-                    </span>
-                    <span className={"total-price-in-off text-gray-500 text-sm"}>
-                        {StylingNumber(price)} تومان
-                    </span>
-                </div>
+                    {
+                        off > 0 ? (
+                            <>
+                                <span className={"text-blue-900 font-black text-sm"}>
+                                    {StylingNumber(off)} تومان
+                                </span>
+                                <span className={"total-price-in-off text-gray-500 text-sm"}>
+                                    {StylingNumber(price)} تومان
+                                </span>
+                            </>
+                        ) : (
+                                <span className={"text-blue-900 font-black text-sm"}>
+                                    {StylingNumber(price)} تومان
+                                </span>
+                         )
+                    }
+
+            </div>
             </div>
         </div>
     )

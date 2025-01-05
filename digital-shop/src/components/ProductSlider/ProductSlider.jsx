@@ -35,7 +35,7 @@ export default function ProductSlider({category,border,title}) {
       <div className="flex justify-between items-center xs:px-11 mb-5">
         {title && <h3 className="font-shabnamBold xs:text-xl">{title}</h3>}
         <Link
-          href="#"
+          to={`/product/category/${category}`}
           className="cursor-pointer flex justify-center items-center gap-1 text-blue-900 font-shabnamMedium"
         >
           <span> نمایش همه</span>
