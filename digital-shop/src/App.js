@@ -19,12 +19,10 @@ function App() {
     fetch("https://677aeda320824100c0786d73.mockapi.io/api/product/products")
         .then(res=>res.json())
         .then(data=>{
-          console.log("ftech :",data)
           setAllProduct(data)
         })
   },[])
     useEffect(()=>{
-        console.log(allProduct)
     },[allProduct])
   useEffect(()=>{
     const currentRoute = routes.find((route) => route.path === location.pathname);

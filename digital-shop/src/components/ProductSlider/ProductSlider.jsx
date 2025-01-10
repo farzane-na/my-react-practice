@@ -23,7 +23,6 @@ export default function ProductSlider({category,border,title}) {
   const contextData=useContext(ProductsContext)
   const [filteredProducts,setFilteredProducts]=useState([])
   useEffect( ()=>{
-    console.log("produtc" , contextData)
     let mainProducts=contextData?.filter(product=>product?.category===category)
     setFilteredProducts(mainProducts)
   },[contextData])

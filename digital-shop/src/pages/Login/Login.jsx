@@ -56,7 +56,7 @@ export default function Login() {
                 type="text"
                 className="peer w-full h-12 outline-none px-6 py-1 rounded-lg relative z-10 bg-transparent"
                 id="phone-number"
-                onChange={(event) => setPhoneNumber(event.target.value)}
+                onChange={(event) => setPhoneNumber(event.target?.value)}
                 value={phoneNumber}
               />
               <span

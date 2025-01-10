@@ -9,7 +9,6 @@ import banners from '../../data/banner'
 import BlogSection from "./../../components/BlogSection/BlogSection"
 
 export default function Home() {
-  console.log("time : ",Date.now());
   const [allBanner,setAllBanner]=useState(banners)
   return (
     <div className="home">

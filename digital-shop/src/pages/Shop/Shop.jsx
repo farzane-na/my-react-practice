@@ -14,7 +14,6 @@ export default function Shop(){
 
     const filteredProducts = useMemo(() => {
         const filter=allData.filter(product => +product.price <= +filterPrice);
-        console.log(filter)
         return filter
     }, [filterPrice,allData]);
     return (
