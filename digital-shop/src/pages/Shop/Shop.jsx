@@ -13,7 +13,9 @@ export default function Shop(){
     },[allProducts])
 
     const filteredProducts = useMemo(() => {
-        return allData.filter(product => +product.price <= +filterPrice);
+        const filter=allData.filter(product => +product.price <= +filterPrice);
+        console.log(filter)
+        return filter
     }, [filterPrice,allData]);
     return (
         <div className={"wrapper"}>

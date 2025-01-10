@@ -112,7 +112,7 @@ export default function ProductSlider({category,border,title}) {
                             product.off>0 ? (
                                 <div className="off-slider relative w-full flex justify-between items-center py-0.5 font-shabnamBold text-blue-600 mb-2">
                                   <span className="text-sm">فروش ویژه</span>
-                                  <Countdown date={1734269834600 + product.time } />
+                                  <Countdown date={173426999 + Date.now() } />
                                 </div>
                             ) : (
                                 <div className="h-7 w-full"></div>
