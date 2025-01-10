@@ -50,8 +50,7 @@ export default function MainProduct() {
     );
     setMainData(filterMainProduct[0]);
     checkingLocalStorage()
-    console.log("inja : ",state,dispatch)
-  }, []);
+  }, [contextData]);
   useEffect(() => {
     console.log("data : ",mainData)
     const dataName = mainData?.name;
@@ -62,17 +61,7 @@ export default function MainProduct() {
     setIsBuy(true)
     const newMainData={count:1,color:selectColor,...mainData}
     dispatch({ type: "ADD_TO_CART", payload: newMainData });
-    // const newCart = [...cartList, newMainData];
-    // console.log(newCart)
-    // setCartList(newCart)
-    // console.log(newCart);
-
   }
-  // useEffect(()=>{
-  //   // localStorage.setItem("cart",JSON.stringify(cartList))
-  //   dispatch({ type: "ADD_TO_CART", payload: cartList });
-  //
-  // },[cartList])
 
   return (
     <div className="wrapper relative">
@@ -109,17 +98,6 @@ export default function MainProduct() {
               </div>
             </div>
             <div className="flex flex-col">
-              {/* <h3>property</h3> */}
-              {/* <div className="border border-gray-200 rounded-xl py-4 px-5">
-                <p>
-                  <span></span>
-                  <span></span>
-                </p>
-                <p>
-                  <span></span>
-                  <span></span>
-                </p>
-              </div> */}
             </div>
           </div>
           <div className="left-right-side w-full md:w-auto">
@@ -141,7 +119,6 @@ export default function MainProduct() {
               </span>
             </div>
             <div className="relative overflow-hidden w-full md:w-80 flex justify-center items-center">
-              {/* <img src={mainData.image} alt="" /> */}
               <InnerImageZoom
                 src={mainData?.image}
                 zoomSrc={mainData?.image}
@@ -155,7 +132,7 @@ export default function MainProduct() {
           {mainData?.off > 0 && (
             <div className="off-slider relative w-full flex justify-between items-center py-0.5 font-shabnamBold text-blue-600">
               <span className="text-sm">فروش ویژه</span>
-              <Countdown date={1734269834600 + mainData?.time} />
+              <Countdown date={173426983 + Date.now()} />
             </div>
           )}
           <div className="p-2 flex flex-col gap-2">
