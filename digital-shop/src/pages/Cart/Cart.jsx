@@ -4,6 +4,8 @@ import empty from "./../../asset/cart/static_emptyBasket.webp"
 import { Link } from "react-router-dom";
 import {CartContext} from "../../context/cartContext";
 import StylingNumber from "../../GlobalFunc/StylingNumber.js";
+import { AiOutlineClear } from "react-icons/ai";
+
 
 export default function Cart(){
     const { state, dispatch } = useContext(CartContext);
@@ -22,6 +24,9 @@ export default function Cart(){
 
     const changeStatus=()=>{
         setCheckRule(prev=>!prev)
+    }
+    const clearCart=()=>{
+        dispatch({type:"CLEAR_CART",payload:state.cart})
     }
     return(
         <div className="wrapper">
@@ -46,6 +51,22 @@ export default function Cart(){
                                 </div>
                             )
                         }
+                        <div className={"flex items-center justify-center w-full mt-4"}>
+                            {
+                                state.cart.length ? (
+                                    <button
+                                        className={"text-sm flex justify-center items-center gap-2 rounded-xl px-4 py-2 border-none outline-none cursor-pointer bg-blue-900 text-white"}
+                                        onClick={clearCart}
+                                    >
+                                        <span>پاک سازی سبد خرید</span>
+                                        <AiOutlineClear className={"w-5 h-5"}/>
+                                    </button>
+                                ) : (
+                                    ""
+                                )
+                            }
+
+                        </div>
                     </div>
                     <div className="w-[40%] flex flex-col gap-y-4 border border-gray-200 rounded-2xl p-3">
                         <div className={"flex justify-between items-center border-b border-b-gray-200 pb-3"}>
