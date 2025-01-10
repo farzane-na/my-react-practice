@@ -9,6 +9,7 @@ import BlogPage from "./pages/BlogPage/BlogPage";
 import MainBlog from "./pages/MainBlog/MainBlog";
 import ProductCategory from './pages/ProductCategory/ProductCategory'
 import Shop from "./pages/Shop/Shop";
+import Page404 from "./pages/404/404";
 
 let routes=[
     {
@@ -62,6 +63,11 @@ let routes=[
         path:'/shop',
         element:<OrgLayout><Shop /></OrgLayout>,
         title:"فروشگاه"
+    },
+    {
+        path:'*',
+        element:<OrgLayout><Page404 /></OrgLayout>,
+        title:""
     },
 ]
 export default routes

@@ -77,34 +77,34 @@ export default function Footer() {
                   دسترسی سریع
                 </h4>
                 <li className="text-xs">
-                  <a href="#">بلاگ</a>
+                  <Link to={"/blog"}>بلاگ</Link>
                 </li>
                 <li className="text-xs">
-                  <a href="#">خرید گوشی</a>
+                  <Link to={"/shop"}>خرید گوشی</Link>
                 </li>
                 <li className="text-xs">
-                  <a href="#">گوشی سامسونگ</a>
+                  <Link to={"/shop"}>گوشی سامسونگ</Link>
                 </li>
                 <li className="text-xs">
-                  <a href="#">گوشی آیفون</a>
+                  <Link to={"/shop"} href="#">گوشی آیفون</Link>
                 </li>
                 <li className="text-xs">
-                  <a href="#">گوشی شیائومی</a>
+                  <Link to={"/shop"} >گوشی شیائومی</Link>
                 </li>
                 <li className="text-xs">
-                  <a href="#">گوشی پوکو</a>
+                  <Link to={"/shop"}>گوشی پوکو</Link>
                 </li>
                 <li className="text-xs">
-                  <a href="#">مقایسه گوشی</a>
+                  <Link to={"/shop"}>مقایسه گوشی</Link>
                 </li>
                 <li className="text-xs">
-                  <a href="#">قیمت لپتاپ</a>
+                  <Link to={"/shop"}>قیمت لپتاپ</Link>
                 </li>
                 <li className="text-xs">
-                  <a href="#">هندزفری بلوتوثی گوشی</a>
+                  <Link to={"/shop"}>هندزفری بلوتوثی گوشی</Link>
                 </li>
                 <li className="text-xs">
-                  <a href="#">بلک فرایدی</a>
+                  <Link to={"/shop"}>بلک فرایدی</Link>
                 </li>
               </ul>
               <ul className="w-32 2xl:w-52  flex flex-col gap-4 text-white">
